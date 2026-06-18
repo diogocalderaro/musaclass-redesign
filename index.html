@@ -21,7 +21,20 @@
             theme: {
                 extend: {
                     colors: {
-                        brandPink: '#f43f5e',
+                        brandPink: '#f6339a',
+                        rose: {
+                            50: '#fff1f6',
+                            100: '#ffe4ee',
+                            200: '#fec8dd',
+                            300: '#fea3c6',
+                            400: '#fc6fa3',
+                            500: '#f6339a',
+                            600: '#e01a7f',
+                            700: '#c20e64',
+                            800: '#a10f53',
+                            900: '#861148',
+                            950: '#520327',
+                        },
                         ytBlack: '#0f0f0f',
                         ytCard: '#1f1f1f',
                         ytBorder: '#282828',
@@ -70,7 +83,7 @@
             border-radius: 3px;
         }
         .modal-scroll::-webkit-scrollbar-thumb:hover {
-            background: #f43f5e;
+            background: #f6339a;
         }
 
         .sidebar-transition {
@@ -138,12 +151,6 @@
 
         <!-- Right Section: Actions + Profile -->
         <div class="flex items-center gap-3">
-            <button class="flex items-center gap-2 text-xs font-semibold bg-gradient-to-r from-rose-500/20 to-[#f43f5e]/30 border border-[#f43f5e]/40 hover:from-rose-500/30 hover:to-[#f43f5e]/40 px-3.5 py-1.5 rounded-full text-white transition-all shadow-md active:scale-95 shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4 text-[#f43f5e]">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                </svg>
-                <span>Anunciar</span>
-            </button>
             <button class="p-2 hover:bg-zinc-800 rounded-full text-white transition-colors relative">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="w-5 h-5">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" />
@@ -167,18 +174,18 @@
                         </svg>
                         <span class="sidebar-text truncate">Início</span>
                     </a>
-                    <a href="#" class="flex items-center gap-4 px-4 py-2.5 text-zinc-400 hover:text-white hover:bg-zinc-900 rounded-xl transition-colors sidebar-link">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 shrink-0">
-                            <path d="M10 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" />
-                            <path fill-rule="evenodd" d="M.664 10.59a1.651 1.651 0 010-1.186A10.004 10.004 0 0110 3c4.257 0 7.893 2.66 9.336 6.41.085.22.085.465 0 .685A10.004 10.004 0 0110 17c-4.257 0-7.893-2.66-9.336-6.41zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
+                    <a href="#cities-section" class="flex items-center gap-4 px-4 py-2.5 text-zinc-400 hover:text-white hover:bg-zinc-900 rounded-xl transition-colors sidebar-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="w-5 h-5 shrink-0">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
                         </svg>
-                        <span class="sidebar-text truncate">Destaques</span>
+                        <span class="sidebar-text truncate">Cidades / Estados</span>
                     </a>
-                    <a href="#" class="flex items-center gap-4 px-4 py-2.5 text-zinc-400 hover:text-white hover:bg-zinc-900 rounded-xl transition-colors sidebar-link">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 shrink-0">
-                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5L6.86 12.49a1 1 0 001.71 1.02l.33-.51h2.2l.3 5.1h2a1 1 0 00.866-.5L13.14 7.5H10z" clip-rule="evenodd" />
+                    <a href="#filters-section" class="flex items-center gap-4 px-4 py-2.5 text-zinc-400 hover:text-white hover:bg-zinc-900 rounded-xl transition-colors sidebar-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="w-5 h-5 shrink-0">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" />
                         </svg>
-                        <span class="sidebar-text truncate">Feeds ao Vivo</span>
+                        <span class="sidebar-text truncate">Filtros Avançados</span>
                     </a>
                 </div>
                 
@@ -187,41 +194,97 @@
                     <hr class="border-ytBorder/40 sidebar-divider">
 
                     <!-- States Section -->
-                    <div class="flex flex-col gap-1 px-3">
+                    <div id="cities-section" class="flex flex-col gap-1 px-3">
                         <span class="sidebar-text text-xs uppercase tracking-wider font-bold text-zinc-500 px-4 mb-1">Cidades / Estados</span>
                         <a href="#" class="flex items-center justify-between px-4 py-2 text-zinc-450 hover:text-white hover:bg-zinc-900 rounded-xl transition-colors sidebar-link">
                             <span class="flex items-center gap-4">
                                 <span class="w-2 h-2 bg-rose-500 rounded-full shrink-0"></span>
-                                <span class="sidebar-text truncate">Ceará (Fortaleza)</span>
+                                <span class="sidebar-text truncate font-semibold">Fortaleza</span>
                             </span>
-                            <span class="sidebar-text text-[10px] bg-zinc-800 text-zinc-400 px-1.5 py-0.5 rounded font-bold border border-zinc-700 shrink-0">18</span>
+                            <span class="sidebar-text text-[10px] bg-rose-950/20 text-rose-500 border border-rose-500/30 px-1.5 py-0.5 rounded font-bold shrink-0">25</span>
                         </a>
                         <a href="#" class="flex items-center justify-between px-4 py-2 text-zinc-450 hover:text-white hover:bg-zinc-900 rounded-xl transition-colors sidebar-link">
                             <span class="flex items-center gap-4">
                                 <span class="w-2 h-2 bg-zinc-700 rounded-full shrink-0"></span>
-                                <span class="sidebar-text truncate">São Paulo (SP)</span>
+                                <span class="sidebar-text truncate">Recife</span>
+                            </span>
+                            <span class="sidebar-text text-[10px] bg-zinc-900 text-zinc-500 px-1.5 py-0.5 rounded font-bold shrink-0">12</span>
+                        </a>
+                        <a href="#" class="flex items-center justify-between px-4 py-2 text-zinc-450 hover:text-white hover:bg-zinc-900 rounded-xl transition-colors sidebar-link">
+                            <span class="flex items-center gap-4">
+                                <span class="w-2 h-2 bg-zinc-700 rounded-full shrink-0"></span>
+                                <span class="sidebar-text truncate">São Paulo</span>
                             </span>
                             <span class="sidebar-text text-[10px] bg-zinc-900 text-zinc-500 px-1.5 py-0.5 rounded font-bold shrink-0">42</span>
                         </a>
                         <a href="#" class="flex items-center justify-between px-4 py-2 text-zinc-450 hover:text-white hover:bg-zinc-900 rounded-xl transition-colors sidebar-link">
                             <span class="flex items-center gap-4">
                                 <span class="w-2 h-2 bg-zinc-700 rounded-full shrink-0"></span>
-                                <span class="sidebar-text truncate">Rio de Janeiro (RJ)</span>
+                                <span class="sidebar-text truncate">Teresina</span>
                             </span>
-                            <span class="sidebar-text text-[10px] bg-zinc-900 text-zinc-500 px-1.5 py-0.5 rounded font-bold shrink-0">29</span>
+                            <span class="sidebar-text text-[10px] bg-zinc-900 text-zinc-500 px-1.5 py-0.5 rounded font-bold shrink-0">8</span>
                         </a>
                         <a href="#" class="flex items-center justify-between px-4 py-2 text-zinc-450 hover:text-white hover:bg-zinc-900 rounded-xl transition-colors sidebar-link">
                             <span class="flex items-center gap-4">
                                 <span class="w-2 h-2 bg-zinc-700 rounded-full shrink-0"></span>
-                                <span class="sidebar-text truncate">Minas Gerais (BH)</span>
+                                <span class="sidebar-text truncate">Natal</span>
                             </span>
-                            <span class="sidebar-text text-[10px] bg-zinc-900 text-zinc-500 px-1.5 py-0.5 rounded font-bold shrink-0">15</span>
+                            <span class="sidebar-text text-[10px] bg-zinc-900 text-zinc-500 px-1.5 py-0.5 rounded font-bold shrink-0">14</span>
+                        </a>
+                        <a href="#" class="flex items-center justify-between px-4 py-2 text-zinc-450 hover:text-white hover:bg-zinc-900 rounded-xl transition-colors sidebar-link">
+                            <span class="flex items-center gap-4">
+                                <span class="w-2 h-2 bg-zinc-700 rounded-full shrink-0"></span>
+                                <span class="sidebar-text truncate">João Pessoa</span>
+                            </span>
+                            <span class="sidebar-text text-[10px] bg-zinc-900 text-zinc-500 px-1.5 py-0.5 rounded font-bold shrink-0">9</span>
+                        </a>
+                        <a href="#" class="flex items-center justify-between px-4 py-2 text-zinc-450 hover:text-white hover:bg-zinc-900 rounded-xl transition-colors sidebar-link">
+                            <span class="flex items-center gap-4">
+                                <span class="w-2 h-2 bg-zinc-700 rounded-full shrink-0"></span>
+                                <span class="sidebar-text truncate">Salvador</span>
+                            </span>
+                            <span class="sidebar-text text-[10px] bg-zinc-900 text-zinc-500 px-1.5 py-0.5 rounded font-bold shrink-0">19</span>
+                        </a>
+                        <a href="#" class="flex items-center justify-between px-4 py-2 text-zinc-450 hover:text-white hover:bg-zinc-900 rounded-xl transition-colors sidebar-link">
+                            <span class="flex items-center gap-4">
+                                <span class="w-2 h-2 bg-zinc-700 rounded-full shrink-0"></span>
+                                <span class="sidebar-text truncate">Maceió</span>
+                            </span>
+                            <span class="sidebar-text text-[10px] bg-zinc-900 text-zinc-500 px-1.5 py-0.5 rounded font-bold shrink-0">11</span>
+                        </a>
+                        <a href="#" class="flex items-center justify-between px-4 py-2 text-zinc-450 hover:text-white hover:bg-zinc-900 rounded-xl transition-colors sidebar-link">
+                            <span class="flex items-center gap-4">
+                                <span class="w-2 h-2 bg-zinc-700 rounded-full shrink-0"></span>
+                                <span class="sidebar-text truncate">Belo Horizonte</span>
+                            </span>
+                            <span class="sidebar-text text-[10px] bg-zinc-900 text-zinc-500 px-1.5 py-0.5 rounded font-bold shrink-0">16</span>
+                        </a>
+                        <a href="#" class="flex items-center justify-between px-4 py-2 text-zinc-450 hover:text-white hover:bg-zinc-900 rounded-xl transition-colors sidebar-link">
+                            <span class="flex items-center gap-4">
+                                <span class="w-2 h-2 bg-zinc-700 rounded-full shrink-0"></span>
+                                <span class="sidebar-text truncate">Brasília</span>
+                            </span>
+                            <span class="sidebar-text text-[10px] bg-zinc-900 text-zinc-500 px-1.5 py-0.5 rounded font-bold shrink-0">21</span>
+                        </a>
+                        <a href="#" class="flex items-center justify-between px-4 py-2 text-zinc-450 hover:text-white hover:bg-zinc-900 rounded-xl transition-colors sidebar-link">
+                            <span class="flex items-center gap-4">
+                                <span class="w-2 h-2 bg-zinc-700 rounded-full shrink-0"></span>
+                                <span class="sidebar-text truncate">São Luis</span>
+                            </span>
+                            <span class="sidebar-text text-[10px] bg-zinc-900 text-zinc-500 px-1.5 py-0.5 rounded font-bold shrink-0">7</span>
+                        </a>
+                        <a href="#" class="flex items-center justify-between px-4 py-2 text-zinc-450 hover:text-white hover:bg-zinc-900 rounded-xl transition-colors sidebar-link">
+                            <span class="flex items-center gap-4">
+                                <span class="w-2 h-2 bg-zinc-700 rounded-full shrink-0"></span>
+                                <span class="sidebar-text truncate">Aracaju</span>
+                            </span>
+                            <span class="sidebar-text text-[10px] bg-zinc-900 text-zinc-500 px-1.5 py-0.5 rounded font-bold shrink-0">6</span>
                         </a>
                     </div>
                     <hr class="border-ytBorder/40 sidebar-divider">
 
                     <!-- Advanced Filters Section -->
-                    <div class="flex flex-col gap-5 px-5 py-2">
+                    <div id="filters-section" class="flex flex-col gap-5 px-5 py-2">
                         <span class="sidebar-text text-xs uppercase tracking-widest font-extrabold text-rose-500 mb-1">Filtros Avançados</span>
                         
                         <!-- BAIRRO -->
@@ -341,7 +404,7 @@
                         </div>
 
                         <!-- BOTÃO APLICAR -->
-                        <button class="w-full py-3 bg-[#f43f5e] hover:bg-rose-600 text-white font-bold uppercase tracking-widest text-[10px] rounded-xl transition-all duration-200 shadow-md shadow-rose-950/20 active:scale-[0.97] mt-2 font-sans">
+                        <button class="w-full py-3 bg-brandPink hover:bg-rose-600 text-white font-bold uppercase tracking-widest text-[10px] rounded-xl transition-all duration-200 shadow-md shadow-rose-950/20 active:scale-[0.97] mt-2 font-sans">
                             Aplicar Filtros
                         </button>
                     </div>
@@ -362,6 +425,12 @@
         <!-- MAIN WINDOW CONTAINER -->
         <main id="main-content" class="flex-1 h-full overflow-y-auto flex flex-col bg-[#09090b] relative">
             
+            <!-- Page Heading Title Section -->
+            <div class="px-6 pt-6 pb-2 shrink-0 select-none">
+                <h1 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Acompanhantes Fortaleza - CE</h1>
+                <p class="text-sm text-zinc-400 mt-1 font-light">Desde 2012, referência em acompanhantes de luxo</p>
+            </div>
+            
             <!-- Sticky Filter Pill Badges Row (YouTube Style) -->
             <div class="sticky top-0 bg-[#09090b] py-3 px-4 border-b border-ytBorder/20 z-20 flex items-center gap-3 overflow-x-auto no-scrollbar shrink-0 select-none">
                 <span class="bg-white text-black font-semibold px-4 py-1.5 rounded-lg text-xs cursor-pointer select-none">Tudo</span>
@@ -378,44 +447,35 @@
 
             <!-- FEEDS / STORIES CIRCLES (Below Badges) -->
             <section class="py-4 px-6 border-b border-ytBorder/15 select-none shrink-0 flex flex-col gap-2.5">
-                <span class="text-xs uppercase tracking-widest text-[#f43f5e] font-extrabold px-1 font-sans">Novos Feeds ao Vivo</span>
                 <div class="flex items-center gap-4 overflow-x-auto py-1.5 no-scrollbar scroll-smooth w-full px-1">
                     <!-- Feed 1 -->
-                    <div onclick="openStoryViewer(0)" class="flex flex-col items-center gap-1.5 cursor-pointer group flex-shrink-0">
-                        <div class="w-[62px] h-[62px] rounded-full p-[2.5px] bg-gradient-to-tr from-[#f43f5e] to-amber-500 group-hover:scale-105 transition-transform duration-300">
-                            <div class="w-full h-full rounded-full border-[2.5px] border-ytBlack overflow-hidden bg-zinc-900">
-                                <img src="https://static.musaclass.com/public/ads/2522d60b-9392-4730-9e21-fef35afdde68/1778961156620-Imagem-do-WhatsApp-de-2025-08-27-as-14.55.40_94771ba4.webp?v=1779817713390" alt="" class="w-full h-full object-cover">
-                            </div>
+                    <div onclick="openStoryViewer(0)" class="flex flex-col items-center gap-2 cursor-pointer group flex-shrink-0">
+                        <div class="w-[58px] h-[58px] rounded-full ring-2 ring-brandPink ring-offset-2 ring-offset-[#09090b] overflow-hidden bg-zinc-900 group-hover:scale-105 transition-all duration-300">
+                            <img src="https://static.musaclass.com/public/ads/2522d60b-9392-4730-9e21-fef35afdde68/1778961156620-Imagem-do-WhatsApp-de-2025-08-27-as-14.55.40_94771ba4.webp?v=1779817713390" alt="" class="w-full h-full object-cover">
                         </div>
                         <span class="text-xs text-zinc-400 group-hover:text-white transition-colors duration-200 font-medium">Kiara</span>
                     </div>
 
                     <!-- Feed 2 -->
-                    <div onclick="openStoryViewer(1)" class="flex flex-col items-center gap-1.5 cursor-pointer group flex-shrink-0">
-                        <div class="w-[62px] h-[62px] rounded-full p-[2.5px] bg-gradient-to-tr from-[#f43f5e] to-amber-500 group-hover:scale-105 transition-transform duration-300">
-                            <div class="w-full h-full rounded-full border-[2.5px] border-ytBlack overflow-hidden bg-zinc-900">
-                                <img src="https://static.musaclass.com/public/slots/b863e22f-65e7-4688-bbe0-a85f119e0fb9.webp?v=1779821056489" alt="" class="w-full h-full object-cover">
-                            </div>
+                    <div onclick="openStoryViewer(1)" class="flex flex-col items-center gap-2 cursor-pointer group flex-shrink-0">
+                        <div class="w-[58px] h-[58px] rounded-full ring-2 ring-brandPink ring-offset-2 ring-offset-[#09090b] overflow-hidden bg-zinc-900 group-hover:scale-105 transition-all duration-300">
+                            <img src="https://static.musaclass.com/public/slots/b863e22f-65e7-4688-bbe0-a85f119e0fb9.webp?v=1779821056489" alt="" class="w-full h-full object-cover">
                         </div>
                         <span class="text-xs text-zinc-400 group-hover:text-white transition-colors duration-200 font-medium">Bia</span>
                     </div>
 
                     <!-- Feed 3 -->
-                    <div onclick="openStoryViewer(2)" class="flex flex-col items-center gap-1.5 cursor-pointer group flex-shrink-0">
-                        <div class="w-[62px] h-[62px] rounded-full p-[2.5px] bg-gradient-to-tr from-[#f43f5e] to-amber-500 group-hover:scale-105 transition-transform duration-300">
-                            <div class="w-full h-full rounded-full border-[2.5px] border-ytBlack overflow-hidden bg-zinc-900">
-                                <img src="https://static.musaclass.com/public/acp/239ed3cb-e282-4699-ac51-3615118e6a3f/1776567856965-WhatsApp-Image-2025-12-26-at-10.31.17-2.webp" alt="" class="w-full h-full object-cover">
-                            </div>
+                    <div onclick="openStoryViewer(2)" class="flex flex-col items-center gap-2 cursor-pointer group flex-shrink-0">
+                        <div class="w-[58px] h-[58px] rounded-full ring-2 ring-brandPink ring-offset-2 ring-offset-[#09090b] overflow-hidden bg-zinc-900 group-hover:scale-105 transition-all duration-300">
+                            <img src="https://static.musaclass.com/public/acp/239ed3cb-e282-4699-ac51-3615118e6a3f/1776567856965-WhatsApp-Image-2025-12-26-at-10.31.17-2.webp" alt="" class="w-full h-full object-cover">
                         </div>
                         <span class="text-xs text-zinc-400 group-hover:text-white transition-colors duration-200 font-medium">Helô</span>
                     </div>
 
                     <!-- Feed 4 -->
-                    <div onclick="openStoryViewer(3)" class="flex flex-col items-center gap-1.5 cursor-pointer group flex-shrink-0">
-                        <div class="w-[62px] h-[62px] rounded-full p-[2.5px] bg-gradient-to-tr from-[#f43f5e] to-amber-500 group-hover:scale-105 transition-transform duration-300">
-                            <div class="w-full h-full rounded-full border-[2.5px] border-ytBlack overflow-hidden bg-zinc-900">
-                                <img src="https://static.musaclass.com/public/slots/b863e22f-65e7-4688-bbe0-a85f119e0fb9.webp?v=1779821056489" alt="" class="w-full h-full object-cover">
-                            </div>
+                    <div onclick="openStoryViewer(3)" class="flex flex-col items-center gap-2 cursor-pointer group flex-shrink-0">
+                        <div class="w-[58px] h-[58px] rounded-full ring-2 ring-brandPink ring-offset-2 ring-offset-[#09090b] overflow-hidden bg-zinc-900 group-hover:scale-105 transition-all duration-300">
+                            <img src="https://static.musaclass.com/public/slots/b863e22f-65e7-4688-bbe0-a85f119e0fb9.webp?v=1779821056489" alt="" class="w-full h-full object-cover">
                         </div>
                         <span class="text-xs text-zinc-400 group-hover:text-white transition-colors duration-200 font-medium">Dri</span>
                     </div>
@@ -424,7 +484,7 @@
 
             <!-- NOVIDADES Section (Swiper Carousel) -->
             <section class="py-4 px-6 border-b border-ytBorder/15 relative">
-                <span class="text-xs uppercase tracking-widest text-[#f43f5e] font-extrabold px-1 font-sans">Novos Ensaios</span>
+                <span class="text-xs uppercase tracking-widest text-brandPink font-extrabold px-1 font-sans">Novos ensaios Musa Class</span>
                 <div class="novidades-swiper swiper w-full mt-2.5">
                     <div id="novidades-container" class="swiper-wrapper">
                         <!-- Dynamic items loaded via JS -->
@@ -435,75 +495,136 @@
             </section>
 
             <!-- DESTAQUES Section (Vertical profile cards grid - 5 columns per line on desktop) -->
-            <section class="flex-1 p-6">
-                <span class="text-xs uppercase tracking-widest text-[#f43f5e] font-extrabold px-1 font-sans block mb-4">Destaques em Fortaleza</span>
+            <section class="p-6">
+                <span class="text-xs uppercase tracking-widest text-brandPink font-extrabold px-1 font-sans block mb-4">Destaques em Fortaleza</span>
                 
                 <div id="profile-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 px-1 w-full">
                     <!-- Dynamic vertical cards loaded via JS -->
                 </div>
             </section>
 
+            <!-- ACOMPANHANTES VIRTUAIS Section -->
+            <section class="p-6 border-t border-zinc-900/50">
+                <span class="text-xs uppercase tracking-widest text-brandPink font-extrabold px-1 font-sans block">Acompanhantes Virtuais</span>
+                <span class="text-xs text-zinc-500 font-light px-1 font-sans block mb-4 mt-0.5">Anunciantes dedicadas a experiências personalizadas por videochamadas</span>
+                
+                <div id="virtual-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 px-1 w-full">
+                    <!-- Dynamic virtual cards loaded via JS (12 items) -->
+                </div>
+            </section>
+
+            <!-- CURTA TEMPORADA Section -->
+            <section class="p-6 border-t border-zinc-900/50">
+                <span class="text-xs uppercase tracking-widest text-brandPink font-extrabold px-1 font-sans block">Curta Temporada</span>
+                <span class="text-xs text-zinc-500 font-light px-1 font-sans block mb-4 mt-0.5">Aguardem novas anunciantes disponíveis para uma curta temporada em Fortaleza no Musa Class</span>
+                
+                <div id="temporada-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 px-1 w-full">
+                    <!-- Dynamic coming soon cards loaded via JS (6 items) -->
+                </div>
+            </section>
+
             <!-- Footer Badges -->
-            <section class="border-t border-zinc-900/50 pt-8 flex flex-col gap-6 px-6 w-full select-none shrink-0">
+            <section class="border-t border-zinc-900/50 pt-10 pb-6 flex flex-col gap-10 px-6 w-full select-none shrink-0">
+                <!-- Acompanhantes por Bairro -->
                 <div>
-                    <h4 class="text-xs uppercase tracking-[0.15em] text-zinc-400 font-bold mb-3 flex items-center gap-2">
-                        <span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span> Categorias em Fortaleza
+                    <h4 class="text-sm uppercase tracking-wider text-zinc-300 font-bold mb-1 flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4 text-brandPink">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                        </svg>
+                        Acompanhantes por Bairro em Fortaleza
                     </h4>
-                    <div class="flex flex-wrap gap-2">
-                        <a href="#" class="text-xs text-zinc-350 bg-zinc-900 hover:bg-zinc-850 border border-zinc-800/80 px-3.5 py-2 rounded-lg transition-colors">Acompanhante de Mulheres em Fortaleza</a>
-                        <a href="#" class="text-xs text-zinc-350 bg-zinc-900 hover:bg-zinc-850 border border-zinc-800/80 px-3.5 py-2 rounded-lg transition-colors">Acompanhante Trans em Fortaleza</a>
-                        <a href="#" class="text-xs text-zinc-350 bg-zinc-900 hover:bg-zinc-850 border border-zinc-800/80 px-3.5 py-2 rounded-lg transition-colors">Casais em Fortaleza</a>
+                    <span class="text-xs text-zinc-500 font-light block mb-4">Selecione o bairro de sua preferência para encontrar acompanhantes próximas em Fortaleza.</span>
+                    <div class="flex flex-wrap gap-2.5">
+                        <a href="#" class="bg-brandPink/10 text-brandPink border border-brandPink/40 rounded-full px-4.5 py-2 text-xs font-semibold flex items-center gap-1.5 transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-3.5 h-3.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                            </svg>
+                            Todos
+                        </a>
+                        <a href="#" class="bg-zinc-900/60 text-zinc-300 border border-zinc-800 rounded-full px-4.5 py-2 text-xs font-semibold flex items-center gap-1.5 hover:bg-zinc-800 hover:text-white transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-3.5 h-3.5 text-brandPink">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                            </svg>
+                            Aldeota
+                        </a>
+                        <a href="#" class="bg-zinc-900/60 text-zinc-300 border border-zinc-800 rounded-full px-4.5 py-2 text-xs font-semibold flex items-center gap-1.5 hover:bg-zinc-800 hover:text-white transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-3.5 h-3.5 text-brandPink">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                            </svg>
+                            Cidade dos Funcionários
+                        </a>
+                        <a href="#" class="bg-zinc-900/60 text-zinc-300 border border-zinc-800 rounded-full px-4.5 py-2 text-xs font-semibold flex items-center gap-1.5 hover:bg-zinc-800 hover:text-white transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-3.5 h-3.5 text-brandPink">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                            </svg>
+                            Meireles
+                        </a>
                     </div>
                 </div>
 
+                <!-- Acompanhantes em Fortaleza por Categoria -->
                 <div>
-                    <h4 class="text-xs uppercase tracking-[0.15em] text-zinc-400 font-bold mb-3 flex items-center gap-2">
-                        <span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span> Acompanhantes por Bairro em Fortaleza
+                    <h4 class="text-sm uppercase tracking-wider text-zinc-300 font-bold mb-1 flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 text-brandPink">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 0 1 1.37.49l1.296 2.247a1.125 1.125 0 0 1-.26 1.43l-1.003.828c-.293.241-.438.613-.43.992a7.723 7.723 0 0 1 0 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 0 1-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 0 1-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 0 1-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 0 1-1.369-.49l-1.297-2.247a1.125 1.125 0 0 1 .26-1.43l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 0 1 0-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 0 1-.26-1.43l1.297-2.247a1.125 1.125 0 0 1 1.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28Z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                        </svg>
+                        Acompanhantes em Fortaleza por Categoria
                     </h4>
+                    <span class="text-xs text-zinc-500 font-light block mb-4">Filtre por características, especialidades e serviços para encontrar acompanhantes de luxo em Fortaleza.</span>
                     <div class="flex flex-wrap gap-2">
-                        <a href="#" class="text-xs text-zinc-400 bg-zinc-900 hover:bg-zinc-850 border border-zinc-800/80 px-3.5 py-2 rounded-lg transition-colors">Aldeota</a>
-                        <a href="#" class="text-xs text-zinc-400 bg-zinc-900 hover:bg-zinc-850 border border-zinc-800/80 px-3.5 py-2 rounded-lg transition-colors">Meireles</a>
-                        <a href="#" class="text-xs text-zinc-400 bg-zinc-900 hover:bg-zinc-850 border border-zinc-800/80 px-3.5 py-2 rounded-lg transition-colors">Centro</a>
-                        <a href="#" class="text-xs text-zinc-400 bg-zinc-900 hover:bg-zinc-850 border border-zinc-800/80 px-3.5 py-2 rounded-lg transition-colors">Cocó</a>
-                        <a href="#" class="text-xs text-zinc-400 bg-zinc-900 hover:bg-zinc-850 border border-zinc-800/80 px-3.5 py-2 rounded-lg transition-colors">Praia de Iracema</a>
+                        <a href="#" class="bg-zinc-900/60 text-zinc-300 border border-zinc-800/80 hover:bg-zinc-800 hover:text-white px-4.5 py-2 rounded-full text-xs font-semibold transition-all">Loiras</a>
+                        <a href="#" class="bg-zinc-900/60 text-zinc-300 border border-zinc-800/80 hover:bg-zinc-800 hover:text-white px-4.5 py-2 rounded-full text-xs font-semibold transition-all">Morenas</a>
+                        <a href="#" class="bg-zinc-900/60 text-zinc-300 border border-zinc-800/80 hover:bg-zinc-800 hover:text-white px-4.5 py-2 rounded-full text-xs font-semibold transition-all">Ruivas</a>
+                        <a href="#" class="bg-zinc-900/60 text-zinc-300 border border-zinc-800/80 hover:bg-zinc-800 hover:text-white px-4.5 py-2 rounded-full text-xs font-semibold transition-all">Perfil Namoradinha</a>
+                        <a href="#" class="bg-zinc-900/60 text-zinc-300 border border-zinc-800/80 hover:bg-zinc-800 hover:text-white px-4.5 py-2 rounded-full text-xs font-semibold transition-all">Perfil Safada</a>
+                        <a href="#" class="bg-zinc-900/60 text-zinc-300 border border-zinc-800/80 hover:bg-zinc-800 hover:text-white px-4.5 py-2 rounded-full text-xs font-semibold transition-all">Massagistas</a>
+                        <a href="#" class="bg-zinc-900/60 text-zinc-300 border border-zinc-800/80 hover:bg-zinc-800 hover:text-white px-4.5 py-2 rounded-full text-xs font-semibold transition-all">Faz Anal</a>
+                        <a href="#" class="bg-zinc-900/60 text-zinc-300 border border-zinc-800/80 hover:bg-zinc-800 hover:text-white px-4.5 py-2 rounded-full text-xs font-semibold transition-all">Beijo na Boca</a>
+                        <a href="#" class="bg-zinc-900/60 text-zinc-300 border border-zinc-800/80 hover:bg-zinc-800 hover:text-white px-4.5 py-2 rounded-full text-xs font-semibold transition-all">Com Flat Próprio</a>
+                        <a href="#" class="bg-zinc-900/60 text-zinc-300 border border-zinc-800/80 hover:bg-zinc-800 hover:text-white px-4.5 py-2 rounded-full text-xs font-semibold transition-all">Atende em Motéis</a>
+                        <a href="#" class="bg-zinc-900/60 text-zinc-300 border border-zinc-800/80 hover:bg-zinc-800 hover:text-white px-4.5 py-2 rounded-full text-xs font-semibold transition-all">Mulherão</a>
+                        <a href="#" class="bg-zinc-900/60 text-zinc-300 border border-zinc-800/80 hover:bg-zinc-800 hover:text-white px-4.5 py-2 rounded-full text-xs font-semibold transition-all">Mignon</a>
+                        <a href="#" class="bg-zinc-900/60 text-zinc-300 border border-zinc-800/80 hover:bg-zinc-800 hover:text-white px-4.5 py-2 rounded-full text-xs font-semibold transition-all">Fitness / Saradas</a>
+                        <a href="#" class="bg-zinc-900/60 text-zinc-300 border border-zinc-800/80 hover:bg-zinc-800 hover:text-white px-4.5 py-2 rounded-full text-xs font-semibold transition-all">Com Silicone</a>
+                        <a href="#" class="bg-zinc-900/60 text-zinc-300 border border-zinc-800/80 hover:bg-zinc-800 hover:text-white px-4.5 py-2 rounded-full text-xs font-semibold transition-all">Seios Grandes</a>
+                        <a href="#" class="bg-zinc-900/60 text-zinc-300 border border-zinc-800/80 hover:bg-zinc-800 hover:text-white px-4.5 py-2 rounded-full text-xs font-semibold transition-all">Bumbum Grande</a>
+                        <a href="#" class="bg-zinc-900/60 text-zinc-300 border border-zinc-800/80 hover:bg-zinc-800 hover:text-white px-4.5 py-2 rounded-full text-xs font-semibold transition-all">Dominação</a>
+                        <a href="#" class="bg-zinc-900/60 text-zinc-300 border border-zinc-800/80 hover:bg-zinc-800 hover:text-white px-4.5 py-2 rounded-full text-xs font-semibold transition-all">Vídeo Chamada</a>
                     </div>
                 </div>
             </section>
 
             <!-- SEO Paragraphs Section -->
-            <section class="border-t border-zinc-900/50 mt-8 py-8 px-6 text-zinc-400 text-xs sm:text-sm font-light leading-relaxed flex flex-col gap-4 px-1 max-w-none text-center [&_h4]:text-zinc-300 [&_h4]:font-semibold [&_h4]:text-base [&_h4]:mt-6 [&_h4]:mb-3 [&_h4]:text-center [&_h3]:text-zinc-300 [&_h3]:font-semibold [&_h3]:text-base [&_h3]:mt-6 [&_h3]:mb-3 [&_h3]:text-center [&_p]:mb-4 [&_p]:text-zinc-400 [&_p]:text-center [&_ul]:list-disc [&_ul]:list-inside [&_ul]:mb-4 [&_ul]:space-y-1 [&_li]:text-center select-none">
-                <h4><strong>Há 13 anos mantendo a exclusividade como o melhor site de acompanhantes de luxo em Fortaleza</strong></h4>
-                <p>Você está em Fortaleza e deseja viver momentos únicos, marcados por sabor, discrição e alto nível de excellence? As acompanhantes Fortaleza-CE disponíveis na plataforma Musa Class Fortaleza são a escolha perfeita para quem procura total prazer e uma experiência personalizada, atenciosa e com total sigilo garantido.</p>
+            <section class="border-t border-zinc-900/50 mt-8 py-10 px-6 text-zinc-400 font-light leading-relaxed flex flex-col gap-6 max-w-4xl mx-auto text-left select-none">
+                <h3 class="text-xl sm:text-2xl font-extrabold text-white tracking-tight">Acompanhantes em Fortaleza: elegância cearense entre a brisa do mar e a vida boa</h3>
+                <p class="text-sm sm:text-base text-zinc-450">Fortaleza tem um jeito próprio de receber. A cidade pulsa no encontro do sol forte com o vento do Atlântico, e essa mistura de calor humano e descontração se traduz na companhia que você encontra por aqui. Na Musa Class, reunimos acompanhantes em Fortaleza que carregam exatamente esse espírito: leves na conversa, atentas ao detalhe e à vontade tanto num jantar à beira-mar quanto num programa mais reservado. Cada perfil traz o selo Garota Real & Verificada, com fotos reais e contato direto, sem intermediários.</p>
+                <p class="text-sm sm:text-base text-zinc-450">A capital cearense não se resume à orla. Entre o burburinho da Praia de Iracema, o requinte do Meireles e a serenidade arborizada da Aldeota, há uma Fortaleza para cada tipo de noite. Quem prefere o ar marítimo encontra no Mucuripe e na Praia do Futuro o cenário ideal para um fim de tarde sem pressa; quem busca tranquilidade longe do agito valoriza a discrição residencial da Cidade dos Funcionários. As acompanhantes de luxo do nosso catálogo conhecem esses bairros e sabem onde a cidade se mostra mais acolhedora.</p>
                 
-                <h4><strong>O que esperar das acompanhantes em Fortaleza-CE</strong></h4>
-                <p>As acompanhantes em Fortaleza-CE do Musa Class foram cuidadosamente selecionados para garantir não apenas beleza, mas também sofisticação, empatia e profissionalismo. São garotas de programa em Fortaleza-CE dispostas a oferecer encontros que aliam prazer, conforto e companhia de alto nível para diversos benefícios.</p>
+                <h3 class="text-lg sm:text-xl font-bold text-white tracking-tight mt-4">Onde encontrar a companhia certa</h3>
+                <p class="text-sm sm:text-base text-zinc-450">A escolha começa pelo clima que você procura. Para uma experiência sofisticada, o Meireles e a Beira-Mar concentram hotéis de alto padrão e restaurantes que pedem boa companhia. Já a Aldeota oferece o equilíbrio entre movimento e privacidade, perfeita para quem quer uma noite elegante sem holofotes. As garotas de programa em Fortaleza disponíveis na Musa Class transitam com naturalidade por todos esses ambientes, ajustando o tom do encontro ao que faz sentido para você.</p>
+                <p class="text-sm sm:text-base text-zinc-450">Nada aqui é deixado ao acaso. Cada escort passa por verificação de identidade e de imagens, de modo que o perfil que você vê é o mesmo que vai te receber. Essa é a diferença de uma plataforma que trabalha com seriedade há anos: você navega por fotos reais, lê descrições honestas e fala diretamente com a acompanhante, combinando horário, local e expectativas antes mesmo do primeiro encontro.</p>
                 
-                <p>Você pode contar com:</p>
-                <ul>
-                    <li>Perfis autênticos e fotos reais</li>
-                    <li>Atendimento discreto e personalizado</li>
-                    <li>Companhia para eventos, viagens e momentos íntimos</li>
-                    <li>Experiências adaptadas às suas preferências</li>
-                </ul>
-                
-                <h4><strong>Onde encontrar acompanhantes de Fortaleza-CE confiáveis</strong></h4>
-                <p>Para garantir uma experiência segura e sem complicações, o melhor caminho é acessar uma plataforma especializada com perfis selecionados. No Musa Class, você encontra as melhores acompanhantes Fortaleza-CE com total facilidade e descrição.</p>
-                
-                <p>A plataforma oferece:</p>
-                <ul>
-                    <li>Interface intuitiva para escolher o perfil ideal</li>
-                    <li>Fotos reais e informações completas de cada acompanhante Fortaleza-CE</li>
-                    <li>Agendamento rápido e seguro</li>
-                    <li>Atendimento personalizado via WhatsApp</li>
-                </ul>
-                
-                <h4><strong>Diversidade de perfis para todos os gostos</strong></h4>
-                <p>A plataforma conta com uma seleção ampla de acompanhantes Fortaleza-CE, oferecendo variedade de estilos e personalidades. Independentemente da ocasião ou do tipo de experiência desejada, há opções ideais para todos os gostos.</p>
+                <h3 class="text-lg sm:text-xl font-bold text-white tracking-tight mt-4">Discrição que vem de série</h3>
+                <p class="text-sm sm:text-base text-zinc-450">Em uma cidade que vive ao ar livre, saber preservar a privacidade é um valor. Os encontros acontecem onde você se sentir mais confortável, de flats reservados na orla a hotéis discretos no centro expandido, sempre com combinação prévia e respeito mutuo. A Musa Class existe justamente para que esse cuidado seja regra, não exceção.</p>
+                <p class="text-sm sm:text-base text-zinc-450">Se você quer transformar uma noite comum em algo memorável, comece por aqui. Explore os perfis verificados de acompanhantes em Fortaleza, escolha quem combina com o seu momento e faça o contato direto pela plataforma. A companhia de alto nível que você procura no Ceará está a poucos cliques de distância, com a elegância e a confiança que só a Musa Class oferece.</p>
             </section>
 
-            <!-- Footer -->
             <footer class="bg-zinc-950 border-t border-zinc-900/50 py-10 px-4 text-center text-zinc-500 text-xs shrink-0 select-none">
                 <div class="max-w-7xl mx-auto flex flex-col items-center gap-6">
+                    <!-- CTA Anuncie -->
+                    <a href="#" class="flex items-center gap-2 text-sm font-bold bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 px-8 py-3 rounded-full text-white transition-all shadow-lg shadow-rose-950/20 active:scale-95 shrink-0 mb-2 select-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-4 h-4 text-white">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                        </svg>
+                        <span>Anuncie no Musa Class</span>
+                    </a>
+
                     <div class="flex justify-center gap-5 text-xs uppercase tracking-wider text-zinc-450 border-b border-zinc-900 pb-4 w-full max-w-md">
                         <a href="#" class="hover:text-rose-500 text-rose-500 font-semibold">Português</a>
                         <a href="#" class="hover:text-rose-500">English</a>
@@ -555,7 +676,7 @@
             
             <!-- Bottom CTA -->
             <div class="absolute bottom-5 left-4 right-4 z-30">
-                <button onclick="closeStoryViewer(); openErosModal(0);" class="w-full py-3.5 bg-[#f43f5e] hover:bg-rose-600 text-white font-bold tracking-widest text-center text-xs uppercase rounded-full transition-colors duration-200 block shadow-lg font-sans">
+                <button onclick="closeStoryViewer(); openErosModal(0);" class="w-full py-3.5 bg-brandPink hover:bg-rose-600 text-white font-bold tracking-widest text-center text-xs uppercase rounded-full transition-colors duration-200 block shadow-lg font-sans">
                     Acessar Perfil
                 </button>
             </div>
@@ -571,7 +692,7 @@
             <!-- Modal Title Header (Eros Style) -->
             <div class="flex items-center justify-between px-5 py-3.5 bg-zinc-950 border-b border-zinc-800 shrink-0">
                 <div class="flex items-center gap-2 text-sm text-zinc-300 font-semibold">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 text-[#f43f5e]">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 text-brandPink">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                         <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
                     </svg>
@@ -671,7 +792,7 @@
                         <div class="flex items-center justify-between border-b border-zinc-800 pb-2">
                             <h3 class="text-xs uppercase tracking-wider text-zinc-400 font-bold font-sans">Fotos Privadas (Hots)</h3>
                             <span class="text-[10px] text-zinc-500 font-bold uppercase tracking-wider flex items-center gap-1 font-sans">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-3 h-3 text-[#f43f5e]">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-3 h-3 text-brandPink">
                                     <path fill-rule="evenodd" d="M8 1a3.5 3.5 0 0 0-3.5 3.5V7A1.5 1.5 0 0 0 3 8.5v5A1.5 1.5 0 0 0 4.5 15h7a1.5 1.5 0 0 0 1.5-1.5v-5A1.5 1.5 0 0 0 11.5 7V4.5A3.5 3.5 0 0 0 8 1Zm3 6V4.5a3 3 0 1 0-6 0V7h6Z" clip-rule="evenodd" />
                                 </svg>
                                 Conteúdo Exclusivo
@@ -731,7 +852,7 @@
                             <div class="flex items-center justify-between">
                                 <h2 id="modal-profile-name" class="text-2xl md:text-3xl font-extrabold text-white tracking-tight">Danny Bond</h2>
                                 <!-- Favorite/Heart Icon -->
-                                <button class="p-2 text-zinc-400 hover:text-[#f43f5e] transition-colors">
+                                <button class="p-2 text-zinc-400 hover:text-brandPink transition-colors">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
                                     </svg>
@@ -809,7 +930,7 @@
                             </div>
                             <div class="flex justify-between border-t border-zinc-800/60 pt-3 text-sm">
                                 <span class="text-zinc-450">Horário</span>
-                                <span id="modal-stat-schedule" class="text-[#f43f5e] font-bold">24 Horas</span>
+                                <span id="modal-stat-schedule" class="text-brandPink font-bold">24 Horas</span>
                             </div>
                             <div class="flex justify-between border-t border-zinc-800/60 pt-3 text-sm">
                                 <span class="text-zinc-450">Aceita Cartão</span>
@@ -865,7 +986,7 @@
                             WhatsApp
                         </a>
                         <a id="modal-btn-call" href="#" class="flex items-center justify-center gap-2 py-3.5 bg-zinc-900 hover:bg-zinc-800 text-white font-extrabold tracking-widest text-xs uppercase rounded-xl border border-zinc-800 transition-colors shadow-lg">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5 text-[#f43f5e]">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5 text-brandPink">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-2.824-1.802-5.122-4.1-6.924-6.924l1.293-.97a1.242 1.242 0 0 0 .417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
                             </svg>
                             Ligar
@@ -1076,6 +1197,162 @@
                     "https://static.musaclass.com/public/ads/2522d60b-9392-4730-9e21-fef35afdde68/1778961156620-Imagem-do-WhatsApp-de-2025-08-27-as-14.55.40_94771ba4.webp?v=1779817713390"
                 ],
                 services: ["Jantares", "Eventos", "Viagens", "VIP"]
+            },
+            {
+                name: "Rebeca Fontaine",
+                age: 26,
+                phone: "85 98101-2233",
+                city: "Fortaleza",
+                neighborhood: "Aldeota",
+                fee: 600,
+                slogan: "Acompanhante premium de luxo, extremamente elegante",
+                bio: "Formada, educada, fluente em inglês. Uma companhia perfeita para jantares de negócios, viagens e momentos íntimos com total discrição e requinte na Aldeota.",
+                images: ["https://static.musaclass.com/public/admin-crops/3b8820fe-b1dd-4fb6-bf51-037390772fbe.webp"],
+                services: ["Jantares", "Viagens", "Completo", "Conversas"]
+            },
+            {
+                name: "Livia Guedes",
+                age: 23,
+                phone: "85 98112-3344",
+                city: "Fortaleza",
+                neighborhood: "Meireles",
+                fee: 500,
+                slogan: "Ninfeta loira e carinhosa com local próprio no Meireles",
+                bio: "Uma menina doce, meiga, com corpinho de boneca. Adoro agradar e realizar suas fantasias com muito carinho, em um flat super confortável e reservado.",
+                images: ["https://static.musaclass.com/public/acp/5ae67f03-c9c0-4b23-aa51-a7d0a59a64a0/1776608053719-Acompanhante-6-3.webp"],
+                services: ["Namoradinha", "Oral completo", "Massagem", "Beijo na boca"]
+            },
+            {
+                name: "Isabella Ross",
+                age: 25,
+                phone: "85 98123-4455",
+                city: "Fortaleza",
+                neighborhood: "Cocó",
+                fee: 600,
+                slogan: "Morena curvilínea, corpo escultural, novidade no Cocó",
+                bio: "Olá! Sou a Isabella, morena sensual de olhar marcante e curvas perfeitas. Ofereço uma experiência única de prazer e relaxamento com total discrição e higiene.",
+                images: ["https://static.musaclass.com/public/acp/5ae67f03-c9c0-4b23-aa51-a7d0a59a64a0/1776608059019-Acompanhante-3-3.webp"],
+                services: ["Massagem erótica", "Completo", "Oral com camisinha"]
+            },
+            {
+                name: "Sophia Loren",
+                age: 24,
+                phone: "85 98134-5566",
+                city: "Fortaleza",
+                neighborhood: "Praia de Iracema",
+                fee: 500,
+                slogan: "Uma ruiva irresistível para noites memoráveis na orla",
+                bio: "Ruiva natural de pele clara e sardas encantadoras. Sou alegre, atenciosa e adoro uma boa conversa acompanhada de momentos de total entrega e prazer.",
+                images: ["https://static.musaclass.com/public/slots/c511d22c-f051-451d-b0f1-989285b87e18.webp"],
+                services: ["Oral completo", "Beijo na boca", "Namoradinha", "Fetiches"]
+            },
+            {
+                name: "Yasmin Brunet",
+                age: 27,
+                phone: "85 98145-6677",
+                city: "Fortaleza",
+                neighborhood: "Meireles",
+                fee: 700,
+                slogan: "Loira de cinema, alta e sofisticada no Meireles",
+                bio: "Uma modelo premium com fotos 100% reais. Cabelos longos, corpo esbelto, seios fartos e simpatia marcante. O par perfeito para os seus melhores momentos.",
+                images: ["https://static.musaclass.com/public/ads/2522d60b-9392-4730-9e21-fef35afdde68/1778961159856-Imagem-do-WhatsApp-de-2025-08-27-as-14.55.41_124ec14b.webp"],
+                services: ["Viagens", "Jantares", "VIP", "Completo"]
+            },
+            {
+                name: "Valentina Prado",
+                age: 22,
+                phone: "85 98156-7788",
+                city: "Fortaleza",
+                neighborhood: "Aldeota",
+                fee: 450,
+                slogan: "Ninfeta novidade na Aldeota com fotos reais",
+                bio: "Estudante universitária realizando atendimentos discretos por tempo limitado. Sou atenciosa, delicada, carinhosa e adoro receber com total privacidade.",
+                images: ["https://static.musaclass.com/public/ads/07297d6e-b240-4c26-af66-dabd0e748ba0/1779131999231-Acompanhante-3-1.webp?v=1779735849404"],
+                services: ["Namoradinha", "Conversas", "Massagem"]
+            },
+            {
+                name: "Nicole Bahls",
+                age: 28,
+                phone: "85 98167-8899",
+                city: "Fortaleza",
+                neighborhood: "Cidade dos Funcionários",
+                fee: 500,
+                slogan: "Morena fitness exuberante, corpo todo durinho",
+                bio: "Uma verdadeira musa do fitness com pernas torneadas, pele bronzeada e sorriso radiante. Muito sensual e liberal, pronta para fazer seu momento inesquecível.",
+                images: ["https://static.musaclass.com/public/acp/239ed3cb-e282-4699-ac51-3615118e6a3f/1776567863463-WhatsApp-Image-2026-01-28-at-16.59.24.webp"],
+                services: ["Completo", "Massagem erótica", "Fetiches"]
+            },
+            {
+                name: "Alícia Vik",
+                age: 24,
+                phone: "85 98178-9900",
+                city: "Fortaleza",
+                neighborhood: "Meireles",
+                fee: 500,
+                slogan: "Modelo internacional, cabelos pretos e olhar fatal",
+                bio: "Pele clara, cabelos longos e negros, corpo slim e elegante. Sou discreta, educada e realizo encontros premium para clientes que buscam exclusividade.",
+                images: ["https://static.musaclass.com/public/acp/239ed3cb-e282-4699-ac51-3615118e6a3f/1776567870082-c7b34e80-1843-446b-9c21-ea489e005f5b.webp"],
+                services: ["Conversas", "Jantares", "Oral completo"]
+            },
+            {
+                name: "Carol Dias",
+                age: 25,
+                phone: "85 98189-0011",
+                city: "Fortaleza",
+                neighborhood: "Aldeota",
+                fee: 500,
+                slogan: "Loira esbelta e simpática com fotos profissionais",
+                bio: "Corpo atlético, muito perfumada, atenciosa e focada no prazer mutuo. Fotos reais e atualizadas. Venha relaxar com uma companhia de alto nível na Aldeota.",
+                images: ["https://static.musaclass.com/public/ads/2522d60b-9392-4730-9e21-fef35afdde68/1778961156620-Imagem-do-WhatsApp-de-2025-08-27-as-14.55.40_94771ba4.webp?v=1779817713390"],
+                services: ["Beijo na boca", "Oral", "Massagem"]
+            },
+            {
+                name: "Gabriela Pug",
+                age: 26,
+                phone: "85 98190-1122",
+                city: "Fortaleza",
+                neighborhood: "Meireles",
+                fee: 600,
+                slogan: "Musa fitness super sarada, bronzeada e muito sexy",
+                bio: "Se você aprecia um corpo fitness bem trabalhado, pele dourada de sol e total entrega na hora do prazer, acabou de encontrar a sua acompanhante perfeita.",
+                images: ["https://static.musaclass.com/public/acp/239ed3cb-e282-4699-ac51-3615118e6a3f/1776567856965-WhatsApp-Image-2025-12-26-at-10.31.17-2.webp"],
+                services: ["Completo", "Massagem erótica", "Casais"]
+            },
+            {
+                name: "Camila Coelho",
+                age: 27,
+                phone: "85 98101-3344",
+                city: "Fortaleza",
+                neighborhood: "Cidade dos Funcionários",
+                fee: 500,
+                slogan: "Morena chique e muito educada para momentos discretos",
+                bio: "Uma acompanhante clássica, discreta e extremamente charmosa. Atendo em hotéis e flats residenciais na Zona Sul com total sigilo e dedicação.",
+                images: ["https://static.musaclass.com/public/slots/b863e22f-65e7-4688-bbe0-a85f119e0fb9.webp?v=1779821056489"],
+                services: ["Jantares", "Conversas", "Oral com camisinha"]
+            },
+            {
+                name: "Juliana Paes",
+                age: 28,
+                phone: "85 98112-4455",
+                city: "Fortaleza",
+                neighborhood: "Praia de Iracema",
+                fee: 550,
+                slogan: "Morena fogosa de curvas acentuadas e olhar penetrante",
+                bio: "Muito simpática, quente e cheia de energia. Sou do tipo que adora fazer o parceiro se sentir no céu, com beijo na boca e total cumplicidade na Praia de Iracema.",
+                images: ["https://static.musaclass.com/public/slots/c511d22c-f051-451d-b0f1-989285b87e18.webp"],
+                services: ["Beijo na boca", "Oral completo", "Fetiches", "Completo"]
+            },
+            {
+                name: "Paolla Oliv",
+                age: 26,
+                phone: "85 98123-5566",
+                city: "Fortaleza",
+                neighborhood: "Mucuripe",
+                fee: 500,
+                slogan: "Loira do corpo escultural com linda marquinha de bikini",
+                bio: "Uma gaúcha passando temporada em Fortaleza, loira dos olhos verdes, pele bronzeada, super cheirosa. Atendo com total discrição e carinho no Mucuripe.",
+                images: ["https://static.musaclass.com/public/admin-crops/3b8820fe-b1dd-4fb6-bf51-037390772fbe.webp"],
+                services: ["Oral completo", "Viagens", "Massagem erótica"]
             }
         ];
 
@@ -1306,7 +1583,7 @@
             if (!container) return;
             container.innerHTML = "";
             
-            const novidadesProfiles = profilesData.slice(-10);
+            const novidadesProfiles = profilesData.slice(0, 20);
             
             novidadesProfiles.forEach((profile) => {
                 const originalIndex = profilesData.indexOf(profile);
@@ -1339,7 +1616,7 @@
             
             profilesData.forEach((profile, index) => {
                 // Determine if profile should show "Últimos dias"
-                const hasBadge = [0, 1, 3, 4, 7, 9, 11].includes(index);
+                const hasBadge = [0, 1, 3, 4, 7, 9, 11, 15, 18, 22].includes(index);
                 const badgeHTML = hasBadge 
                     ? `<div class="absolute top-2.5 left-2.5 bg-rose-500 px-2 py-0.5 rounded text-[8px] text-white font-bold uppercase tracking-wider z-10">Últimos dias</div>`
                     : "";
@@ -1347,7 +1624,7 @@
                 const card = document.createElement("div");
                 card.className = "w-full group relative rounded-2xl overflow-hidden bg-zinc-900 hover:bg-zinc-850 transition-all duration-300 hover:shadow-lg hover:shadow-black/40 flex flex-col";
                 card.innerHTML = `
-                    <div class="w-full aspect-[3/4] overflow-hidden bg-zinc-950 relative">
+                    <div class="w-full aspect-[2/3] overflow-hidden bg-zinc-955 relative">
                         <img src="${profile.images[0]}" alt="${profile.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
                         ${badgeHTML}
                     </div>
@@ -1369,6 +1646,79 @@
                         </p>
                     </div>
                     <button onclick="openErosModal(${index})" class="absolute inset-0 z-20 w-full h-full bg-transparent cursor-pointer outline-none focus:outline-none"></button>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function renderVirtualGrid() {
+            const grid = document.getElementById("virtual-grid");
+            if (!grid) return;
+            grid.innerHTML = "";
+            
+            // Let's pick 12 profiles (e.g. indices 2 to 13)
+            const virtualIndices = [2, 3, 4, 5, 8, 9, 10, 11, 12, 13, 14, 15];
+            
+            virtualIndices.forEach((profileIndex) => {
+                const profile = profilesData[profileIndex];
+                const card = document.createElement("div");
+                card.className = "w-full group relative rounded-2xl overflow-hidden bg-zinc-900 hover:bg-zinc-850 transition-all duration-300 hover:shadow-lg hover:shadow-black/40 flex flex-col";
+                card.innerHTML = `
+                    <div class="w-full aspect-[3/4] overflow-hidden bg-zinc-955 relative">
+                        <img src="${profile.images[0]}" alt="${profile.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <div class="relative flex flex-col p-3 w-full bg-zinc-900 flex-1">
+                        <div class="flex items-center gap-1.5 w-full">
+                            <div class="text-xs md:text-sm font-bold text-white truncate">${profile.name}, ${profile.age} anos</div>
+                            <span class="w-3.5 h-3.5 bg-rose-500 rounded-full flex items-center justify-center text-white shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-2.5 h-2.5">
+                                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="flex items-center gap-1 mt-0.5 text-xs md:text-sm text-zinc-350 font-medium">
+                            <span class="text-rose-500">&bull;</span>
+                            <span>${profile.neighborhood}</span>
+                        </div>
+                    </div>
+                    <button onclick="openErosModal(${profileIndex})" class="absolute inset-0 z-20 w-full h-full bg-transparent cursor-pointer outline-none focus:outline-none"></button>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function renderTemporadaGrid() {
+            const grid = document.getElementById("temporada-grid");
+            if (!grid) return;
+            grid.innerHTML = "";
+            
+            // Let's pick 6 profiles (e.g. indices 16 to 21)
+            const tempIndices = [16, 17, 18, 19, 20, 21];
+            
+            tempIndices.forEach((profileIndex) => {
+                const profile = profilesData[profileIndex];
+                const card = document.createElement("div");
+                card.className = "w-full group relative rounded-2xl overflow-hidden bg-zinc-900 hover:bg-zinc-850 transition-all duration-300 hover:shadow-lg hover:shadow-black/40 flex flex-col";
+                card.innerHTML = `
+                    <div class="w-full aspect-[3/4] overflow-hidden bg-zinc-955 relative">
+                        <img src="${profile.images[0]}" alt="${profile.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute top-2.5 left-2.5 bg-gradient-to-r from-purple-600 to-indigo-650 px-2 py-0.5 rounded text-[8px] text-white font-bold uppercase tracking-wider z-10">Em breve</div>
+                    </div>
+                    <div class="relative flex flex-col p-3 w-full bg-zinc-900 flex-1">
+                        <div class="flex items-center gap-1.5 w-full">
+                            <div class="text-xs md:text-sm font-bold text-white truncate">${profile.name}, ${profile.age} anos</div>
+                            <span class="w-3.5 h-3.5 bg-rose-500 rounded-full flex items-center justify-center text-white shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-2.5 h-2.5">
+                                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="flex items-center gap-1 mt-0.5 text-xs md:text-sm text-zinc-350 font-medium">
+                            <span class="text-rose-500">&bull;</span>
+                            <span>${profile.neighborhood}</span>
+                        </div>
+                    </div>
+                    <button onclick="openErosModal(${profileIndex})" class="absolute inset-0 z-20 w-full h-full bg-transparent cursor-pointer outline-none focus:outline-none"></button>
                 `;
                 grid.appendChild(card);
             });
@@ -1602,7 +1952,7 @@
                         if (leftCol) leftCol.scrollTo({ top: 0, behavior: 'smooth' });
                     };
                     div.innerHTML = `
-                        <div class="aspect-[3/4] rounded-lg overflow-hidden border border-zinc-800 bg-zinc-900 group-hover:border-[#f43f5e] transition-colors duration-250">
+                        <div class="aspect-[3/4] rounded-lg overflow-hidden border border-zinc-800 bg-zinc-900 group-hover:border-brandPink transition-colors duration-250">
                             <img src="${relProfile.images[0]}" class="w-full h-full object-cover" alt="">
                         </div>
                         <span class="text-[10px] text-zinc-400 group-hover:text-white truncate text-center font-medium font-sans">${relProfile.name}</span>
@@ -1617,6 +1967,8 @@
         document.addEventListener("DOMContentLoaded", () => {
             renderNovidadesCarousel();
             renderProfileGrid();
+            renderVirtualGrid();
+            renderTemporadaGrid();
             
             // Initialize Swiper
             const novidadesSwiper = new Swiper('.novidades-swiper', {
