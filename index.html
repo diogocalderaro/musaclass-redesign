@@ -1,0 +1,1744 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MusaClass | Premium YouTube Style Layout</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Swiper.js CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandPink: '#f43f5e',
+                        ytBlack: '#0f0f0f',
+                        ytCard: '#1f1f1f',
+                        ytBorder: '#282828',
+                        ytHover: '#3f3f3f',
+                        ytSidebar: '#0f0f0f',
+                        erosGreen: '#25D366',
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #0f0f0f;
+            color: #f1f1f1;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            box-sizing: border-box;
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        .modal-scroll::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .modal-scroll::-webkit-scrollbar-track {
+            background: #18181b;
+        }
+        .modal-scroll::-webkit-scrollbar-thumb {
+            background: #3f3f46;
+            border-radius: 3px;
+        }
+        .modal-scroll::-webkit-scrollbar-thumb:hover {
+            background: #f43f5e;
+        }
+
+        .sidebar-transition {
+            transition: width 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .content-transition {
+            transition: margin-left 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Swiper overrides */
+        .novidades-swiper .swiper-slide {
+            width: 125px !important;
+        }
+        .novidades-swiper .swiper-button-prev,
+        .novidades-swiper .swiper-button-next {
+            color: white;
+            background: rgba(0,0,0,0.6);
+            border: 1px solid #282828;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .novidades-swiper:hover .swiper-button-prev,
+        .novidades-swiper:hover .swiper-button-next {
+            opacity: 1;
+        }
+        .novidades-swiper .swiper-button-prev::after,
+        .novidades-swiper .swiper-button-next::after {
+            font-size: 14px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="selection:bg-pink-500/30 selection:text-white flex flex-col h-screen overflow-hidden">
+
+    <!-- HEADER / TOPBAR (YouTube Style) -->
+    <header class="h-14 bg-ytBlack border-b border-ytBorder/40 flex items-center justify-between px-4 sticky top-0 z-40 shrink-0 select-none">
+        
+        <!-- Left Section: Menu + Logo -->
+        <div class="flex items-center gap-4">
+            <button onclick="toggleSidebar()" class="p-2 hover:bg-zinc-800 rounded-full text-white transition-colors duration-200 active:scale-95">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
+            <a href="#" class="flex items-center gap-2 h-8 shrink-0">
+                <img src="../../admin/public/logo-pink.png" class="h-6 object-contain" alt="MusaClass">
+            </a>
+        </div>
+
+        <!-- Center Section: Search Bar -->
+        <div class="hidden sm:flex items-center flex-1 max-w-[640px] px-4">
+            <div class="flex items-center w-full bg-[#121212] border border-ytBorder rounded-full overflow-hidden focus-within:border-zinc-500 transition-colors">
+                <input type="text" placeholder="Pesquisar por modelo, cidade ou serviço..." class="w-full bg-transparent px-5 py-2 text-sm text-white focus:outline-none placeholder-zinc-500 font-light">
+                <button class="bg-zinc-800 border-l border-ytBorder px-6 py-2.5 text-zinc-400 hover:text-white hover:bg-zinc-750 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.602 10.602Z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Right Section: Actions + Profile -->
+        <div class="flex items-center gap-3">
+            <button class="flex items-center gap-2 text-xs font-semibold bg-gradient-to-r from-rose-500/20 to-[#f43f5e]/30 border border-[#f43f5e]/40 hover:from-rose-500/30 hover:to-[#f43f5e]/40 px-3.5 py-1.5 rounded-full text-white transition-all shadow-md active:scale-95 shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4 text-[#f43f5e]">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                </svg>
+                <span>Anunciar</span>
+            </button>
+            <button class="p-2 hover:bg-zinc-800 rounded-full text-white transition-colors relative">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- WRAPPER (Sidebar + Main Content Area) -->
+    <div class="flex flex-1 overflow-hidden relative">
+        
+        <!-- SIDEBAR (Menu Lateral Colapsável - YouTube Style) -->
+        <aside id="sidebar" class="sidebar-transition w-64 bg-ytSidebar border-r border-ytBorder/40 h-full shrink-0 flex flex-col justify-between overflow-y-auto no-scrollbar py-3 text-sm select-none z-30">
+            <div class="flex flex-col gap-5">
+                
+                <!-- Main Nav Links -->
+                <div class="flex flex-col px-3 gap-0.5">
+                    <a href="#" class="flex items-center gap-4 px-4 py-2.5 bg-zinc-800 text-white rounded-xl font-medium sidebar-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-rose-500 shrink-0">
+                            <path fill-rule="evenodd" d="M9.293 2.293a1 1 0 011.414 0l7 7A1 1 0 0117 11h-1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-3a1 1 0 00-1-1H9a1 1 0 00-1 1v3a1 1 0 01-1 1H5a1 1 0 01-1-1v-6H3a1 1 0 01-.707-1.707l7-7z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="sidebar-text truncate">Início</span>
+                    </a>
+                    <a href="#" class="flex items-center gap-4 px-4 py-2.5 text-zinc-400 hover:text-white hover:bg-zinc-900 rounded-xl transition-colors sidebar-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 shrink-0">
+                            <path d="M10 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" />
+                            <path fill-rule="evenodd" d="M.664 10.59a1.651 1.651 0 010-1.186A10.004 10.004 0 0110 3c4.257 0 7.893 2.66 9.336 6.41.085.22.085.465 0 .685A10.004 10.004 0 0110 17c-4.257 0-7.893-2.66-9.336-6.41zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="sidebar-text truncate">Destaques</span>
+                    </a>
+                    <a href="#" class="flex items-center gap-4 px-4 py-2.5 text-zinc-400 hover:text-white hover:bg-zinc-900 rounded-xl transition-colors sidebar-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 shrink-0">
+                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5L6.86 12.49a1 1 0 001.71 1.02l.33-.51h2.2l.3 5.1h2a1 1 0 00.866-.5L13.14 7.5H10z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="sidebar-text truncate">Feeds ao Vivo</span>
+                    </a>
+                </div>
+                
+                <!-- Extra sections container to hide on collapse -->
+                <div class="sidebar-text flex flex-col gap-5">
+                    <hr class="border-ytBorder/40 sidebar-divider">
+
+                    <!-- States Section -->
+                    <div class="flex flex-col gap-1 px-3">
+                        <span class="sidebar-text text-xs uppercase tracking-wider font-bold text-zinc-500 px-4 mb-1">Cidades / Estados</span>
+                        <a href="#" class="flex items-center justify-between px-4 py-2 text-zinc-450 hover:text-white hover:bg-zinc-900 rounded-xl transition-colors sidebar-link">
+                            <span class="flex items-center gap-4">
+                                <span class="w-2 h-2 bg-rose-500 rounded-full shrink-0"></span>
+                                <span class="sidebar-text truncate">Ceará (Fortaleza)</span>
+                            </span>
+                            <span class="sidebar-text text-[10px] bg-zinc-800 text-zinc-400 px-1.5 py-0.5 rounded font-bold border border-zinc-700 shrink-0">18</span>
+                        </a>
+                        <a href="#" class="flex items-center justify-between px-4 py-2 text-zinc-450 hover:text-white hover:bg-zinc-900 rounded-xl transition-colors sidebar-link">
+                            <span class="flex items-center gap-4">
+                                <span class="w-2 h-2 bg-zinc-700 rounded-full shrink-0"></span>
+                                <span class="sidebar-text truncate">São Paulo (SP)</span>
+                            </span>
+                            <span class="sidebar-text text-[10px] bg-zinc-900 text-zinc-500 px-1.5 py-0.5 rounded font-bold shrink-0">42</span>
+                        </a>
+                        <a href="#" class="flex items-center justify-between px-4 py-2 text-zinc-450 hover:text-white hover:bg-zinc-900 rounded-xl transition-colors sidebar-link">
+                            <span class="flex items-center gap-4">
+                                <span class="w-2 h-2 bg-zinc-700 rounded-full shrink-0"></span>
+                                <span class="sidebar-text truncate">Rio de Janeiro (RJ)</span>
+                            </span>
+                            <span class="sidebar-text text-[10px] bg-zinc-900 text-zinc-500 px-1.5 py-0.5 rounded font-bold shrink-0">29</span>
+                        </a>
+                        <a href="#" class="flex items-center justify-between px-4 py-2 text-zinc-450 hover:text-white hover:bg-zinc-900 rounded-xl transition-colors sidebar-link">
+                            <span class="flex items-center gap-4">
+                                <span class="w-2 h-2 bg-zinc-700 rounded-full shrink-0"></span>
+                                <span class="sidebar-text truncate">Minas Gerais (BH)</span>
+                            </span>
+                            <span class="sidebar-text text-[10px] bg-zinc-900 text-zinc-500 px-1.5 py-0.5 rounded font-bold shrink-0">15</span>
+                        </a>
+                    </div>
+                    <hr class="border-ytBorder/40 sidebar-divider">
+
+                    <!-- Advanced Filters Section -->
+                    <div class="flex flex-col gap-5 px-5 py-2">
+                        <span class="sidebar-text text-xs uppercase tracking-widest font-extrabold text-rose-500 mb-1">Filtros Avançados</span>
+                        
+                        <!-- BAIRRO -->
+                        <div class="flex flex-col gap-1.5">
+                            <label class="sidebar-text text-[11px] uppercase tracking-wider text-zinc-400 font-bold font-sans">Bairro</label>
+                            <select class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-rose-500 appearance-none cursor-pointer font-sans">
+                                <option>Qualquer bairro</option>
+                                <option>Meireles</option>
+                                <option>Aldeota</option>
+                                <option>Praia de Iracema</option>
+                                <option>Cocó</option>
+                                <option>Centro</option>
+                                <option>Mucuripe</option>
+                                <option>Praia do Futuro</option>
+                            </select>
+                        </div>
+
+                        <!-- APARÊNCIA -->
+                        <div class="flex flex-col gap-2">
+                            <label class="sidebar-text text-[11px] uppercase tracking-wider text-zinc-400 font-bold font-sans">Aparência</label>
+                            <div class="grid grid-cols-2 gap-1.5">
+                                <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Falsa magra</label>
+                                <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Magra</label>
+                                <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Curvilínea</label>
+                                <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Fitness</label>
+                                <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Atlética</label>
+                                <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Plus size</label>
+                                <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Mulherão</label>
+                                <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Mignon</label>
+                                <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Natural</label>
+                                <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Delicada</label>
+                                <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Bronzeada</label>
+                                <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Silicone</label>
+                                <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Tatuagens</label>
+                                <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Piercings</label>
+                                <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Bumbum grande</label>
+                                <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Seios naturais</label>
+                                <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Seios grandes</label>
+                            </div>
+                        </div>
+
+                        <!-- TOM DE PELE -->
+                        <div class="flex flex-col gap-1.5">
+                            <label class="sidebar-text text-[11px] uppercase tracking-wider text-zinc-400 font-bold font-sans">Tom de Pele</label>
+                            <select class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-rose-500 appearance-none cursor-pointer font-sans">
+                                <option>Qualquer</option>
+                                <option>Branca</option>
+                                <option>Morena clara</option>
+                                <option>Morena</option>
+                                <option>Negra</option>
+                            </select>
+                        </div>
+
+                        <!-- CABELOS -->
+                        <div class="flex flex-col gap-1.5">
+                            <label class="sidebar-text text-[11px] uppercase tracking-wider text-zinc-400 font-bold font-sans">Cabelos</label>
+                            <select class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-rose-500 appearance-none cursor-pointer font-sans">
+                                <option>Qualquer</option>
+                                <option>Loiros</option>
+                                <option>Castanhos</option>
+                                <option>Pretos</option>
+                                <option>Ruivos</option>
+                                <option>Coloridos</option>
+                            </select>
+                        </div>
+
+                        <!-- PERSONALIDADE -->
+                        <div class="flex flex-col gap-2">
+                            <label class="sidebar-text text-[11px] uppercase tracking-wider text-zinc-400 font-bold font-sans">Personalidade</label>
+                            <div class="grid grid-cols-2 gap-1.5">
+                                <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Namoradinha</label>
+                                <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Safada</label>
+                                <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Meiga</label>
+                                <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Liberal</label>
+                                <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Discreta</label>
+                            </div>
+                        </div>
+
+                        <!-- ESPECIALIDADES -->
+                        <div class="flex flex-col gap-2">
+                            <label class="sidebar-text text-[11px] uppercase tracking-wider text-zinc-400 font-bold font-sans">Especialidades</label>
+                            <div class="grid grid-cols-2 gap-1.5">
+                                <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Massagem</label>
+                                <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Conversas</label>
+                                <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Fetichismo</label>
+                                <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Dominação</label>
+                                <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Submissão</label>
+                                <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Podolatria</label>
+                                <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Pompoarismo</label>
+                                <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Striptease</label>
+                                <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Fantasias</label>
+                                <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Beijo boca</label>
+                                <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Anal</label>
+                                <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Inversão</label>
+                            </div>
+                        </div>
+
+                        <!-- ATENDE EM -->
+                        <div class="flex flex-col gap-2">
+                            <label class="sidebar-text text-[11px] uppercase tracking-wider text-zinc-400 font-bold font-sans">Atende em</label>
+                            <div class="grid grid-cols-2 gap-1.5">
+                                <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Flat Próprio</label>
+                                <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Motéis</label>
+                                <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Hotéis</label>
+                                <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Virtual</label>
+                            </div>
+                        </div>
+
+                        <!-- ACEITA CARTÃO -->
+                        <div class="flex flex-col gap-1.5">
+                            <label class="sidebar-text text-[11px] uppercase tracking-wider text-zinc-400 font-bold font-sans">Aceita Cartão</label>
+                            <select class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-rose-500 appearance-none cursor-pointer font-sans">
+                                <option>Qualquer</option>
+                                <option>Sim</option>
+                                <option>Não</option>
+                            </select>
+                        </div>
+
+                        <!-- BOTÃO APLICAR -->
+                        <button class="w-full py-3 bg-[#f43f5e] hover:bg-rose-600 text-white font-bold uppercase tracking-widest text-[10px] rounded-xl transition-all duration-200 shadow-md shadow-rose-950/20 active:scale-[0.97] mt-2 font-sans">
+                            Aplicar Filtros
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom Legal/Help -->
+            <div class="px-6 text-[10px] text-zinc-600 flex flex-col gap-2 sidebar-text">
+                <div class="flex flex-wrap gap-x-2 gap-y-1">
+                    <a href="#" class="hover:underline">Sobre</a>
+                    <a href="#" class="hover:underline">Termos</a>
+                    <a href="#" class="hover:underline">Privacidade</a>
+                </div>
+                <span>&copy; 2026 MusaClass</span>
+            </div>
+        </aside>
+
+        <!-- MAIN WINDOW CONTAINER -->
+        <main id="main-content" class="flex-1 h-full overflow-y-auto flex flex-col bg-[#09090b] relative">
+            
+            <!-- Sticky Filter Pill Badges Row (YouTube Style) -->
+            <div class="sticky top-0 bg-[#09090b] py-3 px-4 border-b border-ytBorder/20 z-20 flex items-center gap-3 overflow-x-auto no-scrollbar shrink-0 select-none">
+                <span class="bg-white text-black font-semibold px-4 py-1.5 rounded-lg text-xs cursor-pointer select-none">Tudo</span>
+                <span class="bg-zinc-900 border border-ytBorder text-zinc-350 hover:bg-zinc-800 hover:text-white font-semibold px-4 py-1.5 rounded-lg text-xs cursor-pointer transition-all select-none">Morenas</span>
+                <span class="bg-zinc-900 border border-ytBorder text-zinc-350 hover:bg-zinc-800 hover:text-white font-semibold px-4 py-1.5 rounded-lg text-xs cursor-pointer transition-all select-none">Loiras</span>
+                <span class="bg-zinc-900 border border-ytBorder text-zinc-350 hover:bg-zinc-800 hover:text-white font-semibold px-4 py-1.5 rounded-lg text-xs cursor-pointer transition-all select-none">Ruivas</span>
+                <span class="bg-zinc-900 border border-ytBorder text-zinc-350 hover:bg-zinc-800 hover:text-white font-semibold px-4 py-1.5 rounded-lg text-xs cursor-pointer transition-all select-none">Super Vips</span>
+                <span class="bg-zinc-900 border border-ytBorder text-zinc-350 hover:bg-zinc-800 hover:text-white font-semibold px-4 py-1.5 rounded-lg text-xs cursor-pointer transition-all select-none">Novidades</span>
+                <span class="bg-zinc-900 border border-ytBorder text-zinc-350 hover:bg-zinc-800 hover:text-white font-semibold px-4 py-1.5 rounded-lg text-xs cursor-pointer transition-all select-none">Com vídeo</span>
+                <span class="bg-zinc-900 border border-ytBorder text-zinc-350 hover:bg-zinc-800 hover:text-white font-semibold px-4 py-1.5 rounded-lg text-xs cursor-pointer transition-all select-none">Com local</span>
+                <span class="bg-zinc-900 border border-ytBorder text-zinc-350 hover:bg-zinc-800 hover:text-white font-semibold px-4 py-1.5 rounded-lg text-xs cursor-pointer transition-all select-none">Massagem erótica</span>
+                <span class="bg-zinc-900 border border-ytBorder text-zinc-350 hover:bg-zinc-800 hover:text-white font-semibold px-4 py-1.5 rounded-lg text-xs cursor-pointer transition-all select-none">Atendimento virtual</span>
+            </div>
+
+            <!-- FEEDS / STORIES CIRCLES (Below Badges) -->
+            <section class="py-4 px-6 border-b border-ytBorder/15 select-none shrink-0 flex flex-col gap-2.5">
+                <span class="text-xs uppercase tracking-widest text-[#f43f5e] font-extrabold px-1 font-sans">Novos Feeds ao Vivo</span>
+                <div class="flex items-center gap-4 overflow-x-auto py-1.5 no-scrollbar scroll-smooth w-full px-1">
+                    <!-- Feed 1 -->
+                    <div onclick="openStoryViewer(0)" class="flex flex-col items-center gap-1.5 cursor-pointer group flex-shrink-0">
+                        <div class="w-[62px] h-[62px] rounded-full p-[2.5px] bg-gradient-to-tr from-[#f43f5e] to-amber-500 group-hover:scale-105 transition-transform duration-300">
+                            <div class="w-full h-full rounded-full border-[2.5px] border-ytBlack overflow-hidden bg-zinc-900">
+                                <img src="https://static.musaclass.com/public/ads/2522d60b-9392-4730-9e21-fef35afdde68/1778961156620-Imagem-do-WhatsApp-de-2025-08-27-as-14.55.40_94771ba4.webp?v=1779817713390" alt="" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                        <span class="text-xs text-zinc-400 group-hover:text-white transition-colors duration-200 font-medium">Kiara</span>
+                    </div>
+
+                    <!-- Feed 2 -->
+                    <div onclick="openStoryViewer(1)" class="flex flex-col items-center gap-1.5 cursor-pointer group flex-shrink-0">
+                        <div class="w-[62px] h-[62px] rounded-full p-[2.5px] bg-gradient-to-tr from-[#f43f5e] to-amber-500 group-hover:scale-105 transition-transform duration-300">
+                            <div class="w-full h-full rounded-full border-[2.5px] border-ytBlack overflow-hidden bg-zinc-900">
+                                <img src="https://static.musaclass.com/public/slots/b863e22f-65e7-4688-bbe0-a85f119e0fb9.webp?v=1779821056489" alt="" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                        <span class="text-xs text-zinc-400 group-hover:text-white transition-colors duration-200 font-medium">Bia</span>
+                    </div>
+
+                    <!-- Feed 3 -->
+                    <div onclick="openStoryViewer(2)" class="flex flex-col items-center gap-1.5 cursor-pointer group flex-shrink-0">
+                        <div class="w-[62px] h-[62px] rounded-full p-[2.5px] bg-gradient-to-tr from-[#f43f5e] to-amber-500 group-hover:scale-105 transition-transform duration-300">
+                            <div class="w-full h-full rounded-full border-[2.5px] border-ytBlack overflow-hidden bg-zinc-900">
+                                <img src="https://static.musaclass.com/public/acp/239ed3cb-e282-4699-ac51-3615118e6a3f/1776567856965-WhatsApp-Image-2025-12-26-at-10.31.17-2.webp" alt="" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                        <span class="text-xs text-zinc-400 group-hover:text-white transition-colors duration-200 font-medium">Helô</span>
+                    </div>
+
+                    <!-- Feed 4 -->
+                    <div onclick="openStoryViewer(3)" class="flex flex-col items-center gap-1.5 cursor-pointer group flex-shrink-0">
+                        <div class="w-[62px] h-[62px] rounded-full p-[2.5px] bg-gradient-to-tr from-[#f43f5e] to-amber-500 group-hover:scale-105 transition-transform duration-300">
+                            <div class="w-full h-full rounded-full border-[2.5px] border-ytBlack overflow-hidden bg-zinc-900">
+                                <img src="https://static.musaclass.com/public/slots/b863e22f-65e7-4688-bbe0-a85f119e0fb9.webp?v=1779821056489" alt="" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                        <span class="text-xs text-zinc-400 group-hover:text-white transition-colors duration-200 font-medium">Dri</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- NOVIDADES Section (Swiper Carousel) -->
+            <section class="py-4 px-6 border-b border-ytBorder/15 relative">
+                <span class="text-xs uppercase tracking-widest text-[#f43f5e] font-extrabold px-1 font-sans">Novos Ensaios</span>
+                <div class="novidades-swiper swiper w-full mt-2.5">
+                    <div id="novidades-container" class="swiper-wrapper">
+                        <!-- Dynamic items loaded via JS -->
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </section>
+
+            <!-- DESTAQUES Section (Vertical profile cards grid - 5 columns per line on desktop) -->
+            <section class="flex-1 p-6">
+                <span class="text-xs uppercase tracking-widest text-[#f43f5e] font-extrabold px-1 font-sans block mb-4">Destaques em Fortaleza</span>
+                
+                <div id="profile-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 px-1 w-full">
+                    <!-- Dynamic vertical cards loaded via JS -->
+                </div>
+            </section>
+
+            <!-- Footer Badges -->
+            <section class="border-t border-zinc-900/50 pt-8 flex flex-col gap-6 px-6 w-full select-none shrink-0">
+                <div>
+                    <h4 class="text-xs uppercase tracking-[0.15em] text-zinc-400 font-bold mb-3 flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span> Categorias em Fortaleza
+                    </h4>
+                    <div class="flex flex-wrap gap-2">
+                        <a href="#" class="text-xs text-zinc-350 bg-zinc-900 hover:bg-zinc-850 border border-zinc-800/80 px-3.5 py-2 rounded-lg transition-colors">Acompanhante de Mulheres em Fortaleza</a>
+                        <a href="#" class="text-xs text-zinc-350 bg-zinc-900 hover:bg-zinc-850 border border-zinc-800/80 px-3.5 py-2 rounded-lg transition-colors">Acompanhante Trans em Fortaleza</a>
+                        <a href="#" class="text-xs text-zinc-350 bg-zinc-900 hover:bg-zinc-850 border border-zinc-800/80 px-3.5 py-2 rounded-lg transition-colors">Casais em Fortaleza</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-xs uppercase tracking-[0.15em] text-zinc-400 font-bold mb-3 flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span> Acompanhantes por Bairro em Fortaleza
+                    </h4>
+                    <div class="flex flex-wrap gap-2">
+                        <a href="#" class="text-xs text-zinc-400 bg-zinc-900 hover:bg-zinc-850 border border-zinc-800/80 px-3.5 py-2 rounded-lg transition-colors">Aldeota</a>
+                        <a href="#" class="text-xs text-zinc-400 bg-zinc-900 hover:bg-zinc-850 border border-zinc-800/80 px-3.5 py-2 rounded-lg transition-colors">Meireles</a>
+                        <a href="#" class="text-xs text-zinc-400 bg-zinc-900 hover:bg-zinc-850 border border-zinc-800/80 px-3.5 py-2 rounded-lg transition-colors">Centro</a>
+                        <a href="#" class="text-xs text-zinc-400 bg-zinc-900 hover:bg-zinc-850 border border-zinc-800/80 px-3.5 py-2 rounded-lg transition-colors">Cocó</a>
+                        <a href="#" class="text-xs text-zinc-400 bg-zinc-900 hover:bg-zinc-850 border border-zinc-800/80 px-3.5 py-2 rounded-lg transition-colors">Praia de Iracema</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SEO Paragraphs Section -->
+            <section class="border-t border-zinc-900/50 mt-8 py-8 px-6 text-zinc-400 text-xs sm:text-sm font-light leading-relaxed flex flex-col gap-4 px-1 max-w-none text-center [&_h4]:text-zinc-300 [&_h4]:font-semibold [&_h4]:text-base [&_h4]:mt-6 [&_h4]:mb-3 [&_h4]:text-center [&_h3]:text-zinc-300 [&_h3]:font-semibold [&_h3]:text-base [&_h3]:mt-6 [&_h3]:mb-3 [&_h3]:text-center [&_p]:mb-4 [&_p]:text-zinc-400 [&_p]:text-center [&_ul]:list-disc [&_ul]:list-inside [&_ul]:mb-4 [&_ul]:space-y-1 [&_li]:text-center select-none">
+                <h4><strong>Há 13 anos mantendo a exclusividade como o melhor site de acompanhantes de luxo em Fortaleza</strong></h4>
+                <p>Você está em Fortaleza e deseja viver momentos únicos, marcados por sabor, discrição e alto nível de excellence? As acompanhantes Fortaleza-CE disponíveis na plataforma Musa Class Fortaleza são a escolha perfeita para quem procura total prazer e uma experiência personalizada, atenciosa e com total sigilo garantido.</p>
+                
+                <h4><strong>O que esperar das acompanhantes em Fortaleza-CE</strong></h4>
+                <p>As acompanhantes em Fortaleza-CE do Musa Class foram cuidadosamente selecionados para garantir não apenas beleza, mas também sofisticação, empatia e profissionalismo. São garotas de programa em Fortaleza-CE dispostas a oferecer encontros que aliam prazer, conforto e companhia de alto nível para diversos benefícios.</p>
+                
+                <p>Você pode contar com:</p>
+                <ul>
+                    <li>Perfis autênticos e fotos reais</li>
+                    <li>Atendimento discreto e personalizado</li>
+                    <li>Companhia para eventos, viagens e momentos íntimos</li>
+                    <li>Experiências adaptadas às suas preferências</li>
+                </ul>
+                
+                <h4><strong>Onde encontrar acompanhantes de Fortaleza-CE confiáveis</strong></h4>
+                <p>Para garantir uma experiência segura e sem complicações, o melhor caminho é acessar uma plataforma especializada com perfis selecionados. No Musa Class, você encontra as melhores acompanhantes Fortaleza-CE com total facilidade e descrição.</p>
+                
+                <p>A plataforma oferece:</p>
+                <ul>
+                    <li>Interface intuitiva para escolher o perfil ideal</li>
+                    <li>Fotos reais e informações completas de cada acompanhante Fortaleza-CE</li>
+                    <li>Agendamento rápido e seguro</li>
+                    <li>Atendimento personalizado via WhatsApp</li>
+                </ul>
+                
+                <h4><strong>Diversidade de perfis para todos os gostos</strong></h4>
+                <p>A plataforma conta com uma seleção ampla de acompanhantes Fortaleza-CE, oferecendo variedade de estilos e personalidades. Independentemente da ocasião ou do tipo de experiência desejada, há opções ideais para todos os gostos.</p>
+            </section>
+
+            <!-- Footer -->
+            <footer class="bg-zinc-950 border-t border-zinc-900/50 py-10 px-4 text-center text-zinc-500 text-xs shrink-0 select-none">
+                <div class="max-w-7xl mx-auto flex flex-col items-center gap-6">
+                    <div class="flex justify-center gap-5 text-xs uppercase tracking-wider text-zinc-450 border-b border-zinc-900 pb-4 w-full max-w-md">
+                        <a href="#" class="hover:text-rose-500 text-rose-500 font-semibold">Português</a>
+                        <a href="#" class="hover:text-rose-500">English</a>
+                        <a href="#" class="hover:text-rose-500">Español</a>
+                        <a href="#" class="hover:text-rose-500">Français</a>
+                        <a href="#" class="hover:text-rose-500">Italiano</a>
+                    </div>
+
+                    <img src="../../admin/public/logo-pink.png" class="h-6 object-contain" alt="MusaClass">
+                    <p class="text-[10px] text-zinc-700">&copy; 2026 MusaClass. Todos os direitos reservados.</p>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <!-- STORIES VIEWER MODAL -->
+    <div id="story-viewer" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-md hidden items-center justify-center">
+        <button onclick="closeStoryViewer()" class="absolute top-5 right-5 text-white/70 hover:text-white p-2.5 z-50 bg-zinc-900 rounded-full">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+
+        <div class="relative w-full max-w-[420px] aspect-[9/16] bg-zinc-950 md:rounded-2xl overflow-hidden flex flex-col border border-zinc-800 shadow-2xl">
+            <!-- Progress bars -->
+            <div class="absolute top-3 left-3 right-3 flex gap-1 z-30">
+                <div class="h-1 bg-white/20 flex-1 rounded-full overflow-hidden">
+                    <div id="story-progress" class="h-full bg-rose-500 w-0 transition-all duration-100 ease-linear"></div>
+                </div>
+            </div>
+
+            <!-- Profile Info -->
+            <div class="absolute top-7 left-4 right-4 flex items-center justify-between z-30">
+                <div class="flex items-center gap-3">
+                    <img id="story-avatar" src="" alt="" class="w-8 h-8 rounded-full border border-rose-500 object-cover">
+                    <div>
+                        <h4 id="story-name" class="text-sm font-bold text-white">Kiara</h4>
+                        <span class="text-[10px] text-zinc-300 font-sans">Fortaleza • Ao vivo</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Story Image -->
+            <div class="w-full h-full relative bg-zinc-900">
+                <img id="story-image" src="" alt="Story Image" class="w-full h-full object-cover">
+                <div onclick="prevStory()" class="absolute inset-y-0 left-0 w-1/4 cursor-w-resize z-20"></div>
+                <div onclick="nextStory()" class="absolute inset-y-0 right-0 w-1/4 cursor-e-resize z-20"></div>
+            </div>
+            
+            <!-- Bottom CTA -->
+            <div class="absolute bottom-5 left-4 right-4 z-30">
+                <button onclick="closeStoryViewer(); openErosModal(0);" class="w-full py-3.5 bg-[#f43f5e] hover:bg-rose-600 text-white font-bold tracking-widest text-center text-xs uppercase rounded-full transition-colors duration-200 block shadow-lg font-sans">
+                    Acessar Perfil
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- EROS GUIA QUICK-VIEW MODAL OVERLAY (Premium Double Scroll Column Layout) -->
+    <div id="eros-modal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-sm hidden items-center justify-center p-2 sm:p-4 md:p-6 overflow-y-auto">
+        
+        <!-- Modal Card Container -->
+        <div class="relative w-full max-w-5xl bg-zinc-900 border border-zinc-800/80 rounded-2xl overflow-hidden flex flex-col shadow-2xl h-[95vh] sm:h-[90vh] md:h-[85vh]">
+            
+            <!-- Modal Title Header (Eros Style) -->
+            <div class="flex items-center justify-between px-5 py-3.5 bg-zinc-950 border-b border-zinc-800 shrink-0">
+                <div class="flex items-center gap-2 text-sm text-zinc-300 font-semibold">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 text-[#f43f5e]">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                    </svg>
+                    <span id="modal-top-city">Fortaleza</span>
+                </div>
+
+                <!-- Control Buttons -->
+                <div class="flex items-center gap-2">
+                    <button onclick="prevErosModalProfile()" class="p-1.5 text-zinc-400 hover:text-white hover:bg-zinc-800 rounded-lg border border-zinc-800 bg-zinc-900 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                        </svg>
+                    </button>
+                    <button onclick="nextErosModalProfile()" class="p-1.5 text-zinc-400 hover:text-white hover:bg-zinc-800 rounded-lg border border-zinc-800 bg-zinc-900 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                        </svg>
+                    </button>
+                    <button onclick="closeErosModal()" class="p-1.5 text-zinc-400 hover:text-white hover:bg-zinc-800 rounded-lg border border-zinc-800 bg-zinc-900 transition-colors ml-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Modal Content Grid (Independent double scroll scrollable layout) -->
+            <div class="flex-1 overflow-y-auto md:overflow-hidden p-4 md:p-6 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 h-full bg-zinc-900">
+                
+                <!-- Left Column: Photo Gallery, Advertiser Pics, Videos, Hots & Related (Independent Scroll) -->
+                <div class="md:col-span-5 flex flex-col gap-5 md:h-full md:overflow-y-auto modal-scroll pr-1 pb-4">
+                    <!-- Photo Display Panel -->
+                    <div class="relative aspect-[3/4] w-full rounded-xl overflow-hidden border border-zinc-800 bg-zinc-950 group shrink-0">
+                        <!-- VIP Tag (Eros Style) -->
+                        <div class="absolute top-4 left-4 bg-gradient-to-r from-red-600 to-amber-600 px-3 py-1 rounded-md text-[10px] font-bold text-white tracking-widest uppercase shadow-md z-30">
+                            VIP
+                        </div>
+
+                        <!-- Image Index Page counter -->
+                        <div class="absolute top-4 right-4 bg-black/60 backdrop-blur-md border border-zinc-800 px-3 py-1 rounded-full text-xs font-semibold text-zinc-300 z-30">
+                            <span id="modal-pic-idx">1</span> / <span id="modal-pic-total">4</span>
+                        </div>
+
+                        <img id="modal-pic-display" src="" alt="Photo" class="w-full h-full object-cover">
+                        
+                        <!-- Nav Arrow Overlays -->
+                        <button onclick="prevModalPic()" class="absolute left-3 top-1/2 -translate-y-1/2 p-2 bg-black/65 border border-zinc-800 text-white rounded-full transition-all duration-200 opacity-0 group-hover:opacity-100 z-30">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                            </svg>
+                        </button>
+                        <button onclick="nextModalPic()" class="absolute right-3 top-1/2 -translate-y-1/2 p-2 bg-black/65 border border-zinc-800 text-white rounded-full transition-all duration-200 opacity-0 group-hover:opacity-100 z-30">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Thumbnails row -->
+                    <div id="modal-thumbs-row" class="flex gap-2 overflow-x-auto pb-1 no-scrollbar shrink-0">
+                        <!-- Thumbs dynamically inserted -->
+                    </div>
+
+                    <!-- Fotos enviadas pelo anunciante -->
+                    <div class="flex flex-col gap-3 mt-2">
+                        <h3 class="text-xs uppercase tracking-wider text-zinc-400 font-bold border-b border-zinc-800/80 pb-2 font-sans">Fotos do Anunciante</h3>
+                        <div id="modal-adv-photos" class="grid grid-cols-3 gap-2">
+                            <!-- Dynamic advertiser photos -->
+                        </div>
+                    </div>
+
+                    <!-- Vídeos -->
+                    <div class="flex flex-col gap-3 mt-2">
+                        <h3 class="text-xs uppercase tracking-wider text-zinc-400 font-bold border-b border-zinc-800/80 pb-2 font-sans">Vídeos</h3>
+                        <div class="aspect-video w-full rounded-xl overflow-hidden bg-zinc-950 border border-zinc-850 relative group flex items-center justify-center">
+                            <video id="modal-video-element" class="w-full h-full object-cover" controls preload="none">
+                                <source src="" type="video/mp4">
+                                Seu navegador não suporta vídeos.
+                            </video>
+                        </div>
+                        <!-- Video Tabs / Thumbnails -->
+                        <div id="modal-video-thumbs" class="flex gap-2 mt-1 w-full justify-between">
+                            <button id="btn-video-apres" onclick="changeModalVideo(0)" class="flex-1 py-2 text-[10px] font-bold uppercase tracking-wider rounded-lg border border-rose-500 bg-rose-500/10 text-rose-500 transition-all active:scale-[0.98]">
+                                Apresentação
+                            </button>
+                            <button id="btn-video-bast" onclick="changeModalVideo(1)" class="flex-1 py-2 text-[10px] font-bold uppercase tracking-wider rounded-lg border border-zinc-800 bg-zinc-900 text-zinc-400 hover:text-white hover:bg-zinc-800 transition-all active:scale-[0.98]">
+                                Bastidores 🔥
+                            </button>
+                            <button id="btn-video-ensaio" onclick="changeModalVideo(2)" class="flex-1 py-2 text-[10px] font-bold uppercase tracking-wider rounded-lg border border-zinc-800 bg-zinc-900 text-zinc-400 hover:text-white hover:bg-zinc-800 transition-all active:scale-[0.98]">
+                                Ensaio Oficial
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Fotos Privadas (Hots - Locked Section) -->
+                    <div class="flex flex-col gap-3 mt-2">
+                        <div class="flex items-center justify-between border-b border-zinc-800 pb-2">
+                            <h3 class="text-xs uppercase tracking-wider text-zinc-400 font-bold font-sans">Fotos Privadas (Hots)</h3>
+                            <span class="text-[10px] text-zinc-500 font-bold uppercase tracking-wider flex items-center gap-1 font-sans">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-3 h-3 text-[#f43f5e]">
+                                    <path fill-rule="evenodd" d="M8 1a3.5 3.5 0 0 0-3.5 3.5V7A1.5 1.5 0 0 0 3 8.5v5A1.5 1.5 0 0 0 4.5 15h7a1.5 1.5 0 0 0 1.5-1.5v-5A1.5 1.5 0 0 0 11.5 7V4.5A3.5 3.5 0 0 0 8 1Zm3 6V4.5a3 3 0 1 0-6 0V7h6Z" clip-rule="evenodd" />
+                                </svg>
+                                Conteúdo Exclusivo
+                            </span>
+                        </div>
+                        <div class="grid grid-cols-3 gap-2 relative">
+                            <div class="aspect-[3/4] rounded-lg overflow-hidden bg-zinc-955 border border-zinc-850 relative">
+                                <img src="https://static.musaclass.com/public/slots/b863e22f-65e7-4688-bbe0-a85f119e0fb9.webp?v=1779821056489" class="w-full h-full object-cover blur-md brightness-[0.4]" alt="">
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6 text-white/50">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="aspect-[3/4] rounded-lg overflow-hidden bg-zinc-955 border border-zinc-850 relative">
+                                <img src="https://static.musaclass.com/public/acp/239ed3cb-e282-4699-ac51-3615118e6a3f/1776567856965-WhatsApp-Image-2025-12-26-at-10.31.17-2.webp" class="w-full h-full object-cover blur-md brightness-[0.4]" alt="">
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6 text-white/50">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="aspect-[3/4] rounded-lg overflow-hidden bg-zinc-955 border border-zinc-850 relative">
+                                <img src="https://static.musaclass.com/public/slots/c511d22c-f051-451d-b0f1-989285b87e18.webp" class="w-full h-full object-cover blur-md brightness-[0.4]" alt="">
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6 text-white/50">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
+                                    </svg>
+                                </div>
+                            </div>
+                            
+                            <!-- Lock Overlay Action -->
+                            <div class="absolute inset-0 flex items-center justify-center z-10 bg-black/55 backdrop-blur-[3px] rounded-lg">
+                                <button onclick="openHotsUnlockModal()" class="bg-gradient-to-r from-red-600 to-orange-500 hover:from-red-500 hover:to-orange-400 text-white font-bold text-[10px] uppercase tracking-widest px-4 py-3 rounded-xl shadow-xl flex items-center gap-1.5 transition-all active:scale-95 duration-200">
+                                    <span>🔥 Desbloquear HOTS</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mais Acessadas (Related profiles slider) -->
+                    <div class="flex flex-col gap-3 mt-2">
+                        <h3 class="text-xs uppercase tracking-wider text-zinc-400 font-bold border-b border-zinc-800/85 pb-2 font-sans font-sans">Mais Acessadas</h3>
+                        <div id="modal-related-profiles" class="flex gap-3 overflow-x-auto pb-1.5 no-scrollbar shrink-0">
+                            <!-- Small round/vertical cards -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Profile Detailed Info + Sticky CTA Bottom Actions (Scrollable) -->
+                <div class="md:col-span-7 flex flex-col md:h-full overflow-hidden border border-zinc-800 bg-zinc-950/40 rounded-2xl">
+                    <!-- Scrollable content area -->
+                    <div class="flex-1 overflow-y-auto modal-scroll p-4 md:p-6 flex flex-col gap-6">
+                        
+                        <!-- Title, slogan, publication, phone -->
+                        <div class="flex flex-col gap-2.5">
+                            <div class="flex items-center justify-between">
+                                <h2 id="modal-profile-name" class="text-2xl md:text-3xl font-extrabold text-white tracking-tight">Danny Bond</h2>
+                                <!-- Favorite/Heart Icon -->
+                                <button class="p-2 text-zinc-400 hover:text-[#f43f5e] transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="text-[11px] text-zinc-500 font-medium flex items-center gap-1.5 border-b border-zinc-800/80 pb-3 font-sans">
+                                <span id="modal-published-date">Publicado em: 24/08/2025</span>
+                                <span>•</span>
+                                <span id="modal-profile-phone" class="text-zinc-300 font-semibold">82 99913-2029</span>
+                            </div>
+
+                            <p id="modal-profile-slogan" class="text-sm italic font-medium text-amber-500 leading-relaxed">
+                                "Loirinha fogosa e gostosa com flat próprio..."
+                            </p>
+                        </div>
+
+                        <!-- Cachês Card Box -->
+                        <div class="bg-zinc-950/60 rounded-xl border border-zinc-850 p-4 flex flex-col gap-2 font-sans">
+                            <span class="text-xs uppercase tracking-wider text-zinc-500 font-bold">Cachês</span>
+                            <div class="flex items-center gap-3">
+                                <div class="bg-rose-500/10 border border-rose-500/30 px-4 py-2.5 rounded-lg flex flex-col">
+                                    <span class="text-[10px] text-zinc-400 font-medium">1 Hora</span>
+                                    <span id="modal-stat-fee" class="text-lg font-black text-rose-500">R$ 500</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ficha do Anunciante (Personal Stats Table) -->
+                        <div class="flex flex-col gap-3 font-sans">
+                            <h3 class="text-xs uppercase tracking-wider text-zinc-450 font-bold border-b border-zinc-800 pb-2">Ficha do Anunciante</h3>
+                            
+                            <!-- Detailed Stats Table (Grid list with borders, exactly like the image) -->
+                            <div class="bg-zinc-950/60 rounded-xl border border-zinc-850 p-4 flex flex-col gap-2.5 text-sm">
+                                <div class="flex justify-between border-b border-zinc-800/60 pb-2">
+                                    <span class="text-zinc-450 font-light">Idade</span>
+                                    <span id="modal-stat-age" class="text-white font-bold">-</span>
+                                </div>
+                                <div class="flex justify-between border-b border-zinc-800/60 pb-2">
+                                    <span class="text-zinc-450 font-light">Altura</span>
+                                    <span id="modal-stat-height" class="text-white font-bold">-</span>
+                                </div>
+                                <div class="flex justify-between border-b border-zinc-800/60 pb-2">
+                                    <span class="text-zinc-450 font-light">Peso</span>
+                                    <span id="modal-stat-weight" class="text-white font-bold">-</span>
+                                </div>
+                                <div class="flex justify-between border-b border-zinc-800/60 pb-2">
+                                    <span class="text-zinc-450 font-light">Olhos</span>
+                                    <span id="modal-stat-eyes" class="text-white font-bold">-</span>
+                                </div>
+                                <div class="flex justify-between border-b border-zinc-800/60 pb-2">
+                                    <span class="text-zinc-450 font-light">Cabelo</span>
+                                    <span id="modal-stat-hair" class="text-white font-bold">-</span>
+                                </div>
+                                <div class="flex justify-between border-b border-zinc-800/60 pb-2">
+                                    <span class="text-zinc-450 font-light">Pele</span>
+                                    <span id="modal-stat-skin" class="text-white font-bold">-</span>
+                                </div>
+                                <div class="flex justify-between border-b border-zinc-800/60 pb-2">
+                                    <span class="text-zinc-450 font-light">Pés</span>
+                                    <span id="modal-stat-feet" class="text-white font-bold">-</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-zinc-450 font-light">Manequim</span>
+                                    <span id="modal-stat-manequim" class="text-white font-bold">-</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Atendimento Box Section -->
+                        <div class="bg-zinc-950/60 rounded-xl border border-zinc-850 p-4 flex flex-col gap-3 font-sans">
+                            <h4 class="text-sm font-extrabold text-white">Atendimento</h4>
+                            <span class="text-xs text-zinc-500 font-light">Acompanho em:</span>
+                            <div id="modal-stat-atendimento" class="flex flex-wrap gap-1.5">
+                                <!-- chips render dynamic places -->
+                            </div>
+                            <div class="flex justify-between border-t border-zinc-800/60 pt-3 text-sm">
+                                <span class="text-zinc-450">Horário</span>
+                                <span id="modal-stat-schedule" class="text-[#f43f5e] font-bold">24 Horas</span>
+                            </div>
+                            <div class="flex justify-between border-t border-zinc-800/60 pt-3 text-sm">
+                                <span class="text-zinc-450">Aceita Cartão</span>
+                                <span id="modal-stat-card" class="text-emerald-500 font-bold flex items-center gap-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-4 h-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                                    </svg>
+                                    Sim
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Aparência Style Tags Section -->
+                        <div class="bg-zinc-950/60 rounded-xl border border-zinc-850 p-4 flex flex-col gap-3 font-sans">
+                            <h4 class="text-sm font-extrabold text-white">Aparência</h4>
+                            <div id="modal-stat-aparencia" class="flex flex-wrap gap-1.5">
+                                <!-- chips render dynamic appearance tags -->
+                            </div>
+                        </div>
+
+                        <!-- Perfil Style Tags Section -->
+                        <div class="bg-zinc-950/60 rounded-xl border border-zinc-850 p-4 flex flex-col gap-3 font-sans">
+                            <h4 class="text-sm font-extrabold text-white">Perfil</h4>
+                            <div id="modal-stat-perfil" class="flex flex-wrap gap-1.5">
+                                <!-- chips render dynamic styles -->
+                            </div>
+                        </div>
+
+                        <!-- Complete description text -->
+                        <div class="flex flex-col gap-3">
+                            <h3 class="text-xs uppercase tracking-wider text-zinc-400 font-bold border-b border-zinc-800 pb-2 font-sans">Biografia</h3>
+                            <p id="modal-profile-bio" class="text-xs text-zinc-400 leading-relaxed font-light">
+                                EXCLUSIVA ACOMPANHANTE LOIRA DE CORPO MACIO E CHEIROSO DISPONÍVEL POR TEMPO LIMITADO.
+                            </p>
+                        </div>
+
+                        <!-- Services list (Eros Tags) -->
+                        <div class="flex flex-col gap-3">
+                            <h3 class="text-xs uppercase tracking-wider text-zinc-400 font-bold border-b border-zinc-800 pb-2 font-sans">Serviços Disponíveis</h3>
+                            <div id="modal-services-tags" class="flex flex-wrap gap-2">
+                                <!-- Dynamic tags -->
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Sticky CTA Bottom Actions at the bottom of Right Column -->
+                    <div class="p-4 bg-zinc-950 border-t border-zinc-855 grid grid-cols-2 gap-3.5 shrink-0">
+                        <a id="modal-btn-wa" href="#" target="_blank" class="flex items-center justify-center gap-2 py-3.5 bg-erosGreen hover:bg-emerald-600 text-white font-extrabold tracking-widest text-xs uppercase rounded-xl transition-colors shadow-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-4 h-4" viewBox="0 0 16 16">
+                                <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.907h.004c4.368 0 7.926-3.558 7.93-7.93a7.897 7.897 0 0 0-2.333-5.594M7.994 14.52a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.69-4.98c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.611-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+                            </svg>
+                            WhatsApp
+                        </a>
+                        <a id="modal-btn-call" href="#" class="flex items-center justify-center gap-2 py-3.5 bg-zinc-900 hover:bg-zinc-800 text-white font-extrabold tracking-widest text-xs uppercase rounded-xl border border-zinc-800 transition-colors shadow-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5 text-[#f43f5e]">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-2.824-1.802-5.122-4.1-6.924-6.924l1.293-.97a1.242 1.242 0 0 0 .417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+                            </svg>
+                            Ligar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript code -->
+    <script>
+        const storiesData = [
+            {
+                name: "Kiara",
+                avatar: "https://static.musaclass.com/public/ads/2522d60b-9392-4730-9e21-fef35afdde68/1778961156620-Imagem-do-WhatsApp-de-2025-08-27-as-14.55.40_94771ba4.webp?v=1779817713390",
+                image: "https://static.musaclass.com/public/ads/2522d60b-9392-4730-9e21-fef35afdde68/1778961159856-Imagem-do-WhatsApp-de-2025-08-27-as-14.55.41_124ec14b.webp"
+            },
+            {
+                name: "Bia",
+                avatar: "https://static.musaclass.com/public/slots/b863e22f-65e7-4688-bbe0-a85f119e0fb9.webp?v=1779821056489",
+                image: "https://static.musaclass.com/public/slots/b863e22f-65e7-4688-bbe0-a85f119e0fb9.webp?v=1779821056489"
+            },
+            {
+                name: "Helô",
+                avatar: "https://static.musaclass.com/public/acp/239ed3cb-e282-4699-ac51-3615118e6a3f/1776567856965-WhatsApp-Image-2025-12-26-at-10.31.17-2.webp",
+                image: "https://static.musaclass.com/public/acp/239ed3cb-e282-4699-ac51-3615118e6a3f/1776567856965-WhatsApp-Image-2025-12-26-at-10.31.17-2.webp"
+            },
+            {
+                name: "Dri",
+                avatar: "https://static.musaclass.com/public/slots/b863e22f-65e7-4688-bbe0-a85f119e0fb9.webp?v=1779821056489",
+                image: "https://static.musaclass.com/public/slots/b863e22f-65e7-4688-bbe0-a85f119e0fb9.webp?v=1779821056489"
+            }
+        ];
+
+        // Profiles data (Complete 18 local database profiles)
+        const profilesData = [
+            {
+                name: "Danny Bond",
+                age: 40,
+                phone: "82 99913-2029",
+                city: "Fortaleza",
+                neighborhood: "Meireles",
+                fee: 500,
+                slogan: "Uma loirinha fogosa com flat em Jatiúca! Corpo natural.",
+                bio: "EXCLUSIVA ACOMPANHANTE LOIRA DE CORPO MACIO E CHEIROSO DISPONÍVEL POR TEMPO LIMITADO. Sou loira, cabelos de médio comprimento, corpo todo durinho, perfil delicado e toda natural. Tenho traços finos, olhos claros, lábios carnudos e sorriso encantador. Minha pele é bronzeada, muito perfumada e toque acetinado. Tenho seios pequenos, naturais e uma sexy marquinha de bikini. Meu bumbum é duro, redondinho e empinado.",
+                images: [
+                    "https://static.musaclass.com/public/ads/2522d60b-9392-4730-9e21-fef35afdde68/1778961156620-Imagem-do-WhatsApp-de-2025-08-27-as-14.55.40_94771ba4.webp?v=1779817713390",
+                    "https://static.musaclass.com/public/ads/2522d60b-9392-4730-9e21-fef35afdde68/1778961159856-Imagem-do-WhatsApp-de-2025-08-27-as-14.55.41_124ec14b.webp",
+                    "https://static.musaclass.com/public/ads/2522d60b-9392-4730-9e21-fef35afdde68/1778961163559-Imagem-do-WhatsApp-de-2025-08-27-as-14.55.41_cca005dc.webp"
+                ],
+                services: ["Atenção a casais", "Oral com camisinha", "Massagem erótica"]
+            },
+            {
+                name: "Mel Araujo",
+                age: 22,
+                phone: "85 99187-2542",
+                city: "Fortaleza",
+                neighborhood: "Meireles",
+                fee: 500,
+                slogan: "Uma musa fitness do mais alto nível para clientes exigentes em Fortaleza!",
+                bio: "LINDA NINFETINHA PASSANDO CURTA TEMPORADA NA CIDADE. Sou loirinha de pele parda, tenho olhos verdes and cabelos longos… Meu rosto é bonito, de traços delicados, olhos marcantes e uma boca desenhada e bem macia... Tenho porte elegante, seios turbinados com mamilos suculentos e cintura fina... Sou esbelta, tenho um belo par de pernas, bumbum firme e redondinho... Minha bocetinha é apertada, quente e bem lisinha...",
+                images: [
+                    "https://static.musaclass.com/public/acp/239ed3cb-e282-4699-ac51-3615118e6a3f/1776567856965-WhatsApp-Image-2025-12-26-at-10.31.17-2.webp",
+                    "https://static.musaclass.com/public/acp/239ed3cb-e282-4699-ac51-3615118e6a3f/1776567863463-WhatsApp-Image-2026-01-28-at-16.59.24.webp",
+                    "https://static.musaclass.com/public/acp/239ed3cb-e282-4699-ac51-3615118e6a3f/1776567870082-c7b34e80-1843-446b-9c21-ea489e005f5b.webp"
+                ],
+                services: ["Viagens", "Massagem erótica", "Casais"]
+            },
+            {
+                name: "Marina Alves",
+                age: 22,
+                phone: "85 98111-2233",
+                city: "Fortaleza",
+                neighborhood: "Aldeota",
+                fee: 500,
+                slogan: "Loirinha fogosa e simpática, novidade em Fortaleza",
+                bio: "Sou uma linda loira, com corpo todo natural, olhos claros e sorriso radiante. Gosto de homens decididos que sabem valorizar uma companhia de alto padrão em Fortaleza.",
+                images: [
+                    "https://static.musaclass.com/public/ads/2522d60b-9392-4730-9e21-fef35afdde68/1778961159856-Imagem-do-WhatsApp-de-2025-08-27-as-14.55.41_124ec14b.webp",
+                    "https://static.musaclass.com/public/ads/2522d60b-9392-4730-9e21-fef35afdde68/1778961156620-Imagem-do-WhatsApp-de-2025-08-27-as-14.55.40_94771ba4.webp?v=1779817713390"
+                ],
+                services: ["Oral completo", "Massagem", "Beijo na boca", "Namoradinha"]
+            },
+            {
+                name: "Eduarda Lizz",
+                age: 26,
+                phone: "85 98122-3344",
+                city: "Fortaleza",
+                neighborhood: "Meireles",
+                fee: 600,
+                slogan: "Uma morena luxuosa, corpo escultural, muito perfumada",
+                bio: "Morena clássica de beleza exuberante e simpatia sem igual. Atendimento VIP para empresários, jantares e momentos inesquecíveis. Fotos 100% reais e atualizadas.",
+                images: [
+                    "https://static.musaclass.com/public/ads/2522d60b-9392-4730-9e21-fef35afdde68/1778961163559-Imagem-do-WhatsApp-de-2025-08-27-as-14.55.41_cca005dc.webp",
+                    "https://static.musaclass.com/public/slots/b863e22f-65e7-4688-bbe0-a85f119e0fb9.webp?v=1779821056489"
+                ],
+                services: ["Massagem erótica", "Jantares", "Viagens", "Completo"]
+            },
+            {
+                name: "Angelina Castro",
+                age: 24,
+                phone: "85 98133-4455",
+                city: "Fortaleza",
+                neighborhood: "Praia de Iracema",
+                fee: 500,
+                slogan: "Loira deslumbrante para momentos de intensa sedução",
+                bio: "Uma loira deslumbrante com curvas perfeitas e lábios carnudos. Muito sensual, atenciosa e liberal. Venha desfrutar de um momento único com total discrição em Fortaleza.",
+                images: [
+                    "https://static.musaclass.com/public/acp/239ed3cb-e282-4699-ac51-3615118e6a3f/1776567856965-WhatsApp-Image-2025-12-26-at-10.31.17-2.webp"
+                ],
+                services: ["Oral com camisinha", "Fetiches", "Massagem", "Beijo na boca"]
+            },
+            {
+                name: "Julia Becker",
+                age: 25,
+                phone: "85 98144-5566",
+                city: "Fortaleza",
+                neighborhood: "Aldeota",
+                fee: 400,
+                slogan: "Modelo vip com fotos profissionais e atendimento atencioso",
+                bio: "Uma jovem educada, universitária, realizando atendimentos exclusivos e discretos no bairro Aldeota. Corpo bem cuidado, cheirosa e muito atenciosa.",
+                images: [
+                    "https://static.musaclass.com/public/ads/07297d6e-b240-4c26-af66-dabd0e748ba0/1779131999231-Acompanhante-3-1.webp?v=1779735849404"
+                ],
+                services: ["Namoradinha", "Conversas", "Massagem erótica"]
+            },
+            {
+                name: "Musa",
+                age: 23,
+                phone: "85 98155-6677",
+                city: "Fortaleza",
+                neighborhood: "Centro",
+                fee: 500,
+                slogan: "Modelo vip de fotos reais e atendimento VIP",
+                bio: "Linda loira mignon, olhos expressivos, corpo delineado por exercícios, super perfumada. Ofereço momentos agradáveis com muita discrição e cumplicidade.",
+                images: [
+                    "https://static.musaclass.com/public/slots/b863e22f-65e7-4688-bbe0-a85f119e0fb9.webp?v=1779821056489"
+                ],
+                services: ["Beijo na boca", "Oral", "Massagem erótica"]
+            },
+            {
+                name: "Gaby Albuquerque",
+                age: 24,
+                phone: "85 98166-7788",
+                city: "Fortaleza",
+                neighborhood: "Cocó",
+                fee: 500,
+                slogan: "Linda loira com fotos 100% reais e atendimento atencioso",
+                bio: "Olá! Sou a Gaby, loira natural, corpo escultural, bumbum empinado e olhos mel. Ofereço um atendimento de alto nível para quem sabe apreciar o melhor da vida.",
+                images: [
+                    "https://static.musaclass.com/public/ads/2522d60b-9392-4730-9e21-fef35afdde68/1778961163559-Imagem-do-WhatsApp-de-2025-08-27-as-14.55.41_cca005dc.webp"
+                ],
+                services: ["Completo", "Oral", "Fetiches", "Casais"]
+            },
+            {
+                name: "Safira Valentin",
+                age: 25,
+                phone: "85 98177-8899",
+                city: "Fortaleza",
+                neighborhood: "Meireles",
+                fee: 600,
+                slogan: "Bela loira para momentos inesquecíveis em Fortaleza",
+                bio: "Bela loira de corpo exuberante, seios macios e marquinha de sol. Extremamente perfumada, educada e muito quente na intimidade.",
+                images: [
+                    "https://static.musaclass.com/public/ads/2522d60b-9392-4730-9e21-fef35afdde68/1778961170198-Imagem-do-WhatsApp-de-2025-08-27-as-14.55.43_b215ac79.webp"
+                ],
+                services: ["Massagem erótica", "Inversão", "Oral completo", "Viagens"]
+            },
+            {
+                name: "Kiara Colombiana",
+                age: 23,
+                phone: "85 98188-9900",
+                city: "Fortaleza",
+                neighborhood: "Aldeota",
+                fee: 500,
+                slogan: "Uma morena sedutora com fotos 100% reais",
+                bio: "Morena colombiana with sotaque charmoso, lábios carnudos e olhar penetrante. Muito carinhosa, gosto de fazer o meu parceiro se sentir único. Atendimento com total sigilo.",
+                images: [
+                    "https://static.musaclass.com/public/acp/239ed3cb-e282-4699-ac51-3615118e6a3f/1776567856965-WhatsApp-Image-2025-12-26-at-10.31.17-2.webp"
+                ],
+                services: ["Beijo na boca", "Massagem", "Oral", "Namoradinha"]
+            },
+            {
+                name: "Ana Maria",
+                age: 24,
+                phone: "85 98199-0011",
+                city: "Fortaleza",
+                neighborhood: "Centro",
+                fee: 500,
+                slogan: "Loira novidade para momentos de prazer e cumplicidade",
+                bio: "Jovem loira recém-chegada em Fortaleza. Corpo magro, muito meiga e simpatia. Ofereço um encontro descontraído e inesquecível.",
+                images: [
+                    "https://static.musaclass.com/public/slots/b863e22f-65e7-4688-bbe0-a85f119e0fb9.webp?v=1779821056489"
+                ],
+                services: ["Namoradinha", "Massagem", "Beijo na boca"]
+            },
+            {
+                name: "Geisha Lopez",
+                age: 22,
+                phone: "85 98100-1122",
+                city: "Fortaleza",
+                neighborhood: "Praia de Iracema",
+                fee: 500,
+                slogan: "Linda modelo para atendimento VIP de alto padrão",
+                bio: "Modelo de alto nível para clientes VIPs. Corpo escultural, extremamente discreta e profissional. Disponível para jantares, eventos sociais e momentos de intimidade.",
+                images: [
+                    "https://static.musaclass.com/public/ads/2522d60b-9392-4730-9e21-fef35afdde68/1778961156620-Imagem-do-WhatsApp-de-2025-08-27-as-14.55.40_94771ba4.webp?v=1779817713390"
+                ],
+                services: ["Jantares", "Eventos", "Viagens", "VIP"]
+            }
+        ];
+
+        // Enrich profiles data with stats if not present
+        profilesData.forEach(profile => {
+            // Ensure at least 6 images
+            const fallbackPool = [
+                "https://static.musaclass.com/public/ads/2522d60b-9392-4730-9e21-fef35afdde68/1778961156620-Imagem-do-WhatsApp-de-2025-08-27-as-14.55.40_94771ba4.webp?v=1779817713390",
+                "https://static.musaclass.com/public/ads/2522d60b-9392-4730-9e21-fef35afdde68/1778961159856-Imagem-do-WhatsApp-de-2025-08-27-as-14.55.41_124ec14b.webp",
+                "https://static.musaclass.com/public/ads/2522d60b-9392-4730-9e21-fef35afdde68/1778961163559-Imagem-do-WhatsApp-de-2025-08-27-as-14.55.41_cca005dc.webp",
+                "https://static.musaclass.com/public/acp/239ed3cb-e282-4699-ac51-3615118e6a3f/1776567856965-WhatsApp-Image-2025-12-26-at-10.31.17-2.webp",
+                "https://static.musaclass.com/public/slots/b863e22f-65e7-4688-bbe0-a85f119e0fb9.webp?v=1779821056489",
+                "https://static.musaclass.com/public/ads/07297d6e-b240-4c26-af66-dabd0e748ba0/1779131999231-Acompanhante-3-1.webp?v=1779735849404",
+                "https://static.musaclass.com/public/slots/c511d22c-f051-451d-b0f1-989285b87e18.webp",
+                "https://static.musaclass.com/public/admin-crops/3b8820fe-b1dd-4fb6-bf51-037390772fbe.webp",
+                "https://static.musaclass.com/public/acp/5ae67f03-c9c0-4b23-aa51-a7d0a59a64a0/1776608053719-Acompanhante-6-3.webp",
+                "https://static.musaclass.com/public/acp/5ae67f03-c9c0-4b23-aa51-a7d0a59a64a0/1776608059019-Acompanhante-3-3.webp"
+            ];
+            let fallbackIdx = 0;
+            const uniqueNameVal = profile.name.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+            while (profile.images.length < 6) {
+                const fallbackUrl = fallbackPool[(fallbackIdx + uniqueNameVal) % fallbackPool.length];
+                if (!profile.images.includes(fallbackUrl)) {
+                    profile.images.push(fallbackUrl);
+                }
+                fallbackIdx++;
+            }
+
+            if (!profile.stats) {
+                // Determine hair from bio/slogan
+                let hair = "Castanhos";
+                if (profile.bio.toLowerCase().includes("loira") || profile.slogan.toLowerCase().includes("loira")) {
+                    hair = "Loiros";
+                } else if (profile.bio.toLowerCase().includes("morena") || profile.slogan.toLowerCase().includes("morena")) {
+                    hair = "Castanhos";
+                } else if (profile.bio.toLowerCase().includes("ruiva") || profile.slogan.toLowerCase().includes("ruiva")) {
+                    hair = "Ruivos";
+                }
+                
+                // Determine skin
+                let skin = "Clara";
+                if (profile.bio.toLowerCase().includes("parda") || profile.bio.toLowerCase().includes("pele dourada") || profile.bio.toLowerCase().includes("canela")) {
+                    skin = "Parda";
+                } else if (profile.bio.toLowerCase().includes("branquinha")) {
+                    skin = "Branquinha";
+                } else if (profile.bio.toLowerCase().includes("morena")) {
+                    skin = "Morena";
+                }
+
+                // Determine schedule
+                let schedule = "10:00 às 22:00";
+                if (profile.bio.toLowerCase().includes("24 horas") || profile.slogan.toLowerCase().includes("24 horas")) {
+                    schedule = "24 Horas";
+                }
+
+                // Determine card
+                let card = "Sim";
+
+                // Standard heights, weights, feet, manequim
+                let height = "1.65 m";
+                let weight = "58 kg";
+                let feet = "36";
+                let manequim = "38";
+
+                // Tailor specific profiles
+                if (profile.name === "Danny Bond") {
+                    height = "1.68 m";
+                    weight = "60 kg";
+                    feet = "37";
+                    manequim = "38";
+                } else if (profile.name === "Livia Guedes") {
+                    height = "1.60 m";
+                    weight = "50 kg";
+                    feet = "35";
+                    manequim = "36";
+                } else if (profile.name === "Mel Araujo") {
+                    height = "1.68 m";
+                    weight = "62 kg";
+                    feet = "37";
+                    manequim = "38";
+                } else if (profile.name === "Drii Cordeiro") {
+                    height = "1.65 m";
+                    weight = "72 kg";
+                    feet = "36";
+                    manequim = "42";
+                    schedule = "24 Horas";
+                    skin = "Branquinha";
+                }
+
+                let aparencia = ["Natural"];
+                if (profile.bio.toLowerCase().includes("fitness") || profile.slogan.toLowerCase().includes("fitness")) {
+                    aparencia.push("Fitness", "Atlética");
+                }
+                if (profile.bio.toLowerCase().includes("bumbum") || profile.bio.toLowerCase().includes("bumbum grande") || profile.bio.toLowerCase().includes("bundinha")) {
+                    aparencia.push("Bumbum grande");
+                }
+                if (profile.bio.toLowerCase().includes("bronzeada") || profile.bio.toLowerCase().includes("dourada")) {
+                    aparencia.push("Bronzeada");
+                }
+                if (profile.bio.toLowerCase().includes("seios pequenos") || profile.bio.toLowerCase().includes("seios naturais") || profile.bio.toLowerCase().includes("seios fartos") || profile.bio.toLowerCase().includes("corpo natural")) {
+                    aparencia.push("Seios naturais");
+                }
+                if (profile.bio.toLowerCase().includes("mulherão") || profile.name === "Danny Bond" || profile.name === "Rebeca Fontaine") {
+                    aparencia.push("Mulherão");
+                }
+                if (aparencia.length < 3) {
+                    aparencia.push("Natural", "Atlética");
+                }
+                aparencia = [...new Set(aparencia)];
+
+                profile.stats = {
+                    height: height,
+                    weight: weight,
+                    eyes: "Castanhos",
+                    hair: hair,
+                    skin: skin,
+                    feet: feet,
+                    manequim: manequim,
+                    atendimento: ["Flat Próprio", "Motéis", "Vídeo Chamadas", "Eventos", "Hotéis", "Jantares", "Viagens", "Escritórios"],
+                    schedule: schedule,
+                    card: card,
+                    perfil: ["Liberal", "Meiga", "Safada", "Discreta", "Namoradinha"],
+                    aparencia: aparencia
+                };
+            }
+        });
+
+        let currentProfileIndex = 0;
+        let currentModalPicIndex = 0;
+        let currentStoryIndex = 0;
+        let progressInterval;
+        let progressVal = 0;
+
+        // STORIES Viewer logic
+        function openStoryViewer(index) {
+            currentStoryIndex = index;
+            const viewer = document.getElementById("story-viewer");
+            viewer.classList.remove("hidden");
+            viewer.classList.add("flex");
+            document.body.style.overflow = "hidden";
+            document.documentElement.style.overflow = "hidden";
+            loadStory(currentStoryIndex);
+        }
+
+        function closeStoryViewer() {
+            const viewer = document.getElementById("story-viewer");
+            viewer.classList.add("hidden");
+            viewer.classList.remove("flex");
+            document.body.style.overflow = "";
+            document.documentElement.style.overflow = "";
+            clearInterval(progressInterval);
+        }
+
+        function loadStory(index) {
+            const data = storiesData[index];
+            document.getElementById("story-name").innerText = data.name;
+            document.getElementById("story-avatar").src = data.avatar;
+            document.getElementById("story-image").src = data.image;
+            
+            clearInterval(progressInterval);
+            progressVal = 0;
+            const progressBar = document.getElementById("story-progress");
+            progressBar.style.width = "0%";
+            
+            const duration = 5000;
+            const steps = 100;
+            const stepTime = duration / steps;
+            
+            progressInterval = setInterval(() => {
+                progressVal += 1;
+                progressBar.style.width = `${progressVal}%`;
+                
+                if (progressVal >= 100) {
+                    clearInterval(progressInterval);
+                    nextStory();
+                }
+            }, stepTime);
+        }
+
+        function nextStory() {
+            currentStoryIndex++;
+            if (currentStoryIndex >= storiesData.length) {
+                closeStoryViewer();
+            } else {
+                loadStory(currentStoryIndex);
+            }
+        }
+
+        function prevStory() {
+            currentStoryIndex--;
+            if (currentStoryIndex < 0) {
+                currentStoryIndex = 0;
+            }
+            loadStory(currentStoryIndex);
+        }
+
+        // SIDEBAR COLLAPSE TOGGLE
+        function toggleSidebar() {
+            const sidebar = document.getElementById("sidebar");
+            const texts = document.querySelectorAll(".sidebar-text");
+            const dividers = document.querySelectorAll(".sidebar-divider");
+            const links = document.querySelectorAll(".sidebar-link");
+
+            if (sidebar.classList.contains("w-64")) {
+                sidebar.classList.remove("w-64");
+                sidebar.classList.add("w-[72px]", "items-center", "px-1");
+                texts.forEach(el => el.classList.add("hidden"));
+                dividers.forEach(el => el.classList.add("hidden"));
+                links.forEach(el => {
+                    el.classList.remove("px-4", "py-2.5", "gap-4");
+                    el.classList.add("justify-center", "w-12", "h-12");
+                });
+            } else {
+                sidebar.classList.remove("w-[72px]", "items-center", "px-1");
+                sidebar.classList.add("w-64");
+                texts.forEach(el => el.classList.remove("hidden"));
+                dividers.forEach(el => el.classList.remove("hidden"));
+                links.forEach(el => {
+                    el.classList.add("px-4", "py-2.5", "gap-4");
+                    el.classList.remove("justify-center", "w-12", "h-12");
+                });
+            }
+        }
+
+        // Dynamic render functions
+        function renderNovidadesCarousel() {
+            const container = document.getElementById("novidades-container");
+            if (!container) return;
+            container.innerHTML = "";
+            
+            const novidadesProfiles = profilesData.slice(-10);
+            
+            novidadesProfiles.forEach((profile) => {
+                const originalIndex = profilesData.indexOf(profile);
+                const hasBadge = originalIndex === 10;
+                const badgeHTML = hasBadge 
+                    ? `<div class="absolute top-2 left-2 bg-rose-500/90 px-1.5 py-0.5 rounded text-[7px] text-white font-bold uppercase tracking-wider">Últimos dias</div>`
+                    : "";
+                
+                const slide = document.createElement("div");
+                slide.className = "swiper-slide";
+                slide.style.width = "125px";
+                slide.onclick = () => openErosModal(originalIndex);
+                slide.innerHTML = `
+                    <div class="flex flex-col gap-1.5 cursor-pointer group select-none">
+                        <div class="relative aspect-[3/4] overflow-hidden rounded-2xl bg-zinc-900 border border-zinc-800/80 transition-all duration-300 hover:shadow-lg hover:shadow-black/60 group-hover:scale-[1.03]">
+                            <img src="${profile.images[0]}" alt="" class="w-full h-full object-cover">
+                            ${badgeHTML}
+                        </div>
+                        <h4 class="text-xs font-semibold text-zinc-400 group-hover:text-white truncate px-1 text-center font-sans">${profile.name}</h4>
+                    </div>
+                `;
+                container.appendChild(slide);
+            });
+        }
+
+        function renderProfileGrid() {
+            const grid = document.getElementById("profile-grid");
+            if (!grid) return;
+            grid.innerHTML = "";
+            
+            profilesData.forEach((profile, index) => {
+                // Determine if profile should show "Últimos dias"
+                const hasBadge = [0, 1, 3, 4, 7, 9, 11].includes(index);
+                const badgeHTML = hasBadge 
+                    ? `<div class="absolute top-2.5 left-2.5 bg-rose-500 px-2 py-0.5 rounded text-[8px] text-white font-bold uppercase tracking-wider z-10">Últimos dias</div>`
+                    : "";
+                
+                const card = document.createElement("div");
+                card.className = "w-full group relative rounded-2xl overflow-hidden bg-zinc-900 hover:bg-zinc-850 transition-all duration-300 hover:shadow-lg hover:shadow-black/40 flex flex-col";
+                card.innerHTML = `
+                    <div class="w-full aspect-[3/4] overflow-hidden bg-zinc-950 relative">
+                        <img src="${profile.images[0]}" alt="${profile.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        ${badgeHTML}
+                    </div>
+                    <div class="relative flex flex-col p-3 w-full bg-zinc-900 flex-1">
+                        <div class="flex items-center gap-1.5 w-full">
+                            <div class="text-xs md:text-sm font-bold text-white truncate">${profile.name}, ${profile.age} anos</div>
+                            <span class="w-3.5 h-3.5 bg-rose-500 rounded-full flex items-center justify-center text-white shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-2.5 h-2.5">
+                                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="flex items-center gap-1 mt-0.5 text-xs md:text-sm text-zinc-350 font-medium">
+                            <span class="text-rose-500">&bull;</span>
+                            <span>${profile.neighborhood}</span>
+                        </div>
+                        <p class="text-[11px] md:text-xs text-zinc-550 font-light line-clamp-2 mt-1 antialiased leading-tight">
+                            ${profile.slogan}
+                        </p>
+                    </div>
+                    <button onclick="openErosModal(${index})" class="absolute inset-0 z-20 w-full h-full bg-transparent cursor-pointer outline-none focus:outline-none"></button>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // EROS MODAL OVERLAY Logic
+        function openErosModal(index) {
+            currentProfileIndex = index % profilesData.length;
+            currentModalPicIndex = 0;
+            loadErosModalProfile(currentProfileIndex);
+            
+            const modal = document.getElementById("eros-modal");
+            modal.classList.remove("hidden");
+            modal.classList.add("flex");
+            document.body.style.overflow = "hidden";
+            document.documentElement.style.overflow = "hidden";
+        }
+
+        function closeErosModal() {
+            const modal = document.getElementById("eros-modal");
+            modal.classList.add("hidden");
+            modal.classList.remove("flex");
+            document.body.style.overflow = "";
+            document.documentElement.style.overflow = "";
+            // Pause any playing videos
+            const videoElement = document.getElementById("modal-video-element");
+            if (videoElement) {
+                videoElement.pause();
+            }
+        }
+
+        function updateModalPic() {
+            const profile = profilesData[currentProfileIndex];
+            const picDisplay = document.getElementById("modal-pic-display");
+            if (picDisplay) picDisplay.src = profile.images[currentModalPicIndex];
+            
+            const picIdx = document.getElementById("modal-pic-idx");
+            if (picIdx) picIdx.innerText = currentModalPicIndex + 1;
+            
+            const picTotal = document.getElementById("modal-pic-total");
+            if (picTotal) picTotal.innerText = profile.images.length;
+            
+            // Highlight thumb border
+            const thumbs = document.getElementsByClassName("modal-thumb-item");
+            for (let i = 0; i < thumbs.length; i++) {
+                if (i === currentModalPicIndex) {
+                    thumbs[i].classList.add("border-rose-500");
+                    thumbs[i].classList.remove("border-zinc-800");
+                } else {
+                    thumbs[i].classList.remove("border-rose-500");
+                    thumbs[i].classList.add("border-zinc-800");
+                }
+            }
+        }
+
+        function setModalPic(index) {
+            currentModalPicIndex = index;
+            updateModalPic();
+        }
+
+        function nextModalPic() {
+            const profile = profilesData[currentProfileIndex];
+            currentModalPicIndex = (currentModalPicIndex + 1) % profile.images.length;
+            updateModalPic();
+        }
+
+        function prevModalPic() {
+            const profile = profilesData[currentProfileIndex];
+            currentModalPicIndex = (currentModalPicIndex - 1 + profile.images.length) % profile.images.length;
+            updateModalPic();
+        }
+
+        function nextErosModalProfile() {
+            currentProfileIndex = (currentProfileIndex + 1) % profilesData.length;
+            currentModalPicIndex = 0;
+            loadErosModalProfile(currentProfileIndex);
+        }
+
+        function prevErosModalProfile() {
+            currentProfileIndex = (currentProfileIndex - 1 + profilesData.length) % profilesData.length;
+            currentModalPicIndex = 0;
+            loadErosModalProfile(currentProfileIndex);
+        }
+
+        function loadErosModalProfile(index) {
+            const profile = profilesData[index];
+            
+            // Header & text data
+            document.getElementById("modal-top-city").innerText = `${profile.city} (${profile.neighborhood})`;
+            document.getElementById("modal-profile-name").innerText = profile.name;
+            document.getElementById("modal-profile-phone").innerText = profile.phone;
+            document.getElementById("modal-profile-slogan").innerText = `"${profile.slogan}"`;
+            
+            // Cachês fee box
+            document.getElementById("modal-stat-fee").innerText = `R$ ${profile.fee || 500}`;
+            
+            // Stats table
+            document.getElementById("modal-stat-age").innerText = `${profile.age} anos`;
+            document.getElementById("modal-stat-height").innerText = profile.stats.height;
+            document.getElementById("modal-stat-weight").innerText = profile.stats.weight;
+            document.getElementById("modal-stat-eyes").innerText = profile.stats.eyes;
+            document.getElementById("modal-stat-hair").innerText = profile.stats.hair;
+            document.getElementById("modal-stat-skin").innerText = profile.stats.skin;
+            document.getElementById("modal-stat-feet").innerText = profile.stats.feet;
+            document.getElementById("modal-stat-manequim").innerText = profile.stats.manequim;
+            
+            // Atendimento tags
+            const atendContainer = document.getElementById("modal-stat-atendimento");
+            if (atendContainer) {
+                atendContainer.innerHTML = "";
+                profile.stats.atendimento.forEach(tag => {
+                    const span = document.createElement("span");
+                    span.className = "bg-zinc-900 border border-zinc-800 text-zinc-350 px-3 py-1.5 rounded-full text-xs font-semibold font-sans";
+                    span.innerText = tag;
+                    atendContainer.appendChild(span);
+                });
+            }
+            
+            // Horário & Card
+            document.getElementById("modal-stat-schedule").innerText = profile.stats.schedule;
+            
+            // Perfil tags
+            const perfilContainer = document.getElementById("modal-stat-perfil");
+            if (perfilContainer) {
+                perfilContainer.innerHTML = "";
+                profile.stats.perfil.forEach(tag => {
+                    const span = document.createElement("span");
+                    span.className = "border border-pink-500/20 text-pink-400 bg-pink-500/5 px-3.5 py-1.5 rounded-full text-xs font-semibold font-sans";
+                    span.innerText = tag;
+                    perfilContainer.appendChild(span);
+                });
+            }
+            
+            // Aparência tags
+            const aparenciaContainer = document.getElementById("modal-stat-aparencia");
+            if (aparenciaContainer) {
+                aparenciaContainer.innerHTML = "";
+                (profile.stats.aparencia || []).forEach(tag => {
+                    const span = document.createElement("span");
+                    span.className = "border border-amber-500/20 text-amber-400 bg-amber-500/5 px-3.5 py-1.5 rounded-full text-xs font-semibold font-sans";
+                    span.innerText = tag;
+                    aparenciaContainer.appendChild(span);
+                });
+            }
+            
+            // Bio
+            document.getElementById("modal-profile-bio").innerText = profile.bio;
+            
+            // CTA Actions (Phone normalization)
+            const cleanPhone = profile.phone.replace(/[^0-9]/g, '');
+            // Update WhatsApp CTA button
+            const waButton = document.getElementById("modal-btn-wa");
+            if (waButton) waButton.href = `https://wa.me/55${cleanPhone}`;
+            
+            // Update Ligar CTA button
+            const callButton = document.getElementById("modal-btn-call");
+            if (callButton) callButton.href = `tel:+55${cleanPhone}`;
+            
+            // Update lock overlay WA CTA
+            const lockWaButton = document.getElementById("modal-btn-wa-lock");
+            if (lockWaButton) lockWaButton.href = `https://wa.me/55${cleanPhone}`;
+
+            // Services tags
+            const tagsContainer = document.getElementById("modal-services-tags");
+            if (tagsContainer) {
+                tagsContainer.innerHTML = "";
+                profile.services.forEach(srv => {
+                    const span = document.createElement("span");
+                    span.className = "text-xs px-3 py-1.5 bg-zinc-900 border border-zinc-800 text-zinc-300 rounded-lg font-sans";
+                    span.innerText = srv;
+                    tagsContainer.appendChild(span);
+                });
+            }
+            
+            // Photo & Thumbs
+            updateModalPic();
+            
+            // Render thumbs list
+            const thumbsContainer = document.getElementById("modal-thumbs-row");
+            if (thumbsContainer) {
+                thumbsContainer.innerHTML = "";
+                profile.images.forEach((imgUrl, i) => {
+                    const img = document.createElement("img");
+                    img.src = imgUrl;
+                    img.alt = "thumb";
+                    img.className = `w-14 h-20 object-cover rounded-lg border-2 cursor-pointer flex-shrink-0 transition-all duration-200 modal-thumb-item ${i === currentModalPicIndex ? 'border-rose-500' : 'border-zinc-800'}`;
+                    img.onclick = () => setModalPic(i);
+                    thumbsContainer.appendChild(img);
+                });
+            }
+
+            // Populate advertiser photos (fotos enviadas pelo anunciante)
+            const advPhotosContainer = document.getElementById("modal-adv-photos");
+            if (advPhotosContainer) {
+                advPhotosContainer.innerHTML = "";
+                const advImages = profile.images.slice(1);
+                if (advImages.length === 0) {
+                    advImages.push(profile.images[0]); // fallback if only 1 image
+                }
+                advImages.forEach(imgUrl => {
+                    const div = document.createElement("div");
+                    div.className = "aspect-[3/4] rounded-lg overflow-hidden bg-zinc-955 border border-zinc-850";
+                    div.innerHTML = `<img src="${imgUrl}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-350" alt="">`;
+                    advPhotosContainer.appendChild(div);
+                });
+            }
+
+            // Reset video tabs to first video
+            changeModalVideo(0);
+
+            // Populate Mais Acessadas (related profiles)
+            const relatedContainer = document.getElementById("modal-related-profiles");
+            if (relatedContainer) {
+                relatedContainer.innerHTML = "";
+                let relCount = 0;
+                for (let i = 1; i <= 6; i++) {
+                    const relIdx = (index + i) % profilesData.length;
+                    if (relIdx === index) continue;
+                    if (relCount >= 4) break;
+                    const relProfile = profilesData[relIdx];
+
+                    const div = document.createElement("div");
+                    div.className = "w-20 flex-shrink-0 flex flex-col gap-1 cursor-pointer group";
+                    div.onclick = () => {
+                        // Load clicked related profile
+                        loadErosModalProfile(relIdx);
+                        currentProfileIndex = relIdx;
+                        currentModalPicIndex = 0;
+                        // scroll parent container of this related profiles back to top
+                        const leftCol = relatedContainer.closest('.md\\:col-span-5');
+                        if (leftCol) leftCol.scrollTo({ top: 0, behavior: 'smooth' });
+                    };
+                    div.innerHTML = `
+                        <div class="aspect-[3/4] rounded-lg overflow-hidden border border-zinc-800 bg-zinc-900 group-hover:border-[#f43f5e] transition-colors duration-250">
+                            <img src="${relProfile.images[0]}" class="w-full h-full object-cover" alt="">
+                        </div>
+                        <span class="text-[10px] text-zinc-400 group-hover:text-white truncate text-center font-medium font-sans">${relProfile.name}</span>
+                    `;
+                    relatedContainer.appendChild(div);
+                    relCount++;
+                }
+            }
+        }
+
+        // Initialize on DOMContentLoaded
+        document.addEventListener("DOMContentLoaded", () => {
+            renderNovidadesCarousel();
+            renderProfileGrid();
+            
+            // Initialize Swiper
+            const novidadesSwiper = new Swiper('.novidades-swiper', {
+                slidesPerView: 'auto',
+                spaceBetween: 16,
+                loop: true,
+                speed: 600,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: true,
+                },
+                navigation: {
+                    nextEl: '.novidades-swiper .swiper-button-next',
+                    prevEl: '.novidades-swiper .swiper-button-prev',
+                },
+            });
+        });
+
+        // HOTS unlock modal functions
+        function openHotsUnlockModal() {
+            const profile = profilesData[currentProfileIndex];
+            const cleanPhone = profile.phone.replace(/[^0-9]/g, '');
+            const hotsWaBtn = document.getElementById("hots-wa-btn");
+            if (hotsWaBtn) {
+                hotsWaBtn.href = `https://wa.me/55${cleanPhone}?text=Ol%C3%A1%2C%20gostaria%20de%20liberar%20o%20seu%20conte%C3%BAdo%20HOT%20do%20site%20Musa%20Class.`;
+            }
+            const modal = document.getElementById("hots-unlock-modal");
+            modal.classList.remove("hidden");
+            modal.classList.add("flex");
+        }
+
+        // Multiple videos switching function
+        function changeModalVideo(idx) {
+            const videoElement = document.getElementById("modal-video-element");
+            if (!videoElement) return;
+            
+            const profile = profilesData[currentProfileIndex];
+            // Base video source
+            let baseSrc = "https://static.musaclass.com/public/acp/a71549a9-b6af-4c7b-9979-cf0175cd689d/1776572703671-watermarked-video-6986487623fc5.mp4";
+            
+            // Set source with offset to simulate different videos
+            if (idx === 0) {
+                videoElement.src = baseSrc;
+            } else if (idx === 1) {
+                videoElement.src = baseSrc + "#t=5";
+            } else if (idx === 2) {
+                videoElement.src = baseSrc + "#t=12";
+            }
+            videoElement.load();
+            
+            // Update button styles
+            const btns = ["btn-video-apres", "btn-video-bast", "btn-video-ensaio"];
+            btns.forEach((btnId, i) => {
+                const btn = document.getElementById(btnId);
+                if (!btn) return;
+                if (i === idx) {
+                    btn.className = "flex-1 py-2 text-[10px] font-bold uppercase tracking-wider rounded-lg border border-rose-500 bg-rose-500/10 text-rose-500 transition-all active:scale-[0.98]";
+                } else {
+                    btn.className = "flex-1 py-2 text-[10px] font-bold uppercase tracking-wider rounded-lg border border-zinc-800 bg-zinc-900 text-zinc-400 hover:text-white hover:bg-zinc-800 transition-all active:scale-[0.98]";
+                }
+            });
+        }
+
+        function closeHotsUnlockModal() {
+            const modal = document.getElementById("hots-unlock-modal");
+            modal.classList.add("hidden");
+            modal.classList.remove("flex");
+        }
+    </script>
+
+    <!-- HOTS UNLOCK MODAL -->
+    <div id="hots-unlock-modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/85 backdrop-blur-sm p-4 transition-all duration-300">
+        <div class="relative w-full max-w-[380px] bg-zinc-950 border border-zinc-850 rounded-3xl p-6 shadow-2xl flex flex-col gap-5 text-center font-sans">
+            <!-- Close Button -->
+            <button onclick="closeHotsUnlockModal()" class="absolute top-4 right-4 text-zinc-400 hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <!-- Icon/Fire -->
+            <div class="mx-auto w-14 h-14 rounded-full bg-red-500/10 border border-red-500/20 flex items-center justify-center text-2xl">
+                🔥
+            </div>
+
+            <div class="flex flex-col gap-2">
+                <h3 class="text-lg font-extrabold text-white tracking-tight">Desbloquear Fotos HOTS</h3>
+                <p class="text-xs text-zinc-400 leading-relaxed px-2">
+                    Acesse o álbum privado e exclusivo desta anunciante. Fotos e vídeos sem tarjas e 100% sem censura!
+                </p>
+            </div>
+
+            <!-- Features list -->
+            <div class="flex flex-col gap-2.5 bg-zinc-900/40 border border-zinc-850 rounded-2xl p-4 text-left text-xs">
+                <div class="flex items-center gap-2.5 text-zinc-300">
+                    <span class="text-red-500 text-sm">✓</span>
+                    <span>Fotos privativas e sem tarjas</span>
+                </div>
+                <div class="flex items-center gap-2.5 text-zinc-300">
+                    <span class="text-red-500 text-sm">✓</span>
+                    <span>Vídeos exclusivos e amadores</span>
+                </div>
+                <div class="flex items-center gap-2.5 text-zinc-300">
+                    <span class="text-red-500 text-sm">✓</span>
+                    <span>Envio rápido e 100% discreto</span>
+                </div>
+            </div>
+
+            <!-- Action Button -->
+            <div class="flex flex-col gap-2">
+                <a id="hots-wa-btn" href="#" target="_blank" class="w-full bg-[#25D366] hover:bg-emerald-600 text-white font-bold text-xs py-3.5 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 shadow-lg shadow-emerald-950/20 active:scale-[0.98]">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-4 h-4" viewBox="0 0 16 16">
+                        <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.907h.004c4.368 0 7.926-3.558 7.93-7.93a7.897 7.897 0 0 0-2.333-5.594M7.994 14.52a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.69-4.98c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.611-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+                    </svg>
+                    Liberar pelo WhatsApp
+                </a>
+                <button onclick="closeHotsUnlockModal()" class="w-full text-zinc-400 hover:text-white font-semibold text-[11px] py-2 transition-colors">
+                    Voltar para o perfil
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
