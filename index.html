@@ -133,7 +133,7 @@
                 </svg>
             </button>
             <a href="#" class="flex items-center gap-2 h-8 shrink-0">
-                <img src="../../admin/public/logo-pink.png" class="h-6 object-contain" alt="MusaClass">
+                <img src="./logo-pink.png" class="h-6 object-contain" alt="MusaClass">
             </a>
         </div>
 
@@ -170,7 +170,7 @@
             <div class="flex flex-col gap-5">
                 
                 <!-- Main Nav Links -->
-                <div class="flex flex-col px-3 gap-0.5">
+                <div id="sidebar-nav" class="flex flex-col px-3 gap-0.5">
                     <!-- Link Início -->
                     <a href="#" class="flex items-center gap-4 px-4 py-2.5 bg-zinc-800 text-white rounded-xl font-medium sidebar-link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-rose-500 shrink-0">
@@ -180,7 +180,7 @@
                     </a>
 
                     <!-- Accordion Cidades / Estados -->
-                    <div class="flex flex-col">
+                    <div class="flex flex-col sidebar-accordion">
                         <button onclick="toggleAccordion('cities')" class="flex items-center justify-between w-full px-4 py-2.5 text-zinc-400 hover:text-white hover:bg-zinc-900 rounded-xl transition-colors sidebar-link outline-none">
                             <span class="flex items-center gap-4">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="w-5 h-5 shrink-0">
@@ -193,96 +193,98 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                             </svg>
                         </button>
-                        <div id="accordion-cities" class="accordion-content overflow-hidden flex flex-col gap-0.5 mt-1 px-1 pl-4" style="max-height: 500px;">
-                            <a href="#" class="flex items-center justify-between px-4 py-2 text-zinc-450 hover:text-white hover:bg-zinc-900/50 rounded-xl transition-colors sidebar-link">
-                                <span class="flex items-center gap-4">
-                                    <span class="w-2 h-2 bg-rose-500 rounded-full shrink-0"></span>
-                                    <span class="sidebar-text truncate font-semibold">Fortaleza</span>
-                                </span>
-                                <span class="sidebar-text text-[10px] bg-rose-950/20 text-rose-500 border border-rose-500/30 px-1.5 py-0.5 rounded font-bold shrink-0">25</span>
-                            </a>
-                            <a href="#" class="flex items-center justify-between px-4 py-2 text-zinc-450 hover:text-white hover:bg-zinc-900/50 rounded-xl transition-colors sidebar-link">
-                                <span class="flex items-center gap-4">
-                                    <span class="w-2 h-2 bg-zinc-700 rounded-full shrink-0"></span>
-                                    <span class="sidebar-text truncate">Recife</span>
-                                </span>
-                                <span class="sidebar-text text-[10px] bg-zinc-900 text-zinc-500 px-1.5 py-0.5 rounded font-bold shrink-0">12</span>
-                            </a>
-                            <a href="#" class="flex items-center justify-between px-4 py-2 text-zinc-450 hover:text-white hover:bg-zinc-900/50 rounded-xl transition-colors sidebar-link">
-                                <span class="flex items-center gap-4">
-                                    <span class="w-2 h-2 bg-zinc-700 rounded-full shrink-0"></span>
-                                    <span class="sidebar-text truncate">São Paulo</span>
-                                </span>
-                                <span class="sidebar-text text-[10px] bg-zinc-900 text-zinc-500 px-1.5 py-0.5 rounded font-bold shrink-0">42</span>
-                            </a>
-                            <a href="#" class="flex items-center justify-between px-4 py-2 text-zinc-450 hover:text-white hover:bg-zinc-900/50 rounded-xl transition-colors sidebar-link">
-                                <span class="flex items-center gap-4">
-                                    <span class="w-2 h-2 bg-zinc-700 rounded-full shrink-0"></span>
-                                    <span class="sidebar-text truncate">Teresina</span>
-                                </span>
-                                <span class="sidebar-text text-[10px] bg-zinc-900 text-zinc-500 px-1.5 py-0.5 rounded font-bold shrink-0">8</span>
-                            </a>
-                            <a href="#" class="flex items-center justify-between px-4 py-2 text-zinc-450 hover:text-white hover:bg-zinc-900/50 rounded-xl transition-colors sidebar-link">
-                                <span class="flex items-center gap-4">
-                                    <span class="w-2 h-2 bg-zinc-700 rounded-full shrink-0"></span>
-                                    <span class="sidebar-text truncate">Natal</span>
-                                </span>
-                                <span class="sidebar-text text-[10px] bg-zinc-900 text-zinc-500 px-1.5 py-0.5 rounded font-bold shrink-0">14</span>
-                            </a>
-                            <a href="#" class="flex items-center justify-between px-4 py-2 text-zinc-450 hover:text-white hover:bg-zinc-900/50 rounded-xl transition-colors sidebar-link">
-                                <span class="flex items-center gap-4">
-                                    <span class="w-2 h-2 bg-zinc-700 rounded-full shrink-0"></span>
-                                    <span class="sidebar-text truncate">João Pessoa</span>
-                                </span>
-                                <span class="sidebar-text text-[10px] bg-zinc-900 text-zinc-500 px-1.5 py-0.5 rounded font-bold shrink-0">9</span>
-                            </a>
-                            <a href="#" class="flex items-center justify-between px-4 py-2 text-zinc-450 hover:text-white hover:bg-zinc-900/50 rounded-xl transition-colors sidebar-link">
-                                <span class="flex items-center gap-4">
-                                    <span class="w-2 h-2 bg-zinc-700 rounded-full shrink-0"></span>
-                                    <span class="sidebar-text truncate">Salvador</span>
-                                </span>
-                                <span class="sidebar-text text-[10px] bg-zinc-900 text-zinc-500 px-1.5 py-0.5 rounded font-bold shrink-0">19</span>
-                            </a>
-                            <a href="#" class="flex items-center justify-between px-4 py-2 text-zinc-450 hover:text-white hover:bg-zinc-900/50 rounded-xl transition-colors sidebar-link">
-                                <span class="flex items-center gap-4">
-                                    <span class="w-2 h-2 bg-zinc-700 rounded-full shrink-0"></span>
-                                    <span class="sidebar-text truncate">Maceió</span>
-                                </span>
-                                <span class="sidebar-text text-[10px] bg-zinc-900 text-zinc-500 px-1.5 py-0.5 rounded font-bold shrink-0">11</span>
-                            </a>
-                            <a href="#" class="flex items-center justify-between px-4 py-2 text-zinc-450 hover:text-white hover:bg-zinc-900/50 rounded-xl transition-colors sidebar-link">
-                                <span class="flex items-center gap-4">
-                                    <span class="w-2 h-2 bg-zinc-700 rounded-full shrink-0"></span>
-                                    <span class="sidebar-text truncate">Belo Horizonte</span>
-                                </span>
-                                <span class="sidebar-text text-[10px] bg-zinc-900 text-zinc-500 px-1.5 py-0.5 rounded font-bold shrink-0">16</span>
-                            </a>
-                            <a href="#" class="flex items-center justify-between px-4 py-2 text-zinc-450 hover:text-white hover:bg-zinc-900/50 rounded-xl transition-colors sidebar-link">
-                                <span class="flex items-center gap-4">
-                                    <span class="w-2 h-2 bg-zinc-700 rounded-full shrink-0"></span>
-                                    <span class="sidebar-text truncate">Brasília</span>
-                                </span>
-                                <span class="sidebar-text text-[10px] bg-zinc-900 text-zinc-500 px-1.5 py-0.5 rounded font-bold shrink-0">21</span>
-                            </a>
-                            <a href="#" class="flex items-center justify-between px-4 py-2 text-zinc-450 hover:text-white hover:bg-zinc-900/50 rounded-xl transition-colors sidebar-link">
-                                <span class="flex items-center gap-4">
-                                    <span class="w-2 h-2 bg-zinc-700 rounded-full shrink-0"></span>
-                                    <span class="sidebar-text truncate">São Luis</span>
-                                </span>
-                                <span class="sidebar-text text-[10px] bg-zinc-900 text-zinc-500 px-1.5 py-0.5 rounded font-bold shrink-0">7</span>
-                            </a>
-                            <a href="#" class="flex items-center justify-between px-4 py-2 text-zinc-450 hover:text-white hover:bg-zinc-900/50 rounded-xl transition-colors sidebar-link">
-                                <span class="flex items-center gap-4">
-                                    <span class="w-2 h-2 bg-zinc-700 rounded-full shrink-0"></span>
-                                    <span class="sidebar-text truncate">Aracaju</span>
-                                </span>
-                                <span class="sidebar-text text-[10px] bg-zinc-900 text-zinc-500 px-1.5 py-0.5 rounded font-bold shrink-0">6</span>
-                            </a>
+                        <div id="accordion-cities" class="accordion-content overflow-hidden transition-all duration-200" style="max-height: 500px;">
+                            <div class="flex flex-col gap-0.5 mt-1 px-1 pl-4">
+                                <a href="#" class="flex items-center justify-between px-4 py-2 text-zinc-450 hover:text-white hover:bg-zinc-900/50 rounded-xl transition-colors sidebar-link">
+                                    <span class="flex items-center gap-4">
+                                        <span class="w-2 h-2 bg-rose-500 rounded-full shrink-0"></span>
+                                        <span class="sidebar-text truncate font-semibold">Fortaleza</span>
+                                    </span>
+                                    <span class="sidebar-text text-[10px] bg-rose-950/20 text-rose-500 border border-rose-500/30 px-1.5 py-0.5 rounded font-bold shrink-0">25</span>
+                                </a>
+                                <a href="#" class="flex items-center justify-between px-4 py-2 text-zinc-450 hover:text-white hover:bg-zinc-900/50 rounded-xl transition-colors sidebar-link">
+                                    <span class="flex items-center gap-4">
+                                        <span class="w-2 h-2 bg-zinc-700 rounded-full shrink-0"></span>
+                                        <span class="sidebar-text truncate">Recife</span>
+                                    </span>
+                                    <span class="sidebar-text text-[10px] bg-zinc-900 text-zinc-500 px-1.5 py-0.5 rounded font-bold shrink-0">12</span>
+                                </a>
+                                <a href="#" class="flex items-center justify-between px-4 py-2 text-zinc-450 hover:text-white hover:bg-zinc-900/50 rounded-xl transition-colors sidebar-link">
+                                    <span class="flex items-center gap-4">
+                                        <span class="w-2 h-2 bg-zinc-700 rounded-full shrink-0"></span>
+                                        <span class="sidebar-text truncate">São Paulo</span>
+                                    </span>
+                                    <span class="sidebar-text text-[10px] bg-zinc-900 text-zinc-500 px-1.5 py-0.5 rounded font-bold shrink-0">42</span>
+                                </a>
+                                <a href="#" class="flex items-center justify-between px-4 py-2 text-zinc-450 hover:text-white hover:bg-zinc-900/50 rounded-xl transition-colors sidebar-link">
+                                    <span class="flex items-center gap-4">
+                                        <span class="w-2 h-2 bg-zinc-700 rounded-full shrink-0"></span>
+                                        <span class="sidebar-text truncate">Teresina</span>
+                                    </span>
+                                    <span class="sidebar-text text-[10px] bg-zinc-900 text-zinc-500 px-1.5 py-0.5 rounded font-bold shrink-0">8</span>
+                                </a>
+                                <a href="#" class="flex items-center justify-between px-4 py-2 text-zinc-450 hover:text-white hover:bg-zinc-900/50 rounded-xl transition-colors sidebar-link">
+                                    <span class="flex items-center gap-4">
+                                        <span class="w-2 h-2 bg-zinc-700 rounded-full shrink-0"></span>
+                                        <span class="sidebar-text truncate">Natal</span>
+                                    </span>
+                                    <span class="sidebar-text text-[10px] bg-zinc-900 text-zinc-500 px-1.5 py-0.5 rounded font-bold shrink-0">14</span>
+                                </a>
+                                <a href="#" class="flex items-center justify-between px-4 py-2 text-zinc-450 hover:text-white hover:bg-zinc-900/50 rounded-xl transition-colors sidebar-link">
+                                    <span class="flex items-center gap-4">
+                                        <span class="w-2 h-2 bg-zinc-700 rounded-full shrink-0"></span>
+                                        <span class="sidebar-text truncate">João Pessoa</span>
+                                    </span>
+                                    <span class="sidebar-text text-[10px] bg-zinc-900 text-zinc-500 px-1.5 py-0.5 rounded font-bold shrink-0">9</span>
+                                </a>
+                                <a href="#" class="flex items-center justify-between px-4 py-2 text-zinc-450 hover:text-white hover:bg-zinc-900/50 rounded-xl transition-colors sidebar-link">
+                                    <span class="flex items-center gap-4">
+                                        <span class="w-2 h-2 bg-zinc-700 rounded-full shrink-0"></span>
+                                        <span class="sidebar-text truncate">Salvador</span>
+                                    </span>
+                                    <span class="sidebar-text text-[10px] bg-zinc-900 text-zinc-500 px-1.5 py-0.5 rounded font-bold shrink-0">19</span>
+                                </a>
+                                <a href="#" class="flex items-center justify-between px-4 py-2 text-zinc-450 hover:text-white hover:bg-zinc-900/50 rounded-xl transition-colors sidebar-link">
+                                    <span class="flex items-center gap-4">
+                                        <span class="w-2 h-2 bg-zinc-700 rounded-full shrink-0"></span>
+                                        <span class="sidebar-text truncate">Maceió</span>
+                                    </span>
+                                    <span class="sidebar-text text-[10px] bg-zinc-900 text-zinc-500 px-1.5 py-0.5 rounded font-bold shrink-0">11</span>
+                                </a>
+                                <a href="#" class="flex items-center justify-between px-4 py-2 text-zinc-450 hover:text-white hover:bg-zinc-900/50 rounded-xl transition-colors sidebar-link">
+                                    <span class="flex items-center gap-4">
+                                        <span class="w-2 h-2 bg-zinc-700 rounded-full shrink-0"></span>
+                                        <span class="sidebar-text truncate">Belo Horizonte</span>
+                                    </span>
+                                    <span class="sidebar-text text-[10px] bg-zinc-900 text-zinc-500 px-1.5 py-0.5 rounded font-bold shrink-0">16</span>
+                                </a>
+                                <a href="#" class="flex items-center justify-between px-4 py-2 text-zinc-450 hover:text-white hover:bg-zinc-900/50 rounded-xl transition-colors sidebar-link">
+                                    <span class="flex items-center gap-4">
+                                        <span class="w-2 h-2 bg-zinc-700 rounded-full shrink-0"></span>
+                                        <span class="sidebar-text truncate">Brasília</span>
+                                    </span>
+                                    <span class="sidebar-text text-[10px] bg-zinc-900 text-zinc-500 px-1.5 py-0.5 rounded font-bold shrink-0">21</span>
+                                </a>
+                                <a href="#" class="flex items-center justify-between px-4 py-2 text-zinc-450 hover:text-white hover:bg-zinc-900/50 rounded-xl transition-colors sidebar-link">
+                                    <span class="flex items-center gap-4">
+                                        <span class="w-2 h-2 bg-zinc-700 rounded-full shrink-0"></span>
+                                        <span class="sidebar-text truncate">São Luis</span>
+                                    </span>
+                                    <span class="sidebar-text text-[10px] bg-zinc-900 text-zinc-500 px-1.5 py-0.5 rounded font-bold shrink-0">7</span>
+                                </a>
+                                <a href="#" class="flex items-center justify-between px-4 py-2 text-zinc-450 hover:text-white hover:bg-zinc-900/50 rounded-xl transition-colors sidebar-link">
+                                    <span class="flex items-center gap-4">
+                                        <span class="w-2 h-2 bg-zinc-700 rounded-full shrink-0"></span>
+                                        <span class="sidebar-text truncate">Aracaju</span>
+                                    </span>
+                                    <span class="sidebar-text text-[10px] bg-zinc-900 text-zinc-500 px-1.5 py-0.5 rounded font-bold shrink-0">6</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Accordion Filtros Avançados -->
-                    <div class="flex flex-col">
+                    <div class="flex flex-col sidebar-accordion">
                         <button onclick="toggleAccordion('filters')" class="flex items-center justify-between w-full px-4 py-2.5 text-zinc-400 hover:text-white hover:bg-zinc-900 rounded-xl transition-colors sidebar-link outline-none">
                             <span class="flex items-center gap-4">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="w-5 h-5 shrink-0">
@@ -294,134 +296,141 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                             </svg>
                         </button>
-                        <div id="accordion-filters" class="accordion-content overflow-hidden flex flex-col gap-4 mt-3 px-4 pb-4" style="max-height: 1200px;">
-                            <!-- BAIRRO -->
-                            <div class="flex flex-col gap-1.5">
-                                <label class="sidebar-text text-[11px] uppercase tracking-wider text-zinc-400 font-bold font-sans">Bairro</label>
-                                <select class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-rose-500 appearance-none cursor-pointer font-sans">
-                                    <option>Qualquer bairro</option>
-                                    <option>Meireles</option>
-                                    <option>Aldeota</option>
-                                    <option>Praia de Iracema</option>
-                                    <option>Cocó</option>
-                                    <option>Centro</option>
-                                    <option>Mucuripe</option>
-                                    <option>Praia do Futuro</option>
-                                </select>
-                            </div>
+                        <div id="accordion-filters" class="accordion-content overflow-hidden transition-all duration-200" style="max-height: 3000px;">
+                            <div class="flex flex-col gap-4 mt-3 px-4 pb-4">
+                                <!-- BAIRRO -->
+                                <div class="flex flex-col gap-1.5">
+                                    <label class="sidebar-text text-[11px] uppercase tracking-wider text-zinc-400 font-bold font-sans">Bairro</label>
+                                    <select class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-rose-500 appearance-none cursor-pointer font-sans">
+                                        <option>Qualquer bairro</option>
+                                        <option>Meireles</option>
+                                        <option>Aldeota</option>
+                                        <option>Praia de Iracema</option>
+                                        <option>Cocó</option>
+                                        <option>Centro</option>
+                                        <option>Mucuripe</option>
+                                        <option>Praia do Futuro</option>
+                                    </select>
+                                </div>
 
-                            <!-- APARÊNCIA -->
-                            <div class="flex flex-col gap-2">
-                                <label class="sidebar-text text-[11px] uppercase tracking-wider text-zinc-400 font-bold font-sans">Aparência</label>
-                                <div class="grid grid-cols-2 gap-1.5">
-                                    <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Falsa magra</label>
-                                    <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Magra</label>
-                                    <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Curvilínea</label>
-                                    <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Fitness</label>
-                                    <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Atlética</label>
-                                    <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Plus size</label>
-                                    <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Mulherão</label>
-                                    <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Mignon</label>
-                                    <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Natural</label>
-                                    <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Delicada</label>
-                                    <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Bronzeada</label>
-                                    <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Silicone</label>
-                                    <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Tatuagens</label>
-                                    <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Piercings</label>
-                                    <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Bumbum grande</label>
-                                    <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Seios naturais</label>
-                                    <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Seios grandes</label>
+                                <!-- APARÊNCIA -->
+                                <div class="flex flex-col gap-2">
+                                    <label class="sidebar-text text-[11px] uppercase tracking-wider text-zinc-400 font-bold font-sans">Aparência</label>
+                                    <div class="grid grid-cols-2 gap-1.5">
+                                        <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Falsa magra</label>
+                                        <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Magra</label>
+                                        <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Curvilínea</label>
+                                        <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Fitness</label>
+                                        <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Atlética</label>
+                                        <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Plus size</label>
+                                        <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Mulherão</label>
+                                        <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Mignon</label>
+                                        <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Natural</label>
+                                        <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Delicada</label>
+                                        <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Bronzeada</label>
+                                        <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Silicone</label>
+                                        <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Tatuagens</label>
+                                        <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Piercings</label>
+                                        <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Bumbum grande</label>
+                                        <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Seios naturais</label>
+                                        <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Seios grandes</label>
+                                    </div>
+                                </div>
+
+                                <!-- TOM DE PELE -->
+                                <div class="flex flex-col gap-1.5">
+                                    <label class="sidebar-text text-[11px] uppercase tracking-wider text-zinc-400 font-bold font-sans">Tom de Pele</label>
+                                    <select class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-rose-500 appearance-none cursor-pointer font-sans">
+                                        <option>Qualquer</option>
+                                        <option>Branca</option>
+                                        <option>Morena clara</option>
+                                        <option>Morena</option>
+                                        <option>Negra</option>
+                                    </select>
+                                </div>
+
+                                <!-- CABELOS -->
+                                <div class="flex flex-col gap-1.5">
+                                    <label class="sidebar-text text-[11px] uppercase tracking-wider text-zinc-400 font-bold font-sans">Cabelos</label>
+                                    <select class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-rose-500 appearance-none cursor-pointer font-sans">
+                                        <option>Qualquer</option>
+                                        <option>Loiros</option>
+                                        <option>Castanhos</option>
+                                        <option>Pretos</option>
+                                        <option>Ruivos</option>
+                                        <option>Coloridos</option>
+                                    </select>
+                                </div>
+
+                                <!-- PERSONALIDADE -->
+                                <div class="flex flex-col gap-2">
+                                    <label class="sidebar-text text-[11px] uppercase tracking-wider text-zinc-400 font-bold font-sans">Personalidade</label>
+                                    <div class="grid grid-cols-2 gap-1.5">
+                                        <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Namoradinha</label>
+                                        <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Safada</label>
+                                        <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Meiga</label>
+                                        <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Liberal</label>
+                                        <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Discreta</label>
+                                    </div>
+                                </div>
+
+                                <!-- ESPECIALIDADES -->
+                                <div class="flex flex-col gap-2">
+                                    <label class="sidebar-text text-[11px] uppercase tracking-wider text-zinc-400 font-bold font-sans">Especialidades</label>
+                                    <div class="grid grid-cols-2 gap-1.5">
+                                        <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Massagem</label>
+                                        <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Conversas</label>
+                                        <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Fetichismo</label>
+                                        <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Dominação</label>
+                                        <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Submissão</label>
+                                        <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Podolatria</label>
+                                        <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Pompoarismo</label>
+                                        <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Striptease</label>
+                                        <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Fantasias</label>
+                                        <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Beijo boca</label>
+                                        <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Anal</label>
+                                        <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Inversão</label>
+                                    </div>
+                                </div>
+
+                                <!-- ATENDE EM -->
+                                <div class="flex flex-col gap-2">
+                                    <label class="sidebar-text text-[11px] uppercase tracking-wider text-zinc-400 font-bold font-sans">Atende em</label>
+                                    <div class="grid grid-cols-2 gap-1.5">
+                                        <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Flat Próprio</label>
+                                        <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Motéis</label>
+                                        <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Hotéis</label>
+                                        <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Virtual</label>
+                                    </div>
+                                </div>
+
+                                <!-- ACEITA CARTÃO -->
+                                <div class="flex flex-col gap-1.5">
+                                    <label class="sidebar-text text-[11px] uppercase tracking-wider text-zinc-400 font-bold font-sans">Aceita Cartão</label>
+                                    <select class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-rose-500 appearance-none cursor-pointer font-sans">
+                                        <option>Qualquer</option>
+                                        <option>Sim</option>
+                                        <option>Não</option>
+                                    </select>
+                                </div>
+
+                                <!-- BOTÃO APLICAR / LIMPAR -->
+                                <div class="flex gap-2 mt-2 font-sans">
+                                    <button type="button" onclick="clearFilters()" class="flex-1 py-3 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-zinc-400 hover:text-white font-bold uppercase tracking-wider text-[9px] rounded-xl transition-all duration-200 active:scale-[0.97]">
+                                        Limpar Filtros
+                                    </button>
+                                    <button class="flex-1 py-3 bg-brandPink hover:bg-rose-600 text-white font-bold uppercase tracking-wider text-[9px] rounded-xl transition-all duration-200 shadow-md shadow-rose-950/20 active:scale-[0.97]">
+                                        Aplicar Filtros
+                                    </button>
                                 </div>
                             </div>
-
-                            <!-- TOM DE PELE -->
-                            <div class="flex flex-col gap-1.5">
-                                <label class="sidebar-text text-[11px] uppercase tracking-wider text-zinc-400 font-bold font-sans">Tom de Pele</label>
-                                <select class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-rose-500 appearance-none cursor-pointer font-sans">
-                                    <option>Qualquer</option>
-                                    <option>Branca</option>
-                                    <option>Morena clara</option>
-                                    <option>Morena</option>
-                                    <option>Negra</option>
-                                </select>
-                            </div>
-
-                            <!-- CABELOS -->
-                            <div class="flex flex-col gap-1.5">
-                                <label class="sidebar-text text-[11px] uppercase tracking-wider text-zinc-400 font-bold font-sans">Cabelos</label>
-                                <select class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-rose-500 appearance-none cursor-pointer font-sans">
-                                    <option>Qualquer</option>
-                                    <option>Loiros</option>
-                                    <option>Castanhos</option>
-                                    <option>Pretos</option>
-                                    <option>Ruivos</option>
-                                    <option>Coloridos</option>
-                                </select>
-                            </div>
-
-                            <!-- PERSONALIDADE -->
-                            <div class="flex flex-col gap-2">
-                                <label class="sidebar-text text-[11px] uppercase tracking-wider text-zinc-400 font-bold font-sans">Personalidade</label>
-                                <div class="grid grid-cols-2 gap-1.5">
-                                    <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Namoradinha</label>
-                                    <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Safada</label>
-                                    <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Meiga</label>
-                                    <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Liberal</label>
-                                    <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Discreta</label>
-                                </div>
-                            </div>
-
-                            <!-- ESPECIALIDADES -->
-                            <div class="flex flex-col gap-2">
-                                <label class="sidebar-text text-[11px] uppercase tracking-wider text-zinc-400 font-bold font-sans">Especialidades</label>
-                                <div class="grid grid-cols-2 gap-1.5">
-                                    <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Massagem</label>
-                                    <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Conversas</label>
-                                    <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Fetichismo</label>
-                                    <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Dominação</label>
-                                    <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Submissão</label>
-                                    <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Podolatria</label>
-                                    <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Pompoarismo</label>
-                                    <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Striptease</label>
-                                    <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Fantasias</label>
-                                    <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Beijo boca</label>
-                                    <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Anal</label>
-                                    <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Inversão</label>
-                                </div>
-                            </div>
-
-                            <!-- ATENDE EM -->
-                            <div class="flex flex-col gap-2">
-                                <label class="sidebar-text text-[11px] uppercase tracking-wider text-zinc-400 font-bold font-sans">Atende em</label>
-                                <div class="grid grid-cols-2 gap-1.5">
-                                    <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Flat Próprio</label>
-                                    <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Motéis</label>
-                                    <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Hotéis</label>
-                                    <label class="flex items-center gap-1.5 border border-zinc-800 hover:border-zinc-700 px-2 py-1.5 rounded-lg cursor-pointer text-[10px] text-zinc-350 font-sans"><input type="checkbox" class="accent-rose-500 w-3 h-3"> Virtual</label>
-                                </div>
-                            </div>
-
-                            <!-- ACEITA CARTÃO -->
-                            <div class="flex flex-col gap-1.5">
-                                <label class="sidebar-text text-[11px] uppercase tracking-wider text-zinc-400 font-bold font-sans">Aceita Cartão</label>
-                                <select class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-rose-500 appearance-none cursor-pointer font-sans">
-                                    <option>Qualquer</option>
-                                    <option>Sim</option>
-                                    <option>Não</option>
-                                </select>
-                            </div>
-
-                            <!-- BOTÃO APLICAR -->
-                            <button class="w-full py-3 bg-brandPink hover:bg-rose-600 text-white font-bold uppercase tracking-widest text-[10px] rounded-xl transition-all duration-200 shadow-md shadow-rose-950/20 active:scale-[0.97] mt-2 font-sans">
-                                Aplicar Filtros
-                            </button>
                         </div>
                     </div>
                 </div>
             </div>
             
             <!-- Bottom Legal/Help -->
-            <div class="px-6 text-[10px] text-zinc-600 flex flex-col gap-2 sidebar-text">
+            <div class="px-6 text-[10px] text-zinc-600 flex flex-col gap-2 sidebar-text pb-10">
                 <div class="flex flex-wrap gap-x-2 gap-y-1">
                     <a href="#" class="hover:underline">Sobre</a>
                     <a href="#" class="hover:underline">Termos</a>
@@ -435,28 +444,28 @@
         <main id="main-content" class="flex-1 h-full overflow-y-auto flex flex-col bg-[#09090b] relative">
             
             <!-- Page Heading Title Section -->
-            <div class="px-6 pt-6 pb-2 shrink-0 select-none">
+            <div class="px-3 md:px-6 pt-6 pb-2 shrink-0 select-none">
                 <h1 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Acompanhantes Fortaleza - CE</h1>
                 <p class="text-sm text-zinc-400 mt-1 font-light">Desde 2012, referência em acompanhantes de luxo</p>
             </div>
             
             <!-- Sticky Filter Pill Badges Row (YouTube Style) -->
-            <div class="sticky top-0 bg-[#09090b] py-3 px-4 border-b border-ytBorder/20 z-20 flex items-center gap-3 overflow-x-auto no-scrollbar shrink-0 select-none">
-                <span class="bg-white text-black font-semibold px-4 py-1.5 rounded-lg text-xs cursor-pointer select-none">Tudo</span>
-                <span class="bg-zinc-900 border border-ytBorder text-zinc-350 hover:bg-zinc-800 hover:text-white font-semibold px-4 py-1.5 rounded-lg text-xs cursor-pointer transition-all select-none">Morenas</span>
-                <span class="bg-zinc-900 border border-ytBorder text-zinc-350 hover:bg-zinc-800 hover:text-white font-semibold px-4 py-1.5 rounded-lg text-xs cursor-pointer transition-all select-none">Loiras</span>
-                <span class="bg-zinc-900 border border-ytBorder text-zinc-350 hover:bg-zinc-800 hover:text-white font-semibold px-4 py-1.5 rounded-lg text-xs cursor-pointer transition-all select-none">Ruivas</span>
-                <span class="bg-zinc-900 border border-ytBorder text-zinc-350 hover:bg-zinc-800 hover:text-white font-semibold px-4 py-1.5 rounded-lg text-xs cursor-pointer transition-all select-none">Super Vips</span>
-                <span class="bg-zinc-900 border border-ytBorder text-zinc-350 hover:bg-zinc-800 hover:text-white font-semibold px-4 py-1.5 rounded-lg text-xs cursor-pointer transition-all select-none">Novidades</span>
-                <span class="bg-zinc-900 border border-ytBorder text-zinc-350 hover:bg-zinc-800 hover:text-white font-semibold px-4 py-1.5 rounded-lg text-xs cursor-pointer transition-all select-none">Com vídeo</span>
-                <span class="bg-zinc-900 border border-ytBorder text-zinc-350 hover:bg-zinc-800 hover:text-white font-semibold px-4 py-1.5 rounded-lg text-xs cursor-pointer transition-all select-none">Com local</span>
-                <span class="bg-zinc-900 border border-ytBorder text-zinc-350 hover:bg-zinc-800 hover:text-white font-semibold px-4 py-1.5 rounded-lg text-xs cursor-pointer transition-all select-none">Massagem erótica</span>
-                <span class="bg-zinc-900 border border-ytBorder text-zinc-350 hover:bg-zinc-800 hover:text-white font-semibold px-4 py-1.5 rounded-lg text-xs cursor-pointer transition-all select-none">Atendimento virtual</span>
+            <div class="sticky top-0 bg-[#09090b] py-3 px-3 md:px-6 border-b border-ytBorder/20 z-20 flex items-center gap-3 overflow-x-auto no-scrollbar shrink-0 select-none">
+                <span class="bg-white text-black font-semibold px-4 py-1.5 rounded-lg text-xs cursor-pointer select-none whitespace-nowrap shrink-0">Tudo</span>
+                <span class="bg-zinc-900 border border-ytBorder text-zinc-350 hover:bg-zinc-800 hover:text-white font-semibold px-4 py-1.5 rounded-lg text-xs cursor-pointer transition-all select-none whitespace-nowrap shrink-0">Morenas</span>
+                <span class="bg-zinc-900 border border-ytBorder text-zinc-350 hover:bg-zinc-800 hover:text-white font-semibold px-4 py-1.5 rounded-lg text-xs cursor-pointer transition-all select-none whitespace-nowrap shrink-0">Loiras</span>
+                <span class="bg-zinc-900 border border-ytBorder text-zinc-350 hover:bg-zinc-800 hover:text-white font-semibold px-4 py-1.5 rounded-lg text-xs cursor-pointer transition-all select-none whitespace-nowrap shrink-0">Ruivas</span>
+                <span class="bg-zinc-900 border border-ytBorder text-zinc-350 hover:bg-zinc-800 hover:text-white font-semibold px-4 py-1.5 rounded-lg text-xs cursor-pointer transition-all select-none whitespace-nowrap shrink-0">Super Vips</span>
+                <span class="bg-zinc-900 border border-ytBorder text-zinc-350 hover:bg-zinc-800 hover:text-white font-semibold px-4 py-1.5 rounded-lg text-xs cursor-pointer transition-all select-none whitespace-nowrap shrink-0">Novidades</span>
+                <span class="bg-zinc-900 border border-ytBorder text-zinc-350 hover:bg-zinc-800 hover:text-white font-semibold px-4 py-1.5 rounded-lg text-xs cursor-pointer transition-all select-none whitespace-nowrap shrink-0">Com vídeo</span>
+                <span class="bg-zinc-900 border border-ytBorder text-zinc-350 hover:bg-zinc-800 hover:text-white font-semibold px-4 py-1.5 rounded-lg text-xs cursor-pointer transition-all select-none whitespace-nowrap shrink-0">Com local</span>
+                <span class="bg-zinc-900 border border-ytBorder text-zinc-350 hover:bg-zinc-800 hover:text-white font-semibold px-4 py-1.5 rounded-lg text-xs cursor-pointer transition-all select-none whitespace-nowrap shrink-0">Massagem erótica</span>
+                <span class="bg-zinc-900 border border-ytBorder text-zinc-350 hover:bg-zinc-800 hover:text-white font-semibold px-4 py-1.5 rounded-lg text-xs cursor-pointer transition-all select-none whitespace-nowrap shrink-0">Atendimento virtual</span>
             </div>
 
             <!-- FEEDS / STORIES CIRCLES (Below Badges) -->
-            <section class="py-4 px-6 border-b border-ytBorder/15 select-none shrink-0 flex flex-col gap-2.5">
-                <div class="flex items-center gap-4 overflow-x-auto py-1.5 no-scrollbar scroll-smooth w-full px-1">
+            <section class="py-4 px-3 md:px-6 border-b border-ytBorder/15 select-none shrink-0 flex flex-col gap-2.5">
+                <div class="flex items-center gap-4 overflow-x-auto py-1.5 no-scrollbar scroll-smooth w-full px-3">
                     <!-- Feed 1 -->
                     <div onclick="openStoryViewer(0)" class="flex flex-col items-center gap-2 cursor-pointer group flex-shrink-0">
                         <div class="w-[58px] h-[58px] rounded-full ring-2 ring-brandPink ring-offset-2 ring-offset-[#09090b] overflow-hidden bg-zinc-900 group-hover:scale-105 transition-all duration-300">
@@ -492,7 +501,7 @@
             </section>
 
             <!-- NOVIDADES Section (Swiper Carousel) -->
-            <section class="py-4 px-6 border-b border-ytBorder/15 relative">
+            <section class="py-4 px-3 md:px-6 border-b border-ytBorder/15 relative">
                 <span class="text-xs uppercase tracking-widest text-brandPink font-extrabold px-1 font-sans">Novos ensaios Musa Class</span>
                 <div class="novidades-swiper swiper w-full mt-2.5">
                     <div id="novidades-container" class="swiper-wrapper">
@@ -504,7 +513,7 @@
             </section>
 
             <!-- DESTAQUES Section (Vertical profile cards grid - 5 columns per line on desktop) -->
-            <section class="p-6">
+            <section class="p-3 md:p-6">
                 <span class="text-xs uppercase tracking-widest text-brandPink font-extrabold px-1 font-sans block mb-4">Destaques em Fortaleza</span>
                 
                 <div id="profile-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 px-1 w-full">
@@ -513,7 +522,7 @@
             </section>
 
             <!-- ACOMPANHANTES VIRTUAIS Section -->
-            <section class="p-6 border-t border-zinc-900/50">
+            <section class="p-3 md:p-6 border-t border-zinc-900/50">
                 <span class="text-xs uppercase tracking-widest text-brandPink font-extrabold px-1 font-sans block">Acompanhantes Virtuais</span>
                 <span class="text-xs text-zinc-500 font-light px-1 font-sans block mb-4 mt-0.5">Anunciantes dedicadas a experiências personalizadas por videochamadas</span>
                 
@@ -523,7 +532,7 @@
             </section>
 
             <!-- CURTA TEMPORADA Section -->
-            <section class="p-6 border-t border-zinc-900/50">
+            <section class="p-3 md:p-6 border-t border-zinc-900/50">
                 <span class="text-xs uppercase tracking-widest text-brandPink font-extrabold px-1 font-sans block">Curta Temporada</span>
                 <span class="text-xs text-zinc-500 font-light px-1 font-sans block mb-4 mt-0.5">Aguardem novas anunciantes disponíveis para uma curta temporada em Fortaleza no Musa Class</span>
                 
@@ -533,7 +542,7 @@
             </section>
 
             <!-- Footer Badges -->
-            <section class="border-t border-zinc-900/50 pt-10 pb-6 flex flex-col gap-10 px-6 w-full select-none shrink-0">
+            <section class="border-t border-zinc-900/50 pt-10 pb-6 flex flex-col gap-10 px-3 md:px-6 w-full select-none shrink-0">
                 <!-- Acompanhantes por Bairro -->
                 <div>
                     <h4 class="text-sm uppercase tracking-wider text-zinc-300 font-bold mb-1 flex items-center gap-2">
@@ -610,7 +619,7 @@
             </section>
 
             <!-- SEO Paragraphs Section -->
-            <section class="border-t border-zinc-900/50 mt-8 py-10 px-6 text-zinc-400 font-light leading-relaxed flex flex-col gap-6 max-w-4xl mx-auto text-left select-none">
+            <section class="border-t border-zinc-900/50 mt-8 py-10 px-3 md:px-6 text-zinc-400 font-light leading-relaxed flex flex-col gap-6 max-w-4xl mx-auto text-left select-none">
                 <h3 class="text-xl sm:text-2xl font-extrabold text-white tracking-tight">Acompanhantes em Fortaleza: elegância cearense entre a brisa do mar e a vida boa</h3>
                 <p class="text-sm sm:text-base text-zinc-450">Fortaleza tem um jeito próprio de receber. A cidade pulsa no encontro do sol forte com o vento do Atlântico, e essa mistura de calor humano e descontração se traduz na companhia que você encontra por aqui. Na Musa Class, reunimos acompanhantes em Fortaleza que carregam exatamente esse espírito: leves na conversa, atentas ao detalhe e à vontade tanto num jantar à beira-mar quanto num programa mais reservado. Cada perfil traz o selo Garota Real & Verificada, com fotos reais e contato direto, sem intermediários.</p>
                 <p class="text-sm sm:text-base text-zinc-450">A capital cearense não se resume à orla. Entre o burburinho da Praia de Iracema, o requinte do Meireles e a serenidade arborizada da Aldeota, há uma Fortaleza para cada tipo de noite. Quem prefere o ar marítimo encontra no Mucuripe e na Praia do Futuro o cenário ideal para um fim de tarde sem pressa; quem busca tranquilidade longe do agito valoriza a discrição residencial da Cidade dos Funcionários. As acompanhantes de luxo do nosso catálogo conhecem esses bairros e sabem onde a cidade se mostra mais acolhedora.</p>
@@ -642,7 +651,7 @@
                         <a href="#" class="hover:text-rose-500">Italiano</a>
                     </div>
 
-                    <img src="../../admin/public/logo-pink.png" class="h-6 object-contain" alt="MusaClass">
+                    <img src="./logo-pink.png" class="h-6 object-contain" alt="MusaClass">
                     <p class="text-[10px] text-zinc-700">&copy; 2026 MusaClass. Todos os direitos reservados.</p>
                 </div>
             </footer>
@@ -729,15 +738,15 @@
             </div>
 
             <!-- Modal Content Grid (Independent double scroll scrollable layout) -->
-            <div class="flex-1 overflow-y-auto md:overflow-hidden p-4 md:p-6 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 h-full bg-zinc-900">
+            <div id="modal-content-grid" class="flex-1 overflow-y-auto md:overflow-hidden p-4 md:p-6 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 h-full bg-zinc-900">
                 
                 <!-- Left Column: Photo Gallery, Advertiser Pics, Videos, Hots & Related (Independent Scroll) -->
-                <div class="md:col-span-5 flex flex-col gap-5 md:h-full md:overflow-y-auto modal-scroll pr-1 pb-4">
+                <div id="modal-left-col" class="md:col-span-5 flex flex-col gap-5 md:h-full md:overflow-y-auto modal-scroll pr-1 pb-4">
                     <!-- Photo Display Panel -->
                     <div class="relative aspect-[3/4] w-full rounded-xl overflow-hidden border border-zinc-800 bg-zinc-950 group shrink-0">
                         <!-- VIP Tag (Eros Style) -->
-                        <div class="absolute top-4 left-4 bg-gradient-to-r from-red-600 to-amber-600 px-3 py-1 rounded-md text-[10px] font-bold text-white tracking-widest uppercase shadow-md z-30">
-                            VIP
+                        <div class="absolute top-4 left-4 bg-brandPink px-3 py-1 rounded-md text-[10px] font-bold text-white tracking-widest uppercase shadow-md z-30">
+                            ÚLTIMOS DIAS
                         </div>
 
                         <!-- Image Index Page counter -->
@@ -760,9 +769,23 @@
                         </button>
                     </div>
 
-                    <!-- Thumbnails row -->
-                    <div id="modal-thumbs-row" class="flex gap-2 overflow-x-auto pb-1 no-scrollbar shrink-0">
-                        <!-- Thumbs dynamically inserted -->
+                    <!-- Thumbnails row (With Scroll Buttons) -->
+                    <div class="relative w-full group/thumbs shrink-0">
+                        <!-- Seta esquerda -->
+                        <button onclick="scrollModalThumbs('left')" class="absolute left-1 top-1/2 -translate-y-1/2 bg-black/75 hover:bg-black text-white p-1 rounded-full border border-zinc-800 z-10 transition-opacity opacity-0 group-hover/thumbs:opacity-100 animate-fade-in">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-3 h-3">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                            </svg>
+                        </button>
+                        <!-- Seta direita -->
+                        <button onclick="scrollModalThumbs('right')" class="absolute right-1 top-1/2 -translate-y-1/2 bg-black/75 hover:bg-black text-white p-1 rounded-full border border-zinc-800 z-10 transition-opacity opacity-0 group-hover/thumbs:opacity-100 animate-fade-in">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-3 h-3">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                            </svg>
+                        </button>
+                        <div id="modal-thumbs-row" class="flex gap-2 overflow-x-auto pb-1 no-scrollbar scroll-smooth">
+                            <!-- Thumbs dynamically inserted -->
+                        </div>
                     </div>
 
                     <!-- Fotos enviadas pelo anunciante -->
@@ -773,26 +796,11 @@
                         </div>
                     </div>
 
-                    <!-- Vídeos -->
+                    <!-- Vídeos (Miniaturas Verticais com Lightbox) -->
                     <div class="flex flex-col gap-3 mt-2">
                         <h3 class="text-xs uppercase tracking-wider text-zinc-400 font-bold border-b border-zinc-800/80 pb-2 font-sans">Vídeos</h3>
-                        <div class="aspect-video w-full rounded-xl overflow-hidden bg-zinc-950 border border-zinc-850 relative group flex items-center justify-center">
-                            <video id="modal-video-element" class="w-full h-full object-cover" controls preload="none">
-                                <source src="" type="video/mp4">
-                                Seu navegador não suporta vídeos.
-                            </video>
-                        </div>
-                        <!-- Video Tabs / Thumbnails -->
-                        <div id="modal-video-thumbs" class="flex gap-2 mt-1 w-full justify-between">
-                            <button id="btn-video-apres" onclick="changeModalVideo(0)" class="flex-1 py-2 text-[10px] font-bold uppercase tracking-wider rounded-lg border border-rose-500 bg-rose-500/10 text-rose-500 transition-all active:scale-[0.98]">
-                                Apresentação
-                            </button>
-                            <button id="btn-video-bast" onclick="changeModalVideo(1)" class="flex-1 py-2 text-[10px] font-bold uppercase tracking-wider rounded-lg border border-zinc-800 bg-zinc-900 text-zinc-400 hover:text-white hover:bg-zinc-800 transition-all active:scale-[0.98]">
-                                Bastidores 🔥
-                            </button>
-                            <button id="btn-video-ensaio" onclick="changeModalVideo(2)" class="flex-1 py-2 text-[10px] font-bold uppercase tracking-wider rounded-lg border border-zinc-800 bg-zinc-900 text-zinc-400 hover:text-white hover:bg-zinc-800 transition-all active:scale-[0.98]">
-                                Ensaio Oficial
-                            </button>
+                        <div id="modal-video-thumbs-vertical" class="grid grid-cols-3 gap-2">
+                            <!-- Gerado dinamicamente via JS -->
                         </div>
                     </div>
 
@@ -835,7 +843,7 @@
                             
                             <!-- Lock Overlay Action -->
                             <div class="absolute inset-0 flex items-center justify-center z-10 bg-black/55 backdrop-blur-[3px] rounded-lg">
-                                <button onclick="openHotsUnlockModal()" class="bg-gradient-to-r from-red-600 to-orange-500 hover:from-red-500 hover:to-orange-400 text-white font-bold text-[10px] uppercase tracking-widest px-4 py-3 rounded-xl shadow-xl flex items-center gap-1.5 transition-all active:scale-95 duration-200">
+                                <button onclick="openHotsUnlockModal()" class="bg-brandPink hover:bg-rose-600 text-white font-bold text-[10px] uppercase tracking-widest px-4 py-3 rounded-xl shadow-xl flex items-center gap-1.5 transition-all active:scale-95 duration-200">
                                     <span>🔥 Desbloquear HOTS</span>
                                 </button>
                             </div>
@@ -844,7 +852,7 @@
 
                     <!-- Mais Acessadas (Related profiles slider) -->
                     <div class="flex flex-col gap-3 mt-2">
-                        <h3 class="text-xs uppercase tracking-wider text-zinc-400 font-bold border-b border-zinc-800/85 pb-2 font-sans font-sans">Mais Acessadas</h3>
+                        <h3 class="text-xs uppercase tracking-wider text-zinc-400 font-bold border-b border-zinc-800/85 pb-2 font-sans">Mais Acessadas</h3>
                         <div id="modal-related-profiles" class="flex gap-3 overflow-x-auto pb-1.5 no-scrollbar shrink-0">
                             <!-- Small round/vertical cards -->
                         </div>
@@ -852,20 +860,14 @@
                 </div>
 
                 <!-- Right Column: Profile Detailed Info + Sticky CTA Bottom Actions (Scrollable) -->
-                <div class="md:col-span-7 flex flex-col md:h-full overflow-hidden border border-zinc-800 bg-zinc-950/40 rounded-2xl">
+                <div class="md:col-span-7 md:flex md:flex-col md:h-full md:overflow-hidden border border-zinc-800 bg-zinc-950/40 rounded-2xl">
                     <!-- Scrollable content area -->
-                    <div class="flex-1 overflow-y-auto modal-scroll p-4 md:p-6 flex flex-col gap-6">
+                    <div id="modal-right-col" class="md:flex-1 md:overflow-y-auto modal-scroll p-4 md:p-6 flex flex-col gap-6">
                         
                         <!-- Title, slogan, publication, phone -->
                         <div class="flex flex-col gap-2.5">
                             <div class="flex items-center justify-between">
                                 <h2 id="modal-profile-name" class="text-2xl md:text-3xl font-extrabold text-white tracking-tight">Danny Bond</h2>
-                                <!-- Favorite/Heart Icon -->
-                                <button class="p-2 text-zinc-400 hover:text-brandPink transition-colors">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
-                                    </svg>
-                                </button>
                             </div>
                             <div class="text-[11px] text-zinc-500 font-medium flex items-center gap-1.5 border-b border-zinc-800/80 pb-3 font-sans">
                                 <span id="modal-published-date">Publicado em: 24/08/2025</span>
@@ -878,23 +880,35 @@
                             </p>
                         </div>
 
-                        <!-- Cachês Card Box -->
-                        <div class="bg-zinc-950/60 rounded-xl border border-zinc-850 p-4 flex flex-col gap-2 font-sans">
-                            <span class="text-xs uppercase tracking-wider text-zinc-500 font-bold">Cachês</span>
-                            <div class="flex items-center gap-3">
-                                <div class="bg-rose-500/10 border border-rose-500/30 px-4 py-2.5 rounded-lg flex flex-col">
-                                    <span class="text-[10px] text-zinc-400 font-medium">1 Hora</span>
-                                    <span id="modal-stat-fee" class="text-lg font-black text-rose-500">R$ 500</span>
-                                </div>
+                        <!-- Biografia Section (Mover para o topo, aumentar fonte e "Leia mais") -->
+                        <div class="flex flex-col gap-3 font-sans">
+                            <h3 class="text-xs uppercase tracking-wider text-zinc-400 font-bold border-b border-zinc-800 pb-2">Biografia</h3>
+                            <div class="flex flex-col gap-2">
+                                <p id="modal-profile-bio" class="text-sm text-zinc-300 leading-relaxed font-light transition-all duration-300">
+                                    EXCLUSIVA ACOMPANHANTE LOIRA DE CORPO MACIO E CHEIROSO DISPONÍVEL POR TEMPO LIMITADO.
+                                </p>
+                                <button id="modal-bio-toggle" onclick="toggleBioExpand()" class="text-xs font-bold text-brandPink hover:text-rose-400 text-left transition-colors mt-1 hidden focus:outline-none">
+                                    Leia mais
+                                </button>
                             </div>
                         </div>
 
-                        <!-- Ficha do Anunciante (Personal Stats Table) -->
+                        <!-- Cachês Card Box (Uma única linha, sem borda) -->
+                        <div class="bg-zinc-950/60 rounded-xl p-4 flex items-center justify-between font-sans">
+                            <span class="text-xs uppercase tracking-wider text-zinc-500 font-bold">Cachês</span>
+                            <div class="flex items-center gap-2 bg-rose-500/10 border border-rose-500/30 px-3 py-1.5 rounded-lg text-xs font-semibold">
+                                <span class="text-zinc-400">1 Hora</span>
+                                <span class="text-zinc-600">•</span>
+                                <span id="modal-stat-fee" class="text-rose-500 font-bold">R$ 500</span>
+                            </div>
+                        </div>
+
+                        <!-- Ficha do Anunciante (Personal Stats Table, sem borda no container) -->
                         <div class="flex flex-col gap-3 font-sans">
                             <h3 class="text-xs uppercase tracking-wider text-zinc-450 font-bold border-b border-zinc-800 pb-2">Ficha do Anunciante</h3>
                             
-                            <!-- Detailed Stats Table (Grid list with borders, exactly like the image) -->
-                            <div class="bg-zinc-950/60 rounded-xl border border-zinc-850 p-4 flex flex-col gap-2.5 text-sm">
+                            <!-- Detailed Stats Table (Grid list with borders, sem borda externa) -->
+                            <div class="bg-zinc-950/60 rounded-xl p-4 flex flex-col gap-2.5 text-sm">
                                 <div class="flex justify-between border-b border-zinc-800/60 pb-2">
                                     <span class="text-zinc-450 font-light">Idade</span>
                                     <span id="modal-stat-age" class="text-white font-bold">-</span>
@@ -930,8 +944,8 @@
                             </div>
                         </div>
 
-                        <!-- Atendimento Box Section -->
-                        <div class="bg-zinc-950/60 rounded-xl border border-zinc-850 p-4 flex flex-col gap-3 font-sans">
+                        <!-- Atendimento Box Section (Sem borda) -->
+                        <div class="bg-zinc-950/60 rounded-xl p-4 flex flex-col gap-3 font-sans">
                             <h4 class="text-sm font-extrabold text-white">Atendimento</h4>
                             <span class="text-xs text-zinc-500 font-light">Acompanho em:</span>
                             <div id="modal-stat-atendimento" class="flex flex-wrap gap-1.5">
@@ -952,33 +966,25 @@
                             </div>
                         </div>
 
-                        <!-- Aparência Style Tags Section -->
-                        <div class="bg-zinc-950/60 rounded-xl border border-zinc-850 p-4 flex flex-col gap-3 font-sans">
+                        <!-- Aparência Style Tags Section (Sem borda) -->
+                        <div class="bg-zinc-950/60 rounded-xl p-4 flex flex-col gap-3 font-sans">
                             <h4 class="text-sm font-extrabold text-white">Aparência</h4>
                             <div id="modal-stat-aparencia" class="flex flex-wrap gap-1.5">
                                 <!-- chips render dynamic appearance tags -->
                             </div>
                         </div>
 
-                        <!-- Perfil Style Tags Section -->
-                        <div class="bg-zinc-950/60 rounded-xl border border-zinc-850 p-4 flex flex-col gap-3 font-sans">
+                        <!-- Perfil Style Tags Section (Sem borda) -->
+                        <div class="bg-zinc-950/60 rounded-xl p-4 flex flex-col gap-3 font-sans">
                             <h4 class="text-sm font-extrabold text-white">Perfil</h4>
                             <div id="modal-stat-perfil" class="flex flex-wrap gap-1.5">
                                 <!-- chips render dynamic styles -->
                             </div>
                         </div>
 
-                        <!-- Complete description text -->
-                        <div class="flex flex-col gap-3">
-                            <h3 class="text-xs uppercase tracking-wider text-zinc-400 font-bold border-b border-zinc-800 pb-2 font-sans">Biografia</h3>
-                            <p id="modal-profile-bio" class="text-xs text-zinc-400 leading-relaxed font-light">
-                                EXCLUSIVA ACOMPANHANTE LOIRA DE CORPO MACIO E CHEIROSO DISPONÍVEL POR TEMPO LIMITADO.
-                            </p>
-                        </div>
-
                         <!-- Services list (Eros Tags) -->
-                        <div class="flex flex-col gap-3">
-                            <h3 class="text-xs uppercase tracking-wider text-zinc-400 font-bold border-b border-zinc-800 pb-2 font-sans">Serviços Disponíveis</h3>
+                        <div class="flex flex-col gap-3 font-sans">
+                            <h3 class="text-xs uppercase tracking-wider text-zinc-400 font-bold border-b border-zinc-800 pb-2">Serviços Disponíveis</h3>
                             <div id="modal-services-tags" class="flex flex-wrap gap-2">
                                 <!-- Dynamic tags -->
                             </div>
@@ -1495,6 +1501,19 @@
         let progressInterval;
         let progressVal = 0;
 
+        // Variaveis de controle adicionais
+        let fullBioText = "";
+        let bioExpanded = false;
+        let advLightboxImages = [];
+        let advLightboxCurrentIdx = 0;
+        let currentLightboxVideoIdx = 0;
+        const videoUrls = [
+            "https://static.musaclass.com/public/acp/a71549a9-b6af-4c7b-9979-cf0175cd689d/1776572703671-watermarked-video-6986487623fc5.mp4",
+            "https://static.musaclass.com/public/acp/a71549a9-b6af-4c7b-9979-cf0175cd689d/1776572703671-watermarked-video-6986487623fc5.mp4#t=5",
+            "https://static.musaclass.com/public/acp/a71549a9-b6af-4c7b-9979-cf0175cd689d/1776572703671-watermarked-video-6986487623fc5.mp4#t=12"
+        ];
+        const videoLabels = ["Apresentação", "Bastidores", "Ensaio Oficial"];
+
         // STORIES Viewer logic
         function openStoryViewer(index) {
             currentStoryIndex = index;
@@ -1587,7 +1606,7 @@
             } else if (type === 'filters') {
                 activeAccordions.filters = !activeAccordions.filters;
                 if (activeAccordions.filters) {
-                    accordion.style.maxHeight = "1200px";
+                    accordion.style.maxHeight = "3000px";
                     chevron.classList.add("rotate-180");
                 } else {
                     accordion.style.maxHeight = "0px";
@@ -1622,29 +1641,54 @@
                 const links = document.querySelectorAll(".sidebar-link");
                 const accordions = document.querySelectorAll(".accordion-content");
                 const chevrons = document.querySelectorAll("[id^='chevron-']");
+                const accordionWrappers = document.querySelectorAll(".sidebar-accordion");
+                const navContainer = document.getElementById("sidebar-nav");
 
                 if (sidebar.classList.contains("w-64")) {
                     // Colapsar
                     sidebar.classList.remove("w-64");
                     sidebar.classList.add("w-[72px]", "items-center", "px-1");
+                    if (navContainer) {
+                        navContainer.classList.remove("px-3", "gap-0.5");
+                        navContainer.classList.add("items-center", "gap-1");
+                    }
                     texts.forEach(el => el.classList.add("hidden"));
                     dividers.forEach(el => el.classList.add("hidden"));
+                    // Centralizar wrappers dos accordions
+                    accordionWrappers.forEach(el => el.classList.add("items-center"));
+                    // Remover accordion contents do layout completamente (display:none elimina largura)
+                    accordions.forEach(el => {
+                        el.style.maxHeight = "0px";
+                        el.style.display = "none";
+                    });
+                    chevrons.forEach(el => el.classList.remove("rotate-180"));
+                    // Style links as icon-only
                     links.forEach(el => {
-                        el.classList.remove("px-4", "py-2.5", "gap-4");
+                        el.classList.remove("px-4", "py-2.5", "gap-4", "w-full", "justify-between");
                         el.classList.add("justify-center", "w-12", "h-12");
                     });
-                    // Fechar accordions visualmente ao colapsar sidebar no desktop
-                    accordions.forEach(el => el.style.maxHeight = "0px");
-                    chevrons.forEach(el => el.classList.remove("rotate-180"));
                 } else {
                     // Expandir
                     sidebar.classList.remove("w-[72px]", "items-center", "px-1");
                     sidebar.classList.add("w-64");
+                    if (navContainer) {
+                        navContainer.classList.add("px-3", "gap-0.5");
+                        navContainer.classList.remove("items-center", "gap-1");
+                    }
                     texts.forEach(el => el.classList.remove("hidden"));
                     dividers.forEach(el => el.classList.remove("hidden"));
+                    // Restaurar wrappers dos accordions
+                    accordionWrappers.forEach(el => el.classList.remove("items-center"));
+                    // Restaurar accordion contents no layout
+                    accordions.forEach(el => {
+                        el.style.display = "";
+                    });
                     links.forEach(el => {
                         el.classList.add("px-4", "py-2.5", "gap-4");
                         el.classList.remove("justify-center", "w-12", "h-12");
+                        if (el.tagName === 'BUTTON') {
+                            el.classList.add("w-full", "justify-between");
+                        }
                     });
                     // Restaurar estado dos accordions
                     if (activeAccordions.cities) {
@@ -1652,7 +1696,7 @@
                         document.getElementById("chevron-cities").classList.add("rotate-180");
                     }
                     if (activeAccordions.filters) {
-                        document.getElementById("accordion-filters").style.maxHeight = "1200px";
+                        document.getElementById("accordion-filters").style.maxHeight = "3000px";
                         document.getElementById("chevron-filters").classList.add("rotate-180");
                     }
                 }
@@ -1666,6 +1710,9 @@
             const texts = document.querySelectorAll(".sidebar-text");
             const dividers = document.querySelectorAll(".sidebar-divider");
             const links = document.querySelectorAll(".sidebar-link");
+            const accordionWrappers = document.querySelectorAll(".sidebar-accordion");
+            const accordions = document.querySelectorAll(".accordion-content");
+            const navContainer = document.getElementById("sidebar-nav");
 
             if (window.innerWidth >= 1024) {
                 sidebar.classList.remove("-translate-x-full", "translate-x-0");
@@ -1675,36 +1722,54 @@
 
                 if (!sidebar.classList.contains("w-[72px]")) {
                     sidebar.classList.add("w-64");
+                    if (navContainer) {
+                        navContainer.classList.add("px-3", "gap-0.5");
+                        navContainer.classList.remove("items-center", "gap-1");
+                    }
                     texts.forEach(el => el.classList.remove("hidden"));
                     dividers.forEach(el => el.classList.remove("hidden"));
+                    accordionWrappers.forEach(el => el.classList.remove("items-center"));
+                    accordions.forEach(el => { el.style.display = ""; });
                     links.forEach(el => {
                         el.classList.add("px-4", "py-2.5", "gap-4");
                         el.classList.remove("justify-center", "w-12", "h-12");
+                        if (el.tagName === 'BUTTON') {
+                            el.classList.add("w-full", "justify-between");
+                        }
                     });
                     if (activeAccordions.cities) {
                         document.getElementById("accordion-cities").style.maxHeight = "500px";
                         document.getElementById("chevron-cities").classList.add("rotate-180");
                     }
                     if (activeAccordions.filters) {
-                        document.getElementById("accordion-filters").style.maxHeight = "1200px";
+                        document.getElementById("accordion-filters").style.maxHeight = "3000px";
                         document.getElementById("chevron-filters").classList.add("rotate-180");
                     }
                 }
             } else {
                 sidebar.classList.remove("w-64", "w-[72px]", "items-center", "px-1");
                 sidebar.classList.add("-translate-x-full");
+                if (navContainer) {
+                    navContainer.classList.add("px-3", "gap-0.5");
+                    navContainer.classList.remove("items-center", "gap-1");
+                }
                 texts.forEach(el => el.classList.remove("hidden"));
                 dividers.forEach(el => el.classList.remove("hidden"));
+                accordionWrappers.forEach(el => el.classList.remove("items-center"));
+                accordions.forEach(el => { el.style.display = ""; });
                 links.forEach(el => {
                     el.classList.add("px-4", "py-2.5", "gap-4");
                     el.classList.remove("justify-center", "w-12", "h-12");
+                    if (el.tagName === 'BUTTON') {
+                        el.classList.add("w-full", "justify-between");
+                    }
                 });
                 if (activeAccordions.cities) {
                     document.getElementById("accordion-cities").style.maxHeight = "500px";
                     document.getElementById("chevron-cities").classList.add("rotate-180");
                 }
                 if (activeAccordions.filters) {
-                    document.getElementById("accordion-filters").style.maxHeight = "1200px";
+                    document.getElementById("accordion-filters").style.maxHeight = "3000px";
                     document.getElementById("chevron-filters").classList.add("rotate-180");
                 }
             }
@@ -1757,7 +1822,7 @@
                 const card = document.createElement("div");
                 card.className = "w-full group relative rounded-2xl overflow-hidden bg-zinc-900 hover:bg-zinc-850 transition-all duration-300 hover:shadow-lg hover:shadow-black/40 flex flex-col";
                 card.innerHTML = `
-                    <div class="w-full aspect-[2/3] overflow-hidden bg-zinc-955 relative">
+                    <div class="w-full aspect-[3/6] overflow-hidden bg-zinc-955 relative">
                         <img src="${profile.images[0]}" alt="${profile.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
                         ${badgeHTML}
                     </div>
@@ -1939,6 +2004,14 @@
         function loadErosModalProfile(index) {
             const profile = profilesData[index];
             
+            // Scroll contents back to top (for both desktop columns and mobile grid wrapper)
+            const leftCol = document.getElementById("modal-left-col");
+            if (leftCol) leftCol.scrollTop = 0;
+            const rightCol = document.getElementById("modal-right-col");
+            if (rightCol) rightCol.scrollTop = 0;
+            const gridContainer = document.getElementById("modal-content-grid");
+            if (gridContainer) gridContainer.scrollTop = 0;
+            
             // Header & text data
             document.getElementById("modal-top-city").innerText = `${profile.city} (${profile.neighborhood})`;
             document.getElementById("modal-profile-name").innerText = profile.name;
@@ -1998,7 +2071,9 @@
             }
             
             // Bio
-            document.getElementById("modal-profile-bio").innerText = profile.bio;
+            fullBioText = profile.bio;
+            bioExpanded = false;
+            updateBioDisplay();
             
             // CTA Actions (Phone normalization)
             const cleanPhone = profile.phone.replace(/[^0-9]/g, '');
@@ -2043,7 +2118,7 @@
                 });
             }
 
-            // Populate advertiser photos (fotos enviadas pelo anunciante)
+            // Populate advertiser photos (fotos enviadas pelo anunciante com clique para lightbox)
             const advPhotosContainer = document.getElementById("modal-adv-photos");
             if (advPhotosContainer) {
                 advPhotosContainer.innerHTML = "";
@@ -2051,16 +2126,17 @@
                 if (advImages.length === 0) {
                     advImages.push(profile.images[0]); // fallback if only 1 image
                 }
-                advImages.forEach(imgUrl => {
+                advImages.forEach((imgUrl, i) => {
                     const div = document.createElement("div");
-                    div.className = "aspect-[3/4] rounded-lg overflow-hidden bg-zinc-955 border border-zinc-850";
+                    div.className = "aspect-[3/4] rounded-lg overflow-hidden bg-zinc-955 border border-zinc-850 cursor-pointer";
+                    div.onclick = () => openAdvLightbox(i, advImages);
                     div.innerHTML = `<img src="${imgUrl}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-350" alt="">`;
                     advPhotosContainer.appendChild(div);
                 });
             }
 
-            // Reset video tabs to first video
-            changeModalVideo(0);
+            // Populate video vertical thumbnails
+            renderVideoThumbs(profile);
 
             // Populate Mais Acessadas (related profiles)
             const relatedContainer = document.getElementById("modal-related-profiles");
@@ -2134,36 +2210,168 @@
             modal.classList.add("flex");
         }
 
-        // Multiple videos switching function
-        function changeModalVideo(idx) {
-            const videoElement = document.getElementById("modal-video-element");
-            if (!videoElement) return;
-            
-            const profile = profilesData[currentProfileIndex];
-            // Base video source
-            let baseSrc = "https://static.musaclass.com/public/acp/a71549a9-b6af-4c7b-9979-cf0175cd689d/1776572703671-watermarked-video-6986487623fc5.mp4";
-            
-            // Set source with offset to simulate different videos
-            if (idx === 0) {
-                videoElement.src = baseSrc;
-            } else if (idx === 1) {
-                videoElement.src = baseSrc + "#t=5";
-            } else if (idx === 2) {
-                videoElement.src = baseSrc + "#t=12";
+        // Horizontal scroll function for gallery thumbs
+        function scrollModalThumbs(direction) {
+            const row = document.getElementById("modal-thumbs-row");
+            if (!row) return;
+            const scrollAmount = 150;
+            if (direction === 'left') {
+                row.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            } else {
+                row.scrollBy({ left: scrollAmount, behavior: 'smooth' });
             }
-            videoElement.load();
+        }
+
+        // Bio read-more toggle logic
+        function updateBioDisplay() {
+            const bioEl = document.getElementById("modal-profile-bio");
+            const toggleBtn = document.getElementById("modal-bio-toggle");
+            if (!bioEl || !toggleBtn) return;
             
-            // Update button styles
-            const btns = ["btn-video-apres", "btn-video-bast", "btn-video-ensaio"];
-            btns.forEach((btnId, i) => {
-                const btn = document.getElementById(btnId);
-                if (!btn) return;
-                if (i === idx) {
-                    btn.className = "flex-1 py-2 text-[10px] font-bold uppercase tracking-wider rounded-lg border border-rose-500 bg-rose-500/10 text-rose-500 transition-all active:scale-[0.98]";
+            const limit = 160;
+            if (fullBioText.length <= limit) {
+                bioEl.innerText = fullBioText;
+                toggleBtn.classList.add("hidden");
+            } else {
+                toggleBtn.classList.remove("hidden");
+                if (bioExpanded) {
+                    bioEl.innerText = fullBioText;
+                    toggleBtn.innerText = "Leia menos";
                 } else {
-                    btn.className = "flex-1 py-2 text-[10px] font-bold uppercase tracking-wider rounded-lg border border-zinc-800 bg-zinc-900 text-zinc-400 hover:text-white hover:bg-zinc-800 transition-all active:scale-[0.98]";
+                    let truncated = fullBioText.substring(0, limit);
+                    const lastSpace = truncated.lastIndexOf(" ");
+                    if (lastSpace > limit - 30) {
+                        truncated = truncated.substring(0, lastSpace);
+                    }
+                    bioEl.innerText = truncated + "...";
+                    toggleBtn.innerText = "Leia mais";
                 }
-            });
+            }
+        }
+
+        function toggleBioExpand() {
+            bioExpanded = !bioExpanded;
+            updateBioDisplay();
+        }
+
+        // Advertiser photos Lightbox logic
+        function openAdvLightbox(idx, imagesArray) {
+            advLightboxImages = imagesArray;
+            advLightboxCurrentIdx = idx;
+            updateAdvLightbox();
+            document.getElementById('adv-lightbox').classList.remove('hidden');
+            document.getElementById('adv-lightbox').classList.add('flex');
+        }
+        
+        function closeAdvLightbox() {
+            document.getElementById('adv-lightbox').classList.add('hidden');
+            document.getElementById('adv-lightbox').classList.remove('flex');
+        }
+        
+        function updateAdvLightbox() {
+            const img = document.getElementById('adv-lightbox-img');
+            const idxText = document.getElementById('adv-lightbox-idx');
+            const totalText = document.getElementById('adv-lightbox-total');
+            
+            if (advLightboxImages.length > 0) {
+                img.src = advLightboxImages[advLightboxCurrentIdx];
+                idxText.textContent = advLightboxCurrentIdx + 1;
+                totalText.textContent = advLightboxImages.length;
+            }
+        }
+        
+        function prevAdvLightboxPic(e) {
+            if (e) e.stopPropagation();
+            if (advLightboxImages.length === 0) return;
+            advLightboxCurrentIdx = (advLightboxCurrentIdx - 1 + advLightboxImages.length) % advLightboxImages.length;
+            updateAdvLightbox();
+        }
+        
+        function nextAdvLightboxPic(e) {
+            if (e) e.stopPropagation();
+            if (advLightboxImages.length === 0) return;
+            advLightboxCurrentIdx = (advLightboxCurrentIdx + 1) % advLightboxImages.length;
+            updateAdvLightbox();
+        }
+
+        // Video vertical thumbs and lightbox player logic
+        function renderVideoThumbs(profile) {
+            const container = document.getElementById("modal-video-thumbs-vertical");
+            if (!container) return;
+            container.innerHTML = "";
+            
+            const labels = ["Apresentação", "Bastidores", "Ensaio"];
+            for (let i = 0; i < 3; i++) {
+                const imgUrl = profile.images[i % profile.images.length];
+                const div = document.createElement("div");
+                div.className = "relative aspect-[9/16] rounded-xl overflow-hidden bg-zinc-955 border border-zinc-850 cursor-pointer group/vid";
+                div.onclick = () => openVideoLightbox(i);
+                div.innerHTML = `
+                    <img src="${imgUrl}" class="w-full h-full object-cover opacity-60 group-hover/vid:scale-105 transition-all duration-300" alt="">
+                    <div class="absolute inset-0 flex flex-col items-center justify-center gap-1.5 z-10 bg-black/45">
+                        <div class="w-8 h-8 rounded-full bg-brandPink flex items-center justify-center text-white shadow-lg transition-transform duration-300 group-hover/vid:scale-110">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 ml-0.5">
+                                <path d="M6.3 2.841A1.5 1.5 0 0 0 4 4.11v11.78a1.5 1.5 0 0 0 2.3 1.269l9.344-5.89a1.5 1.5 0 0 0 0-2.538L6.3 2.84z" />
+                            </svg>
+                        </div>
+                        <span class="text-[9px] font-bold uppercase tracking-wider text-white bg-black/60 px-1.5 py-0.5 rounded">${labels[i]}</span>
+                    </div>
+                `;
+                container.appendChild(div);
+            }
+        }
+
+        function openVideoLightbox(idx) {
+            currentLightboxVideoIdx = idx;
+            updateVideoLightbox();
+            document.getElementById('video-lightbox').classList.remove('hidden');
+            document.getElementById('video-lightbox').classList.add('flex');
+        }
+        
+        function closeVideoLightbox() {
+            document.getElementById('video-lightbox').classList.add('hidden');
+            document.getElementById('video-lightbox').classList.remove('flex');
+            const video = document.getElementById('lightbox-video-element');
+            if (video) video.pause();
+        }
+        
+        function updateVideoLightbox() {
+            const video = document.getElementById('lightbox-video-element');
+            const label = document.getElementById('lightbox-video-label');
+            if (video) {
+                video.src = videoUrls[currentLightboxVideoIdx];
+                video.load();
+                video.play().catch(() => {});
+            }
+            if (label) {
+                label.textContent = videoLabels[currentLightboxVideoIdx];
+            }
+        }
+        
+        function nextVideoLightbox(e) {
+            if (e) e.stopPropagation();
+            currentLightboxVideoIdx = (currentLightboxVideoIdx + 1) % videoUrls.length;
+            updateVideoLightbox();
+        }
+        
+        function prevVideoLightbox(e) {
+            if (e) e.stopPropagation();
+            currentLightboxVideoIdx = (currentLightboxVideoIdx - 1 + videoUrls.length) % videoUrls.length;
+            updateVideoLightbox();
+        }
+
+        // Age Verification facial action
+        function startAgeVerification() {
+            alert("Iniciando fluxo de verificação facial obrigatória...");
+            closeHotsUnlockModal();
+        }
+
+        function clearFilters() {
+            const selects = document.querySelectorAll("#accordion-filters select");
+            selects.forEach(sel => sel.selectedIndex = 0);
+            
+            const checkboxes = document.querySelectorAll("#accordion-filters input[type='checkbox']");
+            checkboxes.forEach(cb => cb.checked = false);
         }
 
         function closeHotsUnlockModal() {
@@ -2173,56 +2381,126 @@
         }
     </script>
 
-    <!-- HOTS UNLOCK MODAL -->
+    <!-- CONFIRMAÇÃO DE IDADE OBRIGATÓRIA MODAL -->
     <div id="hots-unlock-modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/85 backdrop-blur-sm p-4 transition-all duration-300">
-        <div class="relative w-full max-w-[380px] bg-zinc-950 border border-zinc-850 rounded-3xl p-6 shadow-2xl flex flex-col gap-5 text-center font-sans">
-            <!-- Close Button -->
+        <div class="relative w-full max-w-[390px] bg-zinc-950 border border-zinc-850/80 rounded-3xl p-6 shadow-2xl flex flex-col gap-5 text-left font-sans animate-fade-in">
+            <!-- Botão de Fechar -->
             <button onclick="closeHotsUnlockModal()" class="absolute top-4 right-4 text-zinc-400 hover:text-white transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
 
-            <!-- Icon/Fire -->
-            <div class="mx-auto w-14 h-14 rounded-full bg-red-500/10 border border-red-500/20 flex items-center justify-center text-2xl">
-                🔥
+            <!-- Título -->
+            <h3 class="text-base font-extrabold text-white tracking-tight leading-tight">
+                Confirmação de idade obrigatória
+            </h3>
+
+            <!-- Descrição -->
+            <p class="text-xs text-zinc-400 leading-relaxed">
+                Para acessar este conteúdo, é necessário comprovar sua <strong>maioridade</strong> em conformidade com a <strong>Lei nº 15.211/2025 (ECA Digital)</strong>, que estabelece diretrizes para a proteção de crianças e adolescentes no ambiente digital.
+            </p>
+
+            <!-- Lista de Benefícios (Checkmarks rosa) -->
+            <div class="flex flex-col gap-3 text-xs text-zinc-300">
+                <div class="flex items-center gap-3">
+                    <span class="w-4 h-4 rounded-full border border-brandPink flex items-center justify-center text-brandPink text-[9px] font-bold shrink-0">✓</span>
+                    <span>Processo rápido</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <span class="w-4 h-4 rounded-full border border-brandPink flex items-center justify-center text-brandPink text-[9px] font-bold shrink-0">✓</span>
+                    <span>Seguro e criptografado</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <span class="w-4 h-4 rounded-full border border-brandPink flex items-center justify-center text-brandPink text-[9px] font-bold shrink-0">✓</span>
+                    <span>Não armazenamos nenhum dado seu</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <span class="w-4 h-4 rounded-full border border-brandPink flex items-center justify-center text-brandPink text-[9px] font-bold shrink-0">✓</span>
+                    <span>É totalmente anônimo</span>
+                </div>
             </div>
 
-            <div class="flex flex-col gap-2">
-                <h3 class="text-lg font-extrabold text-white tracking-tight">Desbloquear Fotos HOTS</h3>
-                <p class="text-xs text-zinc-400 leading-relaxed px-2">
-                    Acesse o álbum privado e exclusivo desta anunciante. Fotos e vídeos sem tarjas e 100% sem censura!
+            <!-- Botão Iniciar Verificação Facial -->
+            <div class="flex flex-col gap-3 mt-1">
+                <button onclick="startAgeVerification()" class="w-full bg-brandPink hover:bg-rose-600 text-white font-bold text-xs py-3.5 rounded-xl transition-all duration-200 text-center shadow-lg shadow-rose-950/20 active:scale-[0.98]">
+                    Iniciar verificação facial
+                </button>
+                <p class="text-[9px] text-zinc-500 text-center">
+                    Ao continuar, você concorda com nossa <a href="#" class="underline hover:text-zinc-400">Política de Privacidade</a>
                 </p>
             </div>
+        </div>
+    </div>
 
-            <!-- Features list -->
-            <div class="flex flex-col gap-2.5 bg-zinc-900/40 border border-zinc-850 rounded-2xl p-4 text-left text-xs">
-                <div class="flex items-center gap-2.5 text-zinc-300">
-                    <span class="text-red-500 text-sm">✓</span>
-                    <span>Fotos privativas e sem tarjas</span>
-                </div>
-                <div class="flex items-center gap-2.5 text-zinc-300">
-                    <span class="text-red-500 text-sm">✓</span>
-                    <span>Vídeos exclusivos e amadores</span>
-                </div>
-                <div class="flex items-center gap-2.5 text-zinc-300">
-                    <span class="text-red-500 text-sm">✓</span>
-                    <span>Envio rápido e 100% discreto</span>
-                </div>
-            </div>
+    <!-- LIGHTBOX DE FOTOS DO ANUNCIANTE -->
+    <div id="adv-lightbox" class="fixed inset-0 z-[120] bg-black/95 hidden flex-col items-center justify-center select-none" onclick="closeAdvLightbox()">
+        <!-- Fechar -->
+        <button onclick="closeAdvLightbox()" class="absolute top-5 right-5 text-white/70 hover:text-white p-2.5 z-[130] bg-zinc-900 rounded-full border border-zinc-800">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+        
+        <!-- Container da imagem principal -->
+        <div class="relative max-w-4xl max-h-[80vh] w-full px-4 flex items-center justify-center" onclick="event.stopPropagation()">
+            <!-- Seta esquerda -->
+            <button onclick="prevAdvLightboxPic(event)" class="absolute left-6 p-3 bg-black/60 border border-zinc-800 text-white rounded-full hover:bg-black transition-all duration-200 active:scale-95 z-30">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                </svg>
+            </button>
+            
+            <!-- Imagem -->
+            <img id="adv-lightbox-img" src="" class="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl" alt="">
+            
+            <!-- Seta direita -->
+            <button onclick="nextAdvLightboxPic(event)" class="absolute right-6 p-3 bg-black/60 border border-zinc-800 text-white rounded-full hover:bg-black transition-all duration-200 active:scale-95 z-30">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Contador de imagem -->
+        <div class="mt-4 text-xs font-semibold text-zinc-400" onclick="event.stopPropagation()">
+            <span id="adv-lightbox-idx">1</span> / <span id="adv-lightbox-total">3</span>
+        </div>
+    </div>
 
-            <!-- Action Button -->
-            <div class="flex flex-col gap-2">
-                <a id="hots-wa-btn" href="#" target="_blank" class="w-full bg-[#25D366] hover:bg-emerald-600 text-white font-bold text-xs py-3.5 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 shadow-lg shadow-emerald-950/20 active:scale-[0.98]">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-4 h-4" viewBox="0 0 16 16">
-                        <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.907h.004c4.368 0 7.926-3.558 7.93-7.93a7.897 7.897 0 0 0-2.333-5.594M7.994 14.52a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.69-4.98c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.611-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
-                    </svg>
-                    Liberar pelo WhatsApp
-                </a>
-                <button onclick="closeHotsUnlockModal()" class="w-full text-zinc-400 hover:text-white font-semibold text-[11px] py-2 transition-colors">
-                    Voltar para o perfil
-                </button>
-            </div>
+    <!-- LIGHTBOX DE VÍDEO VERTICAL -->
+    <div id="video-lightbox" class="fixed inset-0 z-[120] bg-black/95 hidden flex-col items-center justify-center select-none" onclick="closeVideoLightbox()">
+        <!-- Fechar -->
+        <button onclick="closeVideoLightbox()" class="absolute top-5 right-5 text-white/70 hover:text-white p-2.5 z-[130] bg-zinc-900 rounded-full border border-zinc-800">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+        
+        <!-- Player de vídeo vertical -->
+        <div class="relative max-w-[360px] w-full aspect-[9/16] bg-zinc-955 rounded-2xl overflow-hidden border border-zinc-800 shadow-2xl flex items-center justify-center" onclick="event.stopPropagation()">
+            <!-- Seta esquerda -->
+            <button onclick="prevVideoLightbox(event)" class="absolute left-3 p-2.5 bg-black/60 border border-zinc-800 text-white rounded-full hover:bg-black transition-all duration-200 active:scale-95 z-30">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                </svg>
+            </button>
+            
+            <video id="lightbox-video-element" class="w-full h-full object-cover" controls autoplay loop playsinline>
+                <source src="" type="video/mp4">
+            </video>
+            
+            <!-- Seta direita -->
+            <button onclick="nextVideoLightbox(event)" class="absolute right-3 p-2.5 bg-black/60 border border-zinc-800 text-white rounded-full hover:bg-black transition-all duration-200 active:scale-95 z-30">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Legenda/Título -->
+        <div class="mt-4 text-xs font-bold text-white uppercase tracking-widest bg-zinc-900 border border-zinc-800 px-4 py-1.5 rounded-full" onclick="event.stopPropagation()">
+            <span id="lightbox-video-label">Apresentação</span>
         </div>
     </div>
 </body>
